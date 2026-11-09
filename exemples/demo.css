@@ -1,0 +1,9 @@
+.demo-banner {
+  background: #1d2433;
+  color: #f3efe8;
+  text-align: center;
+  font: 500 14px/1.4 system-ui, sans-serif;
+  padding: 9px 16px;
+}
+.demo-banner a { color: #ff8a5c; font-weight: 600; }
+* { box-sizing: border-box; }

@@ -105,6 +105,20 @@ section { padding: 80px 0; }
 .offer li::before { content: "✓  "; color: var(--accent); font-weight: 700; }
 .offer .btn { text-align: center; }
 
+.works { background: var(--surface); border-top: 1px solid var(--line); }
+.work { display: flex; flex-direction: column; text-decoration: none; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.work:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(29, 36, 51, .12); }
+.work-thumb { height: 170px; display: grid; place-items: center; text-align: center; padding: 16px; }
+.work-thumb span { font-size: 1.5rem; }
+.thumb-resto { background: linear-gradient(135deg, #2f3b24, #46532f 55%, #5a3b23); color: #fff; font-family: "Fraunces", serif; }
+.thumb-resto em { color: #e9d7a8; }
+.thumb-artisan { background: linear-gradient(120deg, #1b4d89 0 60%, #163f70 60%); color: #fff; font-weight: 700; letter-spacing: .02em; }
+.thumb-artisan b { color: #f2b705; }
+.thumb-coiffeur { background: linear-gradient(170deg, #e9a8a0, #c97d9c 55%, #6b3a6e); color: #fff; font-weight: 700; letter-spacing: .14em; }
+.work-body { padding: 22px 24px; }
+.work-body p { color: var(--muted); margin: 0 0 12px; font-size: .97rem; }
+.work-link { color: var(--accent); font-weight: 600; }
+
 .method { background: var(--deep); color: #f3efe8; }
 .steps { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .steps span { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: 14px; }
@@ -136,11 +150,13 @@ section { padding: 80px 0; }
   .grid-3 { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
   .steps { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 680px) {
-  section { padding: 56px 0; }
+@media (max-width: 860px) {
   .menu-toggle { display: block; }
   .nav { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 18px; padding: 24px; background: var(--bg); border-bottom: 1px solid var(--line); }
   .nav.open { display: flex; }
+}
+@media (max-width: 680px) {
+  section { padding: 56px 0; }
   .grid-4, .steps, .contact-form .row { grid-template-columns: 1fr; }
   .compare { height: 260px; }
   .mock { padding: 12px; }

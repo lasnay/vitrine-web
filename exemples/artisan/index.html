@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Martel Rénovation — Plomberie, électricité, rénovation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../demo.css">
+  <style>
+    :root { --bg: #ffffff; --soft: #f1f4f8; --ink: #14202e; --muted: #5a6778; --accent: #f2b705; --blue: #1b4d89; --line: #dfe5ec; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 "Archivo", sans-serif; }
+    h1, h2, h3 { font-weight: 800; line-height: 1.1; margin: 0 0 .5em; letter-spacing: -.01em; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    .top { background: var(--blue); color: #fff; }
+    .top .wrap { display: flex; justify-content: space-between; align-items: center; padding: 18px 16px; gap: 12px; flex-wrap: wrap; }
+    .brand { font-size: 1.4rem; font-weight: 800; }
+    .brand span { color: var(--accent); }
+    .phone { background: var(--accent); color: var(--ink); text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; }
+    .hero { background: linear-gradient(120deg, var(--blue) 0 55%, #163f70 55%); color: #fff; padding: 72px 0 96px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.15rem; opacity: .9; max-width: 520px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .badges span { background: rgba(255,255,255,.12); padding: 8px 14px; border-radius: 99px; font-size: .9rem; font-weight: 500; }
+    .quote-box { background: #fff; color: var(--ink); border-radius: 14px; padding: 28px; box-shadow: 0 30px 60px rgba(0,0,0,.25); }
+    .quote-box h3 { font-size: 1.4rem; }
+    .quote-box input, .quote-box select { width: 100%; font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 12px; background: var(--soft); }
+    .quote-box button { width: 100%; background: var(--accent); border: 0; padding: 14px; font: 700 1rem "Archivo", sans-serif; border-radius: 8px; cursor: pointer; }
+    section { padding: 80px 0; }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    .center { text-align: center; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
+    .service { border: 1px solid var(--line); border-radius: 14px; padding: 28px; border-top: 5px solid var(--accent); }
+    .service .ico { font-size: 2rem; }
+    .service p { color: var(--muted); margin: 0; }
+    .works { background: var(--soft); }
+    .ba { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+    .ba-card { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+    .ba-imgs { display: grid; grid-template-columns: 1fr 1fr; height: 180px; }
+    .ba-imgs div { display: grid; place-items: end start; padding: 10px; font-size: .8rem; font-weight: 700; color: #fff; }
+    .before { background: repeating-linear-gradient(45deg, #8a8378 0 12px, #7d766b 12px 24px); }
+    .after { background: linear-gradient(160deg, #e9eef4, #b9c9dc); color: var(--ink) !important; }
+    .after-2 { background: linear-gradient(160deg, #f5efe6, #d7c4a8); }
+    .ba-card p { padding: 16px 20px; margin: 0; font-weight: 500; }
+    .why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; text-align: center; }
+    .why b { display: block; font-size: 2.4rem; color: var(--blue); font-weight: 800; }
+    .why span { color: var(--muted); }
+    .zone { background: var(--ink); color: #fff; text-align: center; }
+    .zone p { opacity: .8; max-width: 620px; margin: 0 auto 28px; }
+    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 860px) {
+      .hero .wrap, .services, .ba { grid-template-columns: 1fr; }
+      .why { grid-template-columns: repeat(2, 1fr); }
+      .hero { background: var(--blue); padding: 48px 0 64px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — entreprise fictive</div>
+  <div class="top">
+    <div class="wrap">
+      <span class="brand">MARTEL <span>Rénovation</span></span>
+      <a class="phone" href="#">📞 01 23 45 67 89</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Vos travaux faits <span>proprement</span>, dans les délais.</h1>
+        <p>Plomberie, électricité, salle de bain, cuisine : un seul interlocuteur pour toute votre rénovation.</p>
+        <div class="badges"><span>✔ Devis gratuit sous 48 h</span><span>✔ Garantie décennale</span><span>✔ Artisan certifié RGE</span></div>
+      </div>
+      <form class="quote-box" onsubmit="event.preventDefault()">
+        <h3>Devis gratuit</h3>
+        <select><option>Type de travaux</option><option>Salle de bain</option><option>Cuisine</option><option>Plomberie</option><option>Électricité</option></select>
+        <input placeholder="Votre nom">
+        <input placeholder="Votre téléphone">
+        <button>Être rappelé</button>
+      </form>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2 class="center">Nos services</h2>
+      <div class="services">
+        <div class="service"><div class="ico">🚿</div><h3>Salle de bain</h3><p>Rénovation complète, douche à l'italienne, accessibilité PMR.</p></div>
+        <div class="service"><div class="ico">🔧</div><h3>Plomberie</h3><p>Dépannage, chauffe-eau, recherche de fuite. Intervention rapide.</p></div>
+        <div class="service"><div class="ico">⚡</div><h3>Électricité</h3><p>Mise aux normes, tableau électrique, éclairage.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="works">
+    <div class="wrap">
+      <h2 class="center">Avant / après</h2>
+      <div class="ba">
+        <div class="ba-card"><div class="ba-imgs"><div class="before">AVANT</div><div class="after">APRÈS</div></div><p>Salle de bain complète — 8 jours de travaux</p></div>
+        <div class="ba-card"><div class="ba-imgs"><div class="before">AVANT</div><div class="after after-2">APRÈS</div></div><p>Cuisine ouverte — 12 jours de travaux</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="center">Pourquoi nous choisir</h2>
+      <div class="why">
+        <div><b>15 ans</b><span>d'expérience</span></div>
+        <div><b>600+</b><span>chantiers réalisés</span></div>
+        <div><b>48 h</b><span>pour votre devis</span></div>
+        <div><b>4,9 ★</b><span>note moyenne</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="zone">
+    <div class="wrap">
+      <h2>On intervient près de chez vous</h2>
+      <p>Votre-Ville et toutes les communes dans un rayon de 30 km. Déplacement gratuit pour le devis.</p>
+      <a class="phone" href="#">Appeler maintenant</a>
+    </div>
+  </section>
+  <footer>© Martel Rénovation — exemple de site, entreprise fictive</footer>
+</body>
+</html>

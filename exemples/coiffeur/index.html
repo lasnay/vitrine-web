@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Ondine — Salon de coiffure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../demo.css">
+  <style>
+    :root { --bg: #fff6f3; --ink: #231a24; --muted: #74687a; --rose: #e9a8a0; --plum: #6b3a6e; --line: #f0dcd6; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.65 "DM Sans", sans-serif; }
+    h1, h2, h3 { font-family: "Syne", sans-serif; font-weight: 800; line-height: 1.05; margin: 0 0 .5em; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+    .brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: .12em; }
+    .pill { background: var(--ink); color: #fff; text-decoration: none; padding: 11px 22px; border-radius: 99px; font-weight: 500; }
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding: 40px 0 80px; }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+    .hero h1 span { color: var(--plum); }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 460px; }
+    .arch { aspect-ratio: 4/5; border-radius: 999px 999px 24px 24px; background: linear-gradient(170deg, var(--rose), #c97d9c 55%, var(--plum)); position: relative; overflow: hidden; }
+    .arch::before { content: ""; position: absolute; inset: 18% 22% auto; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.25); }
+    .arch::after { content: "✂"; position: absolute; bottom: 24px; right: 28px; font-size: 3rem; color: #fff; }
+    section { padding: 72px 0; }
+    .prices { background: #fff; border-radius: 28px; padding: 48px; }
+    .prices h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    .price-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 56px; margin-top: 24px; }
+    .row { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding: 12px 0; }
+    .row b { font-family: "Syne", sans-serif; color: var(--plum); }
+    .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+    .member { text-align: center; }
+    .avatar { aspect-ratio: 1; border-radius: 50%; margin: 0 auto 16px; max-width: 200px; display: grid; place-items: center; font-size: 3rem; }
+    .a1 { background: #f3cfc7; } .a2 { background: #dcc5e3; } .a3 { background: #f7e1c4; }
+    .member p { color: var(--muted); margin: 0; }
+    .book { background: var(--plum); color: #fff; border-radius: 28px; padding: 56px 32px; text-align: center; }
+    .book p { opacity: .85; max-width: 520px; margin: 0 auto 28px; }
+    .slots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+    .slots button { font: inherit; background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 10px 16px; border-radius: 99px; cursor: pointer; }
+    .slots button.on { background: #fff; color: var(--plum); }
+    .book .pill { background: var(--rose); color: var(--ink); }
+    footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 800px) {
+      .hero, .price-cols, .team { grid-template-columns: 1fr; }
+      .arch { max-width: 320px; width: 100%; margin: 0 auto; }
+      .prices { padding: 28px 20px; }
+      section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — salon fictif</div>
+  <div class="wrap">
+    <nav><span class="brand">MAISON ONDINE</span><a class="pill" href="#rdv">Prendre RDV</a></nav>
+    <header class="hero">
+      <div>
+        <h1>Vos cheveux, <span>en mieux.</span></h1>
+        <p>Coupe, couleur et soins sur mesure dans un salon calme et lumineux. Produits naturels, conseils honnêtes.</p>
+        <a class="pill" href="#rdv">Réserver en ligne</a>
+      </div>
+      <div class="arch" aria-hidden="true"></div>
+    </header>
+
+    <section>
+      <div class="prices">
+        <h2>Nos prestations</h2>
+        <div class="price-cols">
+          <div>
+            <div class="row"><span>Coupe femme + brushing</span><b>45 €</b></div>
+            <div class="row"><span>Coupe homme</span><b>25 €</b></div>
+            <div class="row"><span>Coupe enfant (−12 ans)</span><b>18 €</b></div>
+            <div class="row"><span>Brushing seul</span><b>28 €</b></div>
+          </div>
+          <div>
+            <div class="row"><span>Couleur végétale</span><b>dès 55 €</b></div>
+            <div class="row"><span>Balayage</span><b>dès 85 €</b></div>
+            <div class="row"><span>Soin profond</span><b>20 €</b></div>
+            <div class="row"><span>Chignon mariage</span><b>sur devis</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center;font-size:clamp(2rem,4vw,3rem)">L'équipe</h2>
+      <div class="team">
+        <div class="member"><div class="avatar a1">💇‍♀️</div><h3>Léa</h3><p>Coloriste, spécialiste du balayage</p></div>
+        <div class="member"><div class="avatar a2">✂️</div><h3>Yanis</h3><p>Coupes hommes et dégradés</p></div>
+        <div class="member"><div class="avatar a3">🌸</div><h3>Inès</h3><p>Coiffures de mariage et soins</p></div>
+      </div>
+    </section>
+
+    <section id="rdv">
+      <div class="book">
+        <h2 style="font-size:clamp(2rem,4vw,3rem)">Réservez en 30 secondes</h2>
+        <p>Choisissez un créneau, nous confirmons par SMS. Mardi au samedi, 9h – 19h.</p>
+        <div class="slots" id="slots">
+          <button>Mar 10h</button><button class="on">Mar 14h30</button><button>Mer 9h</button><button>Jeu 16h</button><button>Sam 11h</button>
+        </div>
+        <a class="pill" href="#">Confirmer le rendez-vous</a>
+      </div>
+    </section>
+  </div>
+  <footer>© Maison Ondine — exemple de site, salon fictif · 5 rue des Lilas, 00000 Votre-Ville</footer>
+  <script>
+    document.getElementById("slots").addEventListener("click", (e) => {
+      if (e.target.tagName !== "BUTTON") return;
+      document.querySelectorAll("#slots button").forEach((b) => b.classList.toggle("on", b === e.target));
+    });
+  </script>
+</body>
+</html>
