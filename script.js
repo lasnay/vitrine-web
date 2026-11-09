@@ -1,4 +1,4 @@
-const CONTACT_EMAIL = "contact@exemple.fr";
+const CONTACT_EMAIL = "lasnay.dev@gmail.com";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
