@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="topbar">
@@ -18,6 +18,7 @@
       <nav class="nav">
         <a href="#offres">Offres</a>
         <a href="#realisations">Exemples</a>
+        <a href="#comparatif">Comparatif</a>
         <a href="#methode">Méthode</a>
         <a href="#faq">Questions</a>
         <a href="#contact" class="btn btn-small">Audit gratuit</a>
@@ -36,11 +37,12 @@
             <a href="#contact" class="btn">Demander mon audit gratuit</a>
             <a href="#offres" class="btn btn-ghost">Voir les tarifs</a>
           </div>
-          <ul class="trust">
-            <li>Prix fixes, annoncés à l'avance</li>
-            <li>Site en ligne en 1 à 3 semaines</li>
-            <li>Vous restez propriétaire de tout</li>
-          </ul>
+          <a href="#test" class="test-link">⚡ Tester gratuitement la vitesse de mon site →</a>
+          <div class="hero-stats">
+            <div><b>0 €</b><span>pour voir la maquette</span></div>
+            <div><b>2 sem.</b><span>délai moyen</span></div>
+            <div><b>2×</b><span>paiement en deux fois</span></div>
+          </div>
         </div>
         <div class="compare" aria-hidden="true">
           <div class="mock mock-old">
@@ -59,6 +61,13 @@
         </div>
       </div>
     </section>
+
+    <div class="marquee" aria-label="Inclus dans chaque site">
+      <div class="marquee-track">
+        <span>Maquette offerte</span><span>Adapté au mobile</span><span>HTTPS sécurisé</span><span>Chargement rapide</span><span>Référencement local</span><span>Fiche Google Business</span><span>Paiement en 2 fois</span><span>Vous êtes propriétaire</span><span>Prix fixe</span>
+        <span aria-hidden="true">Maquette offerte</span><span aria-hidden="true">Adapté au mobile</span><span aria-hidden="true">HTTPS sécurisé</span><span aria-hidden="true">Chargement rapide</span><span aria-hidden="true">Référencement local</span><span aria-hidden="true">Fiche Google Business</span><span aria-hidden="true">Paiement en 2 fois</span><span aria-hidden="true">Vous êtes propriétaire</span><span aria-hidden="true">Prix fixe</span>
+      </div>
+    </div>
 
     <section class="problems">
       <div class="wrap">
@@ -85,6 +94,23 @@
             <p>Vos clients vous cherchent sur Google… et tombent sur vos concurrents.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="test" class="speedtest">
+      <div class="wrap narrow">
+        <h2>Votre site est-il rapide ?</h2>
+        <p class="section-lead">Testez-le gratuitement avec l'outil officiel de Google. Un score sous 50 sur mobile, c'est des visiteurs qui partent avant même de vous lire.</p>
+        <form class="test-form" id="test-form">
+          <input type="text" id="test-url" placeholder="www.votre-site.fr" aria-label="Adresse de votre site" required>
+          <button type="submit" class="btn">Lancer le test</button>
+        </form>
+        <div class="score-legend">
+          <span><i class="dot bad"></i>0 – 49 : à refaire</span>
+          <span><i class="dot mid"></i>50 – 89 : à améliorer</span>
+          <span><i class="dot good"></i>90 – 100 : excellent</span>
+        </div>
+        <p class="test-note">Le test s'ouvre dans un nouvel onglet (PageSpeed Insights, de Google). Envoyez-moi votre score : je vous explique gratuitement ce qui coince.</p>
       </div>
     </section>
 
@@ -132,6 +158,40 @@
             <a href="#contact" class="btn btn-ghost">En savoir plus</a>
           </article>
         </div>
+        <p class="pay-note">Paiement en 2 fois : 30 % à la validation de la maquette, 70 % à la mise en ligne. Prix nets, pas de TVA en plus (micro-entreprise, TVA non applicable, art. 293 B du CGI).</p>
+        <div class="addons">
+          <h3>Options à la carte</h3>
+          <div class="addons-grid">
+            <div><b>+ 60 €</b><span>Rédaction de vos textes</span></div>
+            <div><b>+ 40 €</b><span>Page supplémentaire</span></div>
+            <div><b>+ 50 €</b><span>Logo simple</span></div>
+            <div><b>+ 40 €</b><span>Galerie photos</span></div>
+            <div><b>+ 60 €</b><span>Réservation ou prise de RDV en ligne</span></div>
+            <div><b>+ 30 €</b><span>Version anglaise d'une page</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparatif" class="comparison">
+      <div class="wrap">
+        <h2>Pourquoi pas Wix ou une agence ?</h2>
+        <p class="section-lead">Ce que vous obtenez vraiment pour votre argent.</p>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <thead>
+              <tr><th></th><th class="us">Pixel &amp; Plume</th><th>Agence web</th><th>Wix / Squarespace</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Prix</td><td class="us">dès 290 €, une seule fois</td><td>souvent 1 500 € et plus</td><td>abonnement tous les mois, à vie</td></tr>
+              <tr><td>Design</td><td class="us">fait pour vous</td><td>thème personnalisé</td><td>modèle utilisé par des milliers de sites</td></tr>
+              <tr><td>Vitesse</td><td class="us">site léger, très rapide</td><td>variable</td><td>souvent lent sur mobile</td></tr>
+              <tr><td>Maquette avant de payer</td><td class="us">✓ offerte</td><td>rarement</td><td>—</td></tr>
+              <tr><td>Interlocuteur</td><td class="us">une seule personne, joignable</td><td>chef de projet</td><td>support en ligne</td></tr>
+              <tr><td>Si vous partez</td><td class="us">vous gardez tout</td><td>selon le contrat</td><td>le site reste chez eux</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -160,11 +220,12 @@
       <div class="wrap">
         <h2>Comment ça se passe</h2>
         <ol class="steps">
-          <li><span>1</span><h3>Audit gratuit</h3><p>J'analyse votre site actuel et je vous dis, sans jargon, ce qui freine vos visiteurs.</p></li>
-          <li><span>2</span><h3>Devis clair</h3><p>Vous recevez un prix fixe et un délai. Vous décidez sans pression.</p></li>
-          <li><span>3</span><h3>Création</h3><p>Je construis votre site et vous le montre en cours de route pour vos retours.</p></li>
-          <li><span>4</span><h3>Mise en ligne</h3><p>Votre nouveau site est en ligne. Je reste disponible si besoin.</p></li>
+          <li><span>1</span><em class="when">Jour 1 · 30 min</em><h3>On discute</h3><p>Par téléphone ou en visio : votre activité, vos clients, ce qui ne va pas dans votre site actuel.</p></li>
+          <li><span>2</span><em class="when">Jours 2 à 4</em><h3>Maquette offerte</h3><p>Je vous montre à quoi ressemblera votre site. Vous ne payez rien tant qu'elle ne vous plaît pas.</p></li>
+          <li><span>3</span><em class="when">Semaine 2</em><h3>Création</h3><p>Je construis le site, vous le suivez en direct et demandez des retouches.</p></li>
+          <li><span>4</span><em class="when">Fin de semaine 2</em><h3>Mise en ligne</h3><p>Nom de domaine, sécurité HTTPS, fiche Google : votre site est en ligne et trouvable.</p></li>
         </ol>
+        <p class="guarantee">✓ Maquette offerte &nbsp;·&nbsp; ✓ Satisfait ou je corrige &nbsp;·&nbsp; ✓ Paiement en 2 fois</p>
       </div>
     </section>
 
@@ -189,7 +250,15 @@
         </details>
         <details>
           <summary>Comment se passe le paiement ?</summary>
-          <p>Un acompte de 30 % au démarrage, le reste à la mise en ligne.</p>
+          <p>En 2 fois : 30 % quand vous validez la maquette, 70 % à la mise en ligne. Virement ou carte bancaire.</p>
+        </details>
+        <details>
+          <summary>Et si le résultat ne me plaît pas ?</summary>
+          <p>Vous voyez la maquette avant de payer quoi que ce soit. Ensuite, je fais les retouches jusqu'à ce que le site vous convienne.</p>
+        </details>
+        <details>
+          <summary>Pourquoi ne pas faire mon site moi-même sur Wix ?</summary>
+          <p>C'est possible, mais il faut du temps, payer un abonnement chaque mois, et le résultat ressemble souvent à beaucoup d'autres sites. Je vous livre un site unique, rapide, que vous payez une seule fois.</p>
         </details>
       </div>
     </section>
@@ -203,9 +272,33 @@
             <label>Votre nom<input type="text" name="name" required></label>
             <label>Votre e-mail<input type="email" name="email" required></label>
           </div>
+          <div class="row">
+            <label>Votre entreprise<input type="text" name="company" placeholder="Nom et activité"></label>
+            <label>Téléphone (facultatif)<input type="tel" name="phone"></label>
+          </div>
+          <div class="row">
+            <label>Avez-vous déjà un site ?
+              <select name="has_site">
+                <option value="">— Choisir —</option>
+                <option>Non, ce serait mon premier site</option>
+                <option>Oui, je veux le refaire</option>
+                <option>Oui, je veux juste l'améliorer</option>
+              </select>
+            </label>
+            <label>Budget envisagé
+              <select name="budget">
+                <option value="">— Choisir —</option>
+                <option>Autour de 290 € (refonte express)</option>
+                <option>Autour de 490 € (site complet)</option>
+                <option>Plus, avec des options</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+            </label>
+          </div>
           <label>Adresse de votre site (si vous en avez un)<input type="text" name="site" placeholder="www.monentreprise.fr"></label>
           <label>Votre message<textarea name="message" rows="4" placeholder="Votre activité, ce qui ne vous plaît pas dans votre site actuel…"></textarea></label>
           <button type="submit" class="btn">Envoyer ma demande</button>
+          <p class="form-reassure">Réponse sous 48 h · Maquette offerte · Sans engagement</p>
         </form>
       </div>
     </section>

@@ -22,9 +22,20 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
   const body = [
     `Nom : ${data.get("name")}`,
     `E-mail : ${data.get("email")}`,
-    `Site : ${data.get("site") || "aucun"}`,
+    `Entreprise : ${data.get("company") || "—"}`,
+    `Téléphone : ${data.get("phone") || "—"}`,
+    `Site actuel : ${data.get("has_site") || "—"} ${data.get("site") ? "(" + data.get("site") + ")" : ""}`,
+    `Budget : ${data.get("budget") || "—"}`,
     "",
     data.get("message"),
   ].join("\n");
   window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+document.getElementById("test-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let url = document.getElementById("test-url").value.trim();
+  if (!url) return;
+  if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+  window.open(`https://pagespeed.web.dev/report?url=${encodeURIComponent(url)}&form_factor=mobile`, "_blank", "noopener");
 });
