@@ -120,7 +120,8 @@ section { padding: 80px 0; }
 .thumb-resto em { color: #e9d7a8; }
 .thumb-artisan { background: linear-gradient(120deg, #1b4d89 0 60%, #163f70 60%); color: #fff; font-weight: 800; letter-spacing: .02em; }
 .thumb-artisan b { color: #f2b705; }
-.thumb-coiffeur { background: linear-gradient(170deg, #e9a8a0, #c97d9c 55%, #6b3a6e); color: #fff; font-weight: 800; letter-spacing: .14em; }
+.thumb-coiffeur { background: linear-gradient(170deg, #e9a8a0, #c97d9c 55%, #6b3a6e); color: #fff; font-weight: 800; }
+.thumb-coiffeur b { color: #3d1f40; }
 .work-body { padding: 22px 24px; }
 .work-body p { color: var(--muted); margin: 0 0 12px; font-size: .95rem; }
 .work-link { color: var(--accent); font-weight: 700; }

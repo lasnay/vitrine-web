@@ -4,107 +4,454 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maison Ondine — Salon de coiffure</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../demo.css?v=3">
   <style>
-    :root { --bg: #fff6f3; --ink: #231a24; --muted: #74687a; --rose: #e9a8a0; --plum: #6b3a6e; --line: #f0dcd6; }
+    :root { --bg: #fff6f3; --paper: #ffffff; --ink: #231a24; --muted: #74687a; --rose: #e9a8a0; --rose-soft: #fbe7e2; --plum: #6b3a6e; --line: #f0dcd6; }
+    html { scroll-behavior: smooth; }
     body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.65 "DM Sans", sans-serif; }
-    h1, h2, h3 { font-family: "Syne", sans-serif; font-weight: 800; line-height: 1.05; margin: 0 0 .5em; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
-    .brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: .12em; }
-    .pill { background: var(--ink); color: #fff; text-decoration: none; padding: 11px 22px; border-radius: 99px; font-weight: 500; }
-    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding: 40px 0 80px; }
-    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+    h1, h2, h3 { font-family: "DM Serif Display", serif; font-weight: 400; line-height: 1.08; margin: 0 0 .5em; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+    h3 { font-size: 1.45rem; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    .kicker { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--plum); margin: 0 0 10px; }
+    .center { text-align: center; }
+    .lead { color: var(--muted); max-width: 560px; }
+    .center .lead { margin: 0 auto 40px; }
+    .pill { display: inline-block; background: var(--ink); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 99px; font-weight: 500; transition: transform .2s, background .2s; }
+    .pill:hover { transform: translateY(-2px); background: var(--plum); }
+    .pill-light { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+    .pill-light:hover { background: var(--rose-soft); }
+    section { padding: 88px 0; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; gap: 16px; }
+    .brand { font-family: "DM Serif Display", serif; font-size: 1.7rem; text-decoration: none; color: var(--ink); }
+    .brand span { color: var(--plum); }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a:not(.pill) { text-decoration: none; color: var(--muted); font-weight: 500; }
+    .nav-links a:not(.pill):hover { color: var(--ink); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 32px 0 72px; }
+    .hero h1 { font-size: clamp(2.8rem, 6.5vw, 4.8rem); }
     .hero h1 span { color: var(--plum); }
-    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 460px; }
-    .arch { aspect-ratio: 4/5; border-radius: 999px 999px 24px 24px; background: linear-gradient(170deg, var(--rose), #c97d9c 55%, var(--plum)); position: relative; overflow: hidden; }
-    .arch::before { content: ""; position: absolute; inset: 18% 22% auto; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.25); }
-    .arch::after { content: "✂"; position: absolute; bottom: 24px; right: 28px; font-size: 3rem; color: #fff; }
-    section { padding: 72px 0; }
-    .prices { background: #fff; border-radius: 28px; padding: 48px; }
-    .prices h2 { font-size: clamp(2rem, 4vw, 3rem); }
-    .price-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 56px; margin-top: 24px; }
-    .row { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding: 12px 0; }
-    .row b { font-family: "Syne", sans-serif; color: var(--plum); }
-    .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
-    .member { text-align: center; }
-    .avatar { aspect-ratio: 1; border-radius: 50%; margin: 0 auto 16px; max-width: 200px; display: grid; place-items: center; font-size: 3rem; }
-    .a1 { background: #f3cfc7; } .a2 { background: #dcc5e3; } .a3 { background: #f7e1c4; }
-    .member p { color: var(--muted); margin: 0; }
-    .book { background: var(--plum); color: #fff; border-radius: 28px; padding: 56px 32px; text-align: center; }
-    .book p { opacity: .85; max-width: 520px; margin: 0 auto 28px; }
-    .slots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
-    .slots button { font: inherit; background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 10px 16px; border-radius: 99px; cursor: pointer; }
-    .slots button.on { background: #fff; color: var(--plum); }
+    .hero .lead { font-size: 1.15rem; margin-bottom: 28px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .rating { display: flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); font-size: .95rem; }
+    .rating b { color: var(--ink); }
+    .stars { color: #d39b2a; letter-spacing: 2px; }
+    .hero-photo { position: relative; }
+    .arch { aspect-ratio: 4/5; border-radius: 999px 999px 24px 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(107,58,110,.18); }
+    .floating { position: absolute; left: -24px; bottom: 36px; background: var(--paper); padding: 14px 18px; border-radius: 16px; box-shadow: 0 16px 40px rgba(35,26,36,.15); font-size: .9rem; }
+    .floating b { display: block; font-family: "DM Serif Display", serif; font-size: 1.2rem; font-weight: 400; }
+
+    .strip { background: var(--plum); color: #f7e9f3; }
+    .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 26px 16px; }
+    .strip div { display: flex; gap: 12px; align-items: center; font-size: .95rem; }
+    .strip i { font-style: normal; font-size: 1.5rem; }
+    .strip b { display: block; color: #fff; }
+
+    .salon { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .salon-photos { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 520px; }
+    .salon-photos figure { margin: 0; border-radius: 20px; overflow: hidden; position: relative; }
+    .salon-photos figure:first-child { grid-row: span 2; }
+    .salon-photos figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255,255,255,.92); padding: 4px 12px; border-radius: 99px; font-size: .8rem; font-weight: 700; }
+    .salon p { color: var(--muted); }
+    .perks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+    .perks li { display: flex; gap: 10px; font-weight: 500; font-size: .95rem; }
+    .perks li::before { content: "✓"; color: var(--plum); font-weight: 700; }
+
+    .prices { background: var(--paper); }
+    .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 36px; }
+    .tabs button { font: 500 .95rem "DM Sans", sans-serif; padding: 10px 20px; border-radius: 99px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+    .tabs button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .price-panel { display: none; max-width: 760px; margin: 0 auto; }
+    .price-panel.on { display: block; }
+    .row { display: grid; grid-template-columns: 1fr auto auto; gap: 18px; align-items: baseline; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+    .row span:first-child b { display: block; font-weight: 700; }
+    .row small { color: var(--muted); font-size: .88rem; }
+    .row .time { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+    .row .price { font-family: "DM Serif Display", serif; font-size: 1.15rem; color: var(--plum); white-space: nowrap; }
+    .price-note { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 24px; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 260px; gap: 12px; }
+    .gallery-grid figure { margin: 0; border-radius: 18px; overflow: hidden; position: relative; }
+    .gallery-grid figure img { transition: transform .5s; }
+    .gallery-grid figure:hover img { transform: scale(1.05); }
+    .gallery-grid figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 16px 14px; background: linear-gradient(transparent, rgba(35,26,36,.7)); color: #fff; font-weight: 700; font-size: .95rem; }
+    .g-tall { grid-row: span 2; }
+
+    .team { background: var(--rose-soft); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .member { background: var(--paper); border-radius: 22px; padding: 32px 26px; text-align: center; }
+    .avatar { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; font: 400 2.3rem "DM Serif Display", serif; color: #fff; }
+    .a1 { background: linear-gradient(135deg, #e9a8a0, #c97d9c); } .a2 { background: linear-gradient(135deg, #8a5c8d, #6b3a6e); } .a3 { background: linear-gradient(135deg, #d9b38c, #c48a6a); }
+    .member .role { color: var(--plum); font-weight: 700; font-size: .9rem; margin-bottom: 10px; }
+    .member p { color: var(--muted); font-size: .95rem; margin: 0; }
+
+    .first { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+    .steps li { counter-increment: s; display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--rose-soft); color: var(--plum); font: 400 1.3rem "DM Serif Display", serif; }
+    .steps b { display: block; }
+    .steps span { color: var(--muted); font-size: .95rem; }
+    .offer-box { background: var(--ink); color: #fff; border-radius: 26px; padding: 40px 36px; }
+    .offer-box .big { font: 400 4rem/1 "DM Serif Display", serif; color: var(--rose); margin: 6px 0 12px; }
+    .offer-box p { color: #d8cdd9; }
+    .offer-box .pill { background: var(--rose); color: var(--ink); margin-top: 8px; }
+
+    .extras { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .extra { border-radius: 24px; padding: 36px; }
+    .extra-products { background: var(--paper); border: 1px solid var(--line); }
+    .extra-gift { background: linear-gradient(135deg, var(--rose), #c97d9c); color: #fff; }
+    .extra-gift p { color: #fff4f6; }
+    .extra .icon { font-size: 2rem; margin-bottom: 10px; }
+    .extra p { color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tags span { background: var(--rose-soft); color: var(--plum); padding: 5px 12px; border-radius: 99px; font-size: .85rem; font-weight: 500; }
+    .extra-gift .pill { background: #fff; color: var(--ink); }
+
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review { background: var(--paper); border-radius: 20px; padding: 26px; border: 1px solid var(--line); }
+    .review p { margin: 10px 0 14px; }
+    .review cite { font-style: normal; font-weight: 700; font-size: .9rem; }
+    .review cite span { color: var(--muted); font-weight: 400; }
+
+    .faq { max-width: 760px; margin: 0 auto; }
+    .faq details { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin-bottom: 10px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq details p { margin: 10px 0 0; color: var(--muted); }
+
+    .book { background: var(--plum); color: #fff; border-radius: 32px; padding: 56px 32px; text-align: center; }
+    .book p { color: #ead9ea; max-width: 520px; margin: 0 auto 26px; }
+    .days, .slots { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+    .days button, .slots button { font: inherit; font-size: .95rem; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 9px 16px; border-radius: 99px; cursor: pointer; }
+    .days button.on, .slots button.on { background: #fff; color: var(--plum); border-color: #fff; }
+    .slots { margin-bottom: 28px; }
     .book .pill { background: var(--rose); color: var(--ink); }
-    footer { text-align: center; padding: 32px 16px; color: var(--muted); font-size: .9rem; }
-    @media (max-width: 800px) {
-      .hero, .price-cols, .team { grid-template-columns: 1fr; }
-      .arch { max-width: 320px; width: 100%; margin: 0 auto; }
-      .prices { padding: 28px 20px; }
-      section { padding: 48px 0; }
+
+    .info { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+    .hours { width: 100%; border-collapse: collapse; }
+    .hours td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .hours td:last-child { text-align: right; font-weight: 500; }
+    .hours tr.closed td:last-child { color: var(--muted); }
+    .access { margin-top: 24px; display: grid; gap: 12px; }
+    .access div { display: flex; gap: 12px; color: var(--muted); }
+    .access b { color: var(--ink); }
+    .map { position: relative; border-radius: 24px; overflow: hidden; min-height: 360px; background:
+      linear-gradient(90deg, transparent 47%, #fff 47% 53%, transparent 53%),
+      linear-gradient(0deg, transparent 30%, #fff 30% 35%, transparent 35%),
+      linear-gradient(0deg, transparent 72%, #fff 72% 76%, transparent 76%),
+      linear-gradient(90deg, transparent 15%, #fff 15% 18%, transparent 18%),
+      #f3e6e1; }
+    .map .pin { position: absolute; left: 50%; top: 33%; transform: translate(-50%, -100%); background: var(--plum); color: #fff; padding: 8px 14px; border-radius: 12px; font-weight: 700; font-size: .9rem; white-space: nowrap; box-shadow: 0 10px 24px rgba(107,58,110,.35); }
+    .map .pin::after { content: ""; position: absolute; left: 50%; bottom: -8px; transform: translateX(-50%); border: 8px solid transparent; border-bottom: 0; border-top-color: var(--plum); }
+    .map .label { position: absolute; font-size: .78rem; color: #a08f98; font-weight: 500; }
+    .map .go { position: absolute; right: 16px; bottom: 16px; }
+
+    footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.pill) { display: none; }
+      .hero, .salon, .first, .extras, .info { grid-template-columns: 1fr; }
+      .hero-photo { max-width: 400px; width: 100%; margin: 0 auto; }
+      .floating { left: 0; }
+      .strip .wrap { grid-template-columns: 1fr 1fr; }
+      .salon-photos { height: 420px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+      .team-grid, .reviews-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+    }
+    @media (max-width: 560px) {
+      .strip .wrap, .perks { grid-template-columns: 1fr; }
+      .salon-photos { height: 340px; }
+      .row { grid-template-columns: 1fr auto; }
+      .row .time { grid-column: 1; grid-row: 2; margin-top: -8px; }
+      .book { padding: 40px 18px; border-radius: 24px; }
+      .offer-box, .extra { padding: 28px 22px; }
     }
   </style>
 </head>
 <body>
   <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — salon fictif</div>
+
   <div class="wrap">
-    <nav><span class="brand">MAISON ONDINE</span><a class="pill" href="#rdv">Prendre RDV</a></nav>
+    <nav>
+      <a href="#" class="brand">Maison <span>Ondine</span></a>
+      <div class="nav-links">
+        <a href="#salon">Le salon</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#equipe">L'équipe</a>
+        <a href="#infos">Infos pratiques</a>
+        <a href="#rdv" class="pill">Prendre RDV</a>
+      </div>
+    </nav>
+
     <header class="hero">
       <div>
+        <p class="kicker">Salon de coiffure · Votre-Ville</p>
         <h1>Vos cheveux, <span>en mieux.</span></h1>
-        <p>Coupe, couleur et soins sur mesure dans un salon calme et lumineux. Produits naturels, conseils honnêtes.</p>
-        <a class="pill" href="#rdv">Réserver en ligne</a>
+        <p class="lead">Coupe, couleur végétale et soins sur mesure dans un salon calme et lumineux. On prend le temps de vous écouter, et on vous dit honnêtement ce qui vous ira.</p>
+        <div class="hero-ctas">
+          <a href="#rdv" class="pill">Réserver en ligne</a>
+          <a href="#tarifs" class="pill pill-light">Voir les tarifs</a>
+        </div>
+        <div class="rating"><span class="stars">★★★★★</span> <span><b>4,9 / 5</b> · 210 avis Google</span></div>
       </div>
-      <div class="arch" aria-hidden="true"></div>
+      <div class="hero-photo">
+        <div class="arch"><img src="https://images.unsplash.com/photo-1706629505300-168aa1604912?w=900&q=80&auto=format&fit=crop" alt="L'intérieur lumineux du salon"></div>
+        <div class="floating"><b>Ouvert aujourd'hui</b>9h – 19h · sans RDV le mercredi matin</div>
+      </div>
     </header>
+  </div>
 
-    <section>
-      <div class="prices">
-        <h2>Nos prestations</h2>
-        <div class="price-cols">
-          <div>
-            <div class="row"><span>Coupe femme + brushing</span><b>45 €</b></div>
-            <div class="row"><span>Coupe homme</span><b>25 €</b></div>
-            <div class="row"><span>Coupe enfant (−12 ans)</span><b>18 €</b></div>
-            <div class="row"><span>Brushing seul</span><b>28 €</b></div>
-          </div>
-          <div>
-            <div class="row"><span>Couleur végétale</span><b>dès 55 €</b></div>
-            <div class="row"><span>Balayage</span><b>dès 85 €</b></div>
-            <div class="row"><span>Soin profond</span><b>20 €</b></div>
-            <div class="row"><span>Chignon mariage</span><b>sur devis</b></div>
-          </div>
-        </div>
+  <div class="strip">
+    <div class="wrap">
+      <div><i>🌿</i><span><b>Produits naturels</b>couleurs végétales</span></div>
+      <div><i>☕</i><span><b>Café ou thé offert</b>pendant la pose</span></div>
+      <div><i>♿</i><span><b>Accès facile</b>salon de plain-pied</span></div>
+      <div><i>🅿️</i><span><b>Parking gratuit</b>à 50 m</span></div>
+    </div>
+  </div>
+
+  <section id="salon">
+    <div class="wrap salon">
+      <div class="salon-photos">
+        <figure><img src="https://images.unsplash.com/photo-1634316010579-465525ebab20?w=800&q=80&auto=format&fit=crop" alt="La façade et la vitrine du salon" loading="lazy"><figcaption>Notre vitrine, 5 rue des Lilas</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1746723378067-83a345ff3160?w=600&q=80&auto=format&fit=crop" alt="Le coin produits du salon" loading="lazy"><figcaption>Le coin produits</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80&auto=format&fit=crop" alt="Le bac à shampoing" loading="lazy"><figcaption>Le bac massant</figcaption></figure>
       </div>
-    </section>
-
-    <section>
-      <h2 style="text-align:center;font-size:clamp(2rem,4vw,3rem)">L'équipe</h2>
-      <div class="team">
-        <div class="member"><div class="avatar a1">💇‍♀️</div><h3>Léa</h3><p>Coloriste, spécialiste du balayage</p></div>
-        <div class="member"><div class="avatar a2">✂️</div><h3>Yanis</h3><p>Coupes hommes et dégradés</p></div>
-        <div class="member"><div class="avatar a3">🌸</div><h3>Inès</h3><p>Coiffures de mariage et soins</p></div>
+      <div>
+        <p class="kicker">Le salon</p>
+        <h2>Un endroit où l'on prend son temps</h2>
+        <p>Maison Ondine, c'est un salon à taille humaine ouvert en 2019 au cœur du centre-ville. Trois postes de coiffage, une grande vitrine qui laisse entrer la lumière et une équipe qui préfère la qualité à la cadence.</p>
+        <p>Chaque rendez-vous commence par un vrai diagnostic : votre type de cheveux, votre quotidien, le temps que vous voulez passer à vous coiffer le matin. Ensuite seulement, on coupe.</p>
+        <ul class="perks">
+          <li>Diagnostic offert à chaque visite</li>
+          <li>Shampoing avec massage crânien</li>
+          <li>Couleurs sans ammoniaque</li>
+          <li>Wi-Fi et magazines</li>
+          <li>Paiement CB, espèces, sans contact</li>
+          <li>Coin jeux pour les enfants</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="rdv">
+  <section id="tarifs" class="prices">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Nos prestations</p>
+        <h2>Des tarifs clairs</h2>
+        <p class="lead">Les prix incluent le shampoing et le coiffage. Pas de supplément caché : si une prestation dépend de la longueur, on vous le dit avant de commencer.</p>
+      </div>
+      <div class="tabs" id="tabs">
+        <button class="on" data-tab="femme">Femme</button>
+        <button data-tab="homme">Homme</button>
+        <button data-tab="enfant">Enfant</button>
+        <button data-tab="couleur">Couleur</button>
+        <button data-tab="soins">Soins &amp; événements</button>
+      </div>
+      <div class="price-panel on" data-panel="femme">
+        <div class="row"><span><b>Coupe + brushing</b><small>cheveux courts à mi-longs</small></span><span class="time">45 min</span><span class="price">42 €</span></div>
+        <div class="row"><span><b>Coupe + brushing</b><small>cheveux longs</small></span><span class="time">1 h</span><span class="price">48 €</span></div>
+        <div class="row"><span><b>Brushing seul</b><small>lisse ou wavy</small></span><span class="time">30 min</span><span class="price">28 €</span></div>
+        <div class="row"><span><b>Frange</b><small>entre deux coupes</small></span><span class="time">10 min</span><span class="price">8 €</span></div>
+      </div>
+      <div class="price-panel" data-panel="homme">
+        <div class="row"><span><b>Coupe homme</b><small>ciseaux ou tondeuse</small></span><span class="time">30 min</span><span class="price">25 €</span></div>
+        <div class="row"><span><b>Coupe + barbe</b><small>taille et contours</small></span><span class="time">45 min</span><span class="price">35 €</span></div>
+        <div class="row"><span><b>Dégradé américain</b><small>finitions au rasoir</small></span><span class="time">40 min</span><span class="price">28 €</span></div>
+      </div>
+      <div class="price-panel" data-panel="enfant">
+        <div class="row"><span><b>Coupe enfant</b><small>moins de 12 ans</small></span><span class="time">20 min</span><span class="price">16 €</span></div>
+        <div class="row"><span><b>Coupe ado</b><small>12 à 17 ans</small></span><span class="time">30 min</span><span class="price">22 €</span></div>
+        <div class="row"><span><b>Première coupe</b><small>avec photo souvenir et mèche gardée</small></span><span class="time">20 min</span><span class="price">12 €</span></div>
+      </div>
+      <div class="price-panel" data-panel="couleur">
+        <div class="row"><span><b>Couleur végétale</b><small>racines</small></span><span class="time">1 h 30</span><span class="price">55 €</span></div>
+        <div class="row"><span><b>Couleur complète</b><small>sans ammoniaque</small></span><span class="time">1 h 45</span><span class="price">dès 68 €</span></div>
+        <div class="row"><span><b>Balayage</b><small>effet soleil naturel</small></span><span class="time">2 h 30</span><span class="price">dès 85 €</span></div>
+        <div class="row"><span><b>Gloss / patine</b><small>pour raviver la couleur</small></span><span class="time">30 min</span><span class="price">25 €</span></div>
+      </div>
+      <div class="price-panel" data-panel="soins">
+        <div class="row"><span><b>Soin profond</b><small>masque + massage</small></span><span class="time">20 min</span><span class="price">20 €</span></div>
+        <div class="row"><span><b>Lissage brésilien</b><small>tient 3 à 5 mois</small></span><span class="time">2 h 30</span><span class="price">dès 150 €</span></div>
+        <div class="row"><span><b>Chignon / coiffure de soirée</b><small>avec essai possible</small></span><span class="time">1 h</span><span class="price">dès 55 €</span></div>
+        <div class="row"><span><b>Forfait mariée</b><small>essai + jour J, déplacement possible</small></span><span class="time">—</span><span class="price">sur devis</span></div>
+      </div>
+      <p class="price-note">Étudiants : −10 % du mardi au jeudi sur présentation de la carte.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Nos réalisations</p>
+        <h2>Fait à Maison Ondine</h2>
+        <p class="lead">Quelques réalisations de l'équipe. Retrouvez-en plus chaque semaine sur notre Instagram.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-tall"><img src="https://images.unsplash.com/photo-1605980766335-d3a41c7332a1?w=700&q=80&auto=format&fit=crop" alt="Balayage blond naturel" loading="lazy"><figcaption>Balayage effet soleil</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1629397685944-7073f5589754?w=700&q=80&auto=format&fit=crop" alt="Boucles au fer" loading="lazy"><figcaption>Boucles souples</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?w=700&q=80&auto=format&fit=crop" alt="Coupe aux ciseaux" loading="lazy"><figcaption>Coupe sur mesure</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=700&q=80&auto=format&fit=crop" alt="Brushing" loading="lazy"><figcaption>Brushing wavy</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1605980625600-88b46abafa8d?w=700&q=80&auto=format&fit=crop" alt="Ondulations couleur cendrée" loading="lazy"><figcaption>Patine cendrée</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe" class="team">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">L'équipe</p>
+        <h2>Trois passionnées à votre écoute</h2>
+        <p class="lead">Une équipe stable, formée chaque année aux nouvelles techniques. Vous pouvez choisir votre coiffeuse à la réservation.</p>
+      </div>
+      <div class="team-grid">
+        <div class="member"><div class="avatar a1">L</div><h3>Léa</h3><p class="role">Fondatrice · coloriste</p><p>12 ans d'expérience. Spécialiste du balayage et des couleurs végétales, elle adore les transformations en douceur.</p></div>
+        <div class="member"><div class="avatar a2">Y</div><h3>Yanis</h3><p class="role">Coiffeur · barbier</p><p>Coupes hommes, dégradés précis et taille de barbe. Il a aussi la patience qu'il faut pour les petits.</p></div>
+        <div class="member"><div class="avatar a3">I</div><h3>Inès</h3><p class="role">Coiffeuse · chignons</p><p>Coiffures de mariage et de soirée, soins profonds. Elle se déplace à domicile le jour J.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap first">
+      <div class="offer-box">
+        <p class="kicker" style="color:var(--rose)">Nouveau client ?</p>
+        <p class="big">−15 %</p>
+        <h3>sur votre première visite</h3>
+        <p>Valable sur toutes les prestations, une fois par personne. Indiquez « première visite » en réservant.</p>
+        <a href="#rdv" class="pill">J'en profite</a>
+      </div>
+      <div>
+        <p class="kicker">Votre première visite</p>
+        <h2>Comment ça se passe</h2>
+        <ol class="steps">
+          <li><div><b>On discute</b><span>10 minutes pour comprendre vos envies, regarder des photos et parler de votre routine.</span></div></li>
+          <li><div><b>Shampoing massant</b><span>Avec des produits adaptés à votre cuir chevelu.</span></div></li>
+          <li><div><b>La prestation</b><span>On vous explique ce qu'on fait au fur et à mesure. Aucune surprise.</span></div></li>
+          <li><div><b>Nos conseils</b><span>Comment vous coiffer seule, quels produits utiliser, quand revenir.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap extras">
+      <div class="extra extra-products">
+        <div class="icon">🧴</div>
+        <h3>Nos produits</h3>
+        <p>Nous travaillons avec des marques françaises, vegan et sans silicones. Tous les produits utilisés au salon sont aussi en vente, avec des conseils personnalisés.</p>
+        <div class="tags"><span>Vegan</span><span>Fabriqué en France</span><span>Sans silicones</span><span>Recharges disponibles</span></div>
+      </div>
+      <div class="extra extra-gift">
+        <div class="icon">🎁</div>
+        <h3>Carte cadeau</h3>
+        <p>Offrez une coupe, un soin ou un montant libre. Valable un an, à retirer au salon ou envoyée par e-mail en quelques minutes.</p>
+        <a href="#" class="pill">Offrir une carte cadeau</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="prices">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Ils nous font confiance</p>
+        <h2>Ce que disent nos clientes et clients</h2>
+        <p class="lead"><span class="stars">★★★★★</span> 4,9 / 5 sur 210 avis Google</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review"><span class="stars">★★★★★</span><p>« Léa a enfin compris ce que je voulais pour mon balayage. Résultat très naturel, je n'ai jamais eu autant de compliments. »</p><cite>Camille <span>· balayage</span></cite></div>
+        <div class="review"><span class="stars">★★★★★</span><p>« Mon fils de 4 ans avait peur du coiffeur. Yanis a été d'une patience incroyable. On reviendra ! »</p><cite>Nadia <span>· coupe enfant</span></cite></div>
+        <div class="review"><span class="stars">★★★★★</span><p>« Chignon de mariage parfait, il a tenu toute la nuit. Inès est venue à la maison, ça m'a évité tout le stress. »</p><cite>Julie <span>· forfait mariée</span></cite></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Questions fréquentes</p>
+        <h2>Bon à savoir</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Faut-il forcément prendre rendez-vous ?</summary><p>C'est conseillé. Le mercredi matin, nous acceptons les clients sans rendez-vous pour les coupes, dans la limite des places disponibles.</p></details>
+        <details><summary>Et si je suis en retard ou que je dois annuler ?</summary><p>Prévenez-nous simplement par téléphone ou SMS. L'annulation est gratuite jusqu'à 24 h avant le rendez-vous.</p></details>
+        <details><summary>La couleur végétale couvre-t-elle les cheveux blancs ?</summary><p>Oui, très bien, avec un rendu plus naturel et brillant. On fait toujours un diagnostic avant pour choisir la bonne nuance.</p></details>
+        <details><summary>Faites-vous les cheveux bouclés et frisés ?</summary><p>Oui. Léa est formée à la coupe des cheveux texturés, à sec et mèche par mèche.</p></details>
+        <details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Carte bancaire, sans contact, espèces et cartes cadeaux Maison Ondine. Les chèques ne sont pas acceptés.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="rdv" style="padding-top:0">
+    <div class="wrap">
       <div class="book">
-        <h2 style="font-size:clamp(2rem,4vw,3rem)">Réservez en 30 secondes</h2>
-        <p>Choisissez un créneau, nous confirmons par SMS. Mardi au samedi, 9h – 19h.</p>
-        <div class="slots" id="slots">
-          <button>Mar 10h</button><button class="on">Mar 14h30</button><button>Mer 9h</button><button>Jeu 16h</button><button>Sam 11h</button>
-        </div>
+        <h2>Réservez en 30 secondes</h2>
+        <p>Choisissez un jour et un créneau, nous confirmons par SMS dans l'heure.</p>
+        <div class="days" id="days"><button>Mar 12</button><button class="on">Mer 13</button><button>Jeu 14</button><button>Ven 15</button><button>Sam 16</button></div>
+        <div class="slots" id="slots"><button>9h00</button><button>10h30</button><button class="on">14h30</button><button>16h00</button><button>17h30</button></div>
         <a class="pill" href="#">Confirmer le rendez-vous</a>
       </div>
-    </section>
-  </div>
-  <footer>© Maison Ondine — exemple de site, salon fictif · 5 rue des Lilas, 00000 Votre-Ville</footer>
+    </div>
+  </section>
+
+  <section id="infos" style="padding-top:0">
+    <div class="wrap info">
+      <div>
+        <p class="kicker">Infos pratiques</p>
+        <h2>Nous trouver</h2>
+        <table class="hours">
+          <tr class="closed"><td>Lundi</td><td>Fermé</td></tr>
+          <tr><td>Mardi</td><td>9h – 19h</td></tr>
+          <tr><td>Mercredi</td><td>9h – 19h <small>(sans RDV le matin)</small></td></tr>
+          <tr><td>Jeudi</td><td>9h – 20h</td></tr>
+          <tr><td>Vendredi</td><td>9h – 19h</td></tr>
+          <tr><td>Samedi</td><td>8h30 – 17h</td></tr>
+          <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+        </table>
+        <div class="access">
+          <div>📍<span><b>5 rue des Lilas, 00000 Votre-Ville</b><br>En face de la boulangerie, à côté de la pharmacie</span></div>
+          <div>🚌<span><b>Bus lignes 2 et 7</b> · arrêt « Mairie », à 2 minutes à pied</span></div>
+          <div>🅿️<span><b>Parking du Marché</b> · gratuit 1 h 30, à 50 m</span></div>
+          <div>📞<span><b>01 23 45 67 89</b> · ou par SMS au 06 12 34 56 78</span></div>
+        </div>
+      </div>
+      <div class="map" aria-label="Plan d'accès">
+        <span class="label" style="left:20px;top:22%">Rue des Lilas</span>
+        <span class="label" style="left:55%;top:60%">Place du Marché</span>
+        <span class="label" style="left:20px;top:80%">🅿️ Parking</span>
+        <span class="pin">Maison Ondine</span>
+        <a href="#" class="pill go">Itinéraire</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© Maison Ondine — exemple de site, salon fictif · Photos : Unsplash</span>
+      <span><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">Mentions légales</a></span>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById("slots").addEventListener("click", (e) => {
-      if (e.target.tagName !== "BUTTON") return;
-      document.querySelectorAll("#slots button").forEach((b) => b.classList.toggle("on", b === e.target));
+    function pick(groupId) {
+      document.getElementById(groupId).addEventListener("click", (e) => {
+        if (e.target.tagName !== "BUTTON") return;
+        e.currentTarget.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === e.target));
+      });
+    }
+    pick("days");
+    pick("slots");
+    document.getElementById("tabs").addEventListener("click", (e) => {
+      const tab = e.target.dataset.tab;
+      if (!tab) return;
+      document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("on", b === e.target));
+      document.querySelectorAll(".price-panel").forEach((p) => p.classList.toggle("on", p.dataset.panel === tab));
     });
   </script>
 </body>
