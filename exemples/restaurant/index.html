@@ -14,13 +14,18 @@
     h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+    .center { text-align: center; }
     .kicker { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); font-weight: 600; margin: 0 0 12px; }
-    .btn { display: inline-block; padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 600; letter-spacing: .03em; transition: transform .2s, background .2s; }
+    .lead { color: var(--muted); max-width: 560px; }
+    .center .lead { margin: 0 auto 44px; }
+    .btn { display: inline-block; padding: 15px 30px; border-radius: 2px; border: 0; cursor: pointer; text-decoration: none; font: 600 1rem "Work Sans", sans-serif; letter-spacing: .03em; transition: transform .2s, background .2s; }
     .btn:hover { transform: translateY(-2px); }
     .btn-terra { background: var(--terra); color: #fff; }
     .btn-terra:hover { background: #9c4422; }
-    .btn-line { border: 1px solid rgba(255,255,255,.7); color: #fff; }
+    .btn-line { border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; }
     .btn-line:hover { background: rgba(255,255,255,.12); }
+    .btn-ink { background: var(--ink); color: #fff; }
+    section { padding: 96px 0; }
 
     .hero { position: relative; isolation: isolate; min-height: 92vh; display: flex; flex-direction: column; color: #fff; overflow: hidden; }
     .hero > img { position: absolute; inset: 0; z-index: -2; }
@@ -29,7 +34,7 @@
     .hero nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
     .brand { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 700; color: #fff; text-decoration: none; }
     .brand em { color: var(--gold); }
-    .hero nav .links { display: flex; gap: 28px; align-items: center; }
+    .hero nav .links { display: flex; gap: 26px; align-items: center; }
     .hero nav .links a { color: #fff; text-decoration: none; font-weight: 500; }
     .hero-body { margin: auto 0; padding: 40px 16px 90px; }
     .hero-body > * { max-width: 680px; }
@@ -41,11 +46,10 @@
     .open-now i { width: 8px; height: 8px; border-radius: 50%; background: #7fd47a; box-shadow: 0 0 0 4px rgba(127,212,122,.25); }
 
     .promises { background: var(--green); color: #f1ead8; }
-    .promises .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 34px 16px; text-align: center; }
-    .promises b { display: block; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: #fff; font-weight: 600; }
-    .promises span { font-size: .92rem; opacity: .85; }
+    .promises .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 34px 16px; text-align: center; }
+    .promises b { display: block; font-family: "Cormorant Garamond", serif; font-size: 1.45rem; color: #fff; font-weight: 600; }
+    .promises span { font-size: .9rem; opacity: .85; }
 
-    section { padding: 96px 0; }
     .story { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
     .story-img { position: relative; isolation: isolate; aspect-ratio: 4/5; }
     .story-img::after { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid var(--terra); z-index: -1; }
@@ -53,9 +57,21 @@
     .quote { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.6rem; line-height: 1.35; color: var(--ink) !important; border-left: 3px solid var(--terra); padding-left: 20px; margin: 28px 0; }
     .sign { font-weight: 600; color: var(--ink) !important; }
 
+    .daily { background: var(--paper); border-block: 1px solid var(--line); }
+    .daily-box { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+    .days { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; }
+    .days button { font: 500 .95rem "Work Sans", sans-serif; padding: 10px 16px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+    .days button.on { background: var(--green); border-color: var(--green); color: #fff; }
+    .days button.today::after { content: " •"; color: var(--terra); }
+    .daily-card { background: var(--ink); color: #f1ead8; padding: 44px; position: relative; }
+    .daily-card::before { content: "Plat du jour"; position: absolute; top: -14px; left: 32px; background: var(--terra); color: #fff; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 14px; font-weight: 600; }
+    .daily-card h3 { font-size: 2.2rem; color: #fff; }
+    .daily-card p { color: #c7bda8; margin: 0 0 18px; }
+    .daily-card .price { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: var(--gold); }
+    .daily-card small { display: block; color: #a09682; margin-top: 8px; }
+
     .gallery { background: var(--ink); color: #f1ead8; }
-    .gallery .head { text-align: center; margin-bottom: 48px; }
-    .gallery .head p:last-child { color: #c7bda8; max-width: 520px; margin: 0 auto; }
+    .gallery .lead { color: #c7bda8; }
     .mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 12px; }
     .mosaic figure { margin: 0; position: relative; overflow: hidden; }
     .mosaic figure img { transition: transform .6s; }
@@ -65,17 +81,23 @@
     .m-wide { grid-column: span 2; }
 
     .board { background: var(--paper); border: 1px solid var(--line); padding: 56px; box-shadow: 0 30px 60px rgba(42,38,32,.08); }
-    .board .head { text-align: center; margin-bottom: 44px; }
+    .board .head { text-align: center; margin-bottom: 28px; }
     .formula { display: inline-block; margin-top: 8px; background: var(--terra); color: #fff; padding: 8px 18px; font-weight: 600; font-size: .95rem; }
+    .diet { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px; }
+    .diet span { color: var(--muted); font-size: .9rem; align-self: center; margin-right: 4px; }
+    .diet button { font: 500 .9rem "Work Sans", sans-serif; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+    .diet button.on { background: var(--green); color: #fff; border-color: var(--green); }
     .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .menu-grid h3 { font-size: 1.7rem; color: var(--green); text-align: center; margin-bottom: 20px; }
     .menu-grid h3::after { content: "✦"; display: block; font-size: .8rem; color: var(--terra); margin-top: 6px; }
-    .dish { margin-bottom: 20px; }
+    .dish { margin-bottom: 20px; transition: opacity .25s; }
+    .dish.dim { opacity: .25; }
     .dish div { display: flex; align-items: baseline; gap: 8px; font-weight: 600; }
     .dish div::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted #b9ad94; }
     .dish div span:last-child { order: 2; color: var(--terra); white-space: nowrap; }
     .dish p { margin: 2px 0 0; color: var(--muted); font-size: .92rem; }
-    .veg { color: var(--green); font-size: .8rem; white-space: nowrap; }
+    .icons { margin-left: 4px; font-size: .85rem; }
+    .allergens { text-align: center; color: var(--muted); font-size: .88rem; margin: 28px 0 0; }
 
     .terrace { position: relative; isolation: isolate; color: #fff; padding: 140px 0; overflow: hidden; }
     .terrace > img { position: absolute; inset: 0; z-index: -2; }
@@ -83,37 +105,105 @@
     .terrace .box { max-width: 520px; }
     .terrace p { font-size: 1.1rem; }
 
-    .reviews .head { text-align: center; margin-bottom: 44px; }
-    .score { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; color: var(--muted); margin: 0; }
-    .score b { color: var(--terra); font-size: 1.6rem; }
+    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .event { background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-columns: 84px 1fr; }
+    .event .date { background: var(--green); color: #fff; text-align: center; padding: 18px 8px; font-family: "Cormorant Garamond", serif; }
+    .event .date b { display: block; font-size: 2.4rem; line-height: 1; }
+    .event .date span { font-size: 1rem; text-transform: uppercase; letter-spacing: .1em; }
+    .event .body { padding: 20px 22px; }
+    .event h3 { font-size: 1.5rem; }
+    .event p { color: var(--muted); font-size: .93rem; margin: 0 0 12px; }
+    .event .meta { font-size: .85rem; color: var(--terra); font-weight: 600; margin-bottom: 14px; }
+    .event button { font: 600 .9rem "Work Sans", sans-serif; padding: 10px 16px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+    .event button.done { background: var(--green); color: #fff; border-color: var(--green); }
+
+    .book { background: var(--green); color: #f1ead8; }
+    .book-box { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+    .book h2 { color: #fff; }
+    .book .lead { color: #d8d0bb; }
+    .book-perks { list-style: none; padding: 0; margin: 24px 0 0; }
+    .book-perks li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.15); }
+    .widget { background: var(--paper); color: var(--ink); padding: 36px; }
+    .widget .label { display: block; font-weight: 600; margin: 0 0 10px; }
+    .widget .group { margin-bottom: 24px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips button { font: 500 .92rem "Work Sans", sans-serif; padding: 10px 14px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; min-width: 64px; }
+    .chips button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .chips button:disabled { opacity: .35; cursor: not-allowed; text-decoration: line-through; }
+    .counter { display: inline-flex; align-items: center; border: 1px solid var(--line); background: #fff; }
+    .counter button { font: 600 1.2rem "Work Sans", sans-serif; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; color: var(--ink); }
+    .counter output { min-width: 110px; text-align: center; font-weight: 600; }
+    .group-note { font-size: .88rem; color: var(--terra); margin: 8px 0 0; min-height: 1.2em; }
+    .confirm { margin-top: 8px; padding: 16px; background: #eef2e8; border-left: 4px solid var(--green); display: none; }
+    .confirm.on { display: block; }
+
+    .takeaway-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+    .item { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .item b { display: block; }
+    .item small { color: var(--muted); }
+    .item .p { font-weight: 600; color: var(--terra); white-space: nowrap; }
+    .qty { display: inline-flex; align-items: center; border: 1px solid var(--line); background: #fff; }
+    .qty button { width: 34px; height: 34px; border: 0; background: none; font-size: 1.1rem; cursor: pointer; color: var(--ink); }
+    .qty output { width: 26px; text-align: center; font-weight: 600; }
+    .cart { background: var(--paper); border: 1px solid var(--line); padding: 30px; position: sticky; top: 24px; }
+    .cart .total { display: flex; justify-content: space-between; font-family: "Cormorant Garamond", serif; font-size: 2rem; margin: 10px 0 18px; }
+    .cart select { width: 100%; font: inherit; padding: 10px; border: 1px solid var(--line); background: #fff; margin: 6px 0 18px; }
+    .cart .btn { width: 100%; text-align: center; }
+    .cart-msg { margin: 14px 0 0; font-size: .92rem; color: var(--green); min-height: 1.2em; }
+
+    .reviews .score { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; color: var(--muted); margin: 0 0 44px; }
+    .reviews .score b { color: var(--terra); font-size: 1.6rem; }
     .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .review-grid blockquote { margin: 0; background: var(--paper); padding: 32px; border: 1px solid var(--line); }
     .review-grid p { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-style: italic; line-height: 1.4; margin: 10px 0 16px; }
     .stars { color: #d39b2a; letter-spacing: 3px; }
     .review-grid cite { font-style: normal; font-weight: 600; font-size: .9rem; color: var(--muted); }
 
-    .visit { background: var(--green); color: #f1ead8; }
+    .private { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+    .private-img { aspect-ratio: 4/3; }
+    .private p { color: var(--muted); }
+    .private ul { padding-left: 20px; color: var(--muted); margin: 0 0 26px; }
+
+    .faq { max-width: 780px; margin: 0 auto; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-weight: 600; }
+    .faq details p { color: var(--muted); margin: 8px 0 0; }
+
+    .visit { background: var(--ink); color: #f1ead8; }
     .visit .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
     .visit h2 { color: #fff; }
-    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 28px 0 34px; }
-    .visit-grid h3 { color: var(--gold); font-size: 1.4rem; margin-bottom: 6px; }
-    .visit-grid p { margin: 0; }
+    .hours { width: 100%; border-collapse: collapse; margin: 20px 0 26px; }
+    .hours td { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .hours td:last-child { text-align: right; }
+    .hours .closed td:last-child { color: #8f8673; }
+    .access p { margin: 0 0 8px; color: #d8d0bb; }
+    .access b { color: var(--gold); font-weight: 600; }
     .visit-img { aspect-ratio: 1; }
+    .newsletter { display: flex; gap: 8px; margin-top: 26px; flex-wrap: wrap; }
+    .newsletter input { flex: 1; min-width: 200px; font: inherit; padding: 12px 14px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06); color: #fff; }
     footer { text-align: center; padding: 28px 16px; color: var(--muted); font-size: .88rem; }
     .mobile-book { display: none; }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .hero nav .links a:not(.btn) { display: none; }
       .hero nav .links .btn { padding: 10px 18px; }
-      .promises .wrap, .story, .menu-grid, .review-grid, .visit .wrap { grid-template-columns: 1fr; }
+      .promises .wrap { grid-template-columns: 1fr 1fr; }
+      .story, .daily-box, .menu-grid, .events-grid, .book-box, .takeaway-grid, .review-grid, .private, .visit .wrap { grid-template-columns: 1fr; }
       .story { gap: 48px; }
       .story-img { max-width: 420px; width: calc(100% - 22px); }
       .mosaic { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
-      .board { padding: 32px 20px; }
+      .board, .widget, .daily-card { padding: 32px 20px; }
       section { padding: 64px 0; }
       .terrace { padding: 96px 0; }
+      .cart { position: static; }
       .mobile-book { display: block; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
       footer { padding-bottom: 96px; }
+    }
+    @media (max-width: 520px) {
+      .promises .wrap { grid-template-columns: 1fr; }
+      .item { grid-template-columns: 1fr auto; }
+      .item .p { grid-column: 2; grid-row: 1; }
+      .item .qty { grid-column: 1 / -1; justify-self: start; }
     }
   </style>
 </head>
@@ -127,9 +217,10 @@
         <a href="#" class="brand">Le Comptoir <em>Basilic</em></a>
         <div class="links">
           <a href="#carte">La carte</a>
-          <a href="#histoire">Notre histoire</a>
+          <a href="#agenda">Événements</a>
+          <a href="#emporter">À emporter</a>
           <a href="#infos">Nous trouver</a>
-          <a href="#infos" class="btn btn-terra">Réserver</a>
+          <a href="#reserver" class="btn btn-terra">Réserver</a>
         </div>
       </nav>
     </div>
@@ -138,7 +229,7 @@
       <h1>Ici, on cuisine <em>le marché</em> du matin.</h1>
       <p>Un bistrot chaleureux, des plats généreux faits maison et des vins de petits vignerons. On vous garde une table ?</p>
       <div class="ctas">
-        <a href="#infos" class="btn btn-terra">Réserver une table</a>
+        <a href="#reserver" class="btn btn-terra">Réserver une table</a>
         <a href="#carte" class="btn btn-line">Découvrir la carte</a>
       </div>
     </div>
@@ -147,8 +238,9 @@
   <div class="promises">
     <div class="wrap">
       <div><b>100 % fait maison</b><span>des sauces aux desserts</span></div>
-      <div><b>Producteurs à 30 km</b><span>légumes, viandes et fromages</span></div>
-      <div><b>Terrasse ombragée</b><span>aux beaux jours</span></div>
+      <div><b>Producteurs à 30 km</b><span>légumes, viandes, fromages</span></div>
+      <div><b>Terrasse ombragée</b><span>et chauffée en hiver</span></div>
+      <div><b>Vins nature</b><span>plus de 40 références</span></div>
     </div>
   </div>
 
@@ -165,12 +257,31 @@
     </div>
   </section>
 
+  <section class="daily">
+    <div class="wrap daily-box">
+      <div>
+        <p class="kicker">Chaque midi</p>
+        <h2>Le plat du jour</h2>
+        <p class="lead">Un plat différent chaque jour, selon le marché. Servi uniquement le midi, jusqu'à épuisement.</p>
+        <div class="days" id="days">
+          <button data-day="2">Mardi</button><button data-day="3">Mercredi</button><button data-day="4">Jeudi</button><button data-day="5">Vendredi</button><button data-day="6">Samedi</button>
+        </div>
+      </div>
+      <div class="daily-card" aria-live="polite">
+        <h3 id="daily-name">—</h3>
+        <p id="daily-desc"></p>
+        <span class="price">14 €</span>
+        <small>Ou dans la formule midi à 19 € (entrée + plat ou plat + dessert)</small>
+      </div>
+    </div>
+  </section>
+
   <section class="gallery">
     <div class="wrap">
-      <div class="head">
+      <div class="center">
         <p class="kicker" style="color:var(--gold)">Dans nos assiettes</p>
         <h2>Ça se passe de commentaires</h2>
-        <p>Quelques plats de saison, à retrouver sur l'ardoise selon les arrivages.</p>
+        <p class="lead">Quelques plats de saison, à retrouver sur l'ardoise selon les arrivages.</p>
       </div>
       <div class="mosaic">
         <figure class="m-big"><img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=1000&q=80&auto=format&fit=crop" alt="Suprême de volaille et betteraves rôties" loading="lazy"><figcaption>Suprême de volaille, betteraves rôties</figcaption></figure>
@@ -189,52 +300,159 @@
           <h2>La carte d'automne</h2>
           <span class="formula">Formule midi · entrée + plat ou plat + dessert : 19 €</span>
         </div>
+        <div class="diet" id="diet">
+          <span>Afficher :</span>
+          <button class="on" data-diet="all">Tout</button>
+          <button data-diet="veg">🌿 Végétarien</button>
+          <button data-diet="gf">🌾 Sans gluten</button>
+          <button data-diet="lf">🥛 Sans lactose</button>
+        </div>
         <div class="menu-grid">
           <div>
             <h3>Pour commencer</h3>
-            <div class="dish"><div><span>Velouté de potimarron</span><span>8 €</span></div><p>Noisettes torréfiées, crème crue · <span class="veg">🌿 végétarien</span></p></div>
-            <div class="dish"><div><span>Œuf parfait</span><span>9 €</span></div><p>Champignons des bois, mouillettes au beurre</p></div>
-            <div class="dish"><div><span>Terrine de campagne</span><span>9 €</span></div><p>Pickles maison, pain au levain</p></div>
+            <div class="dish" data-tags="veg gf"><div><span>Velouté de potimarron<span class="icons">🌿🌾</span></span><span>8 €</span></div><p>Noisettes torréfiées, crème crue</p></div>
+            <div class="dish" data-tags="veg"><div><span>Œuf parfait<span class="icons">🌿</span></span><span>9 €</span></div><p>Champignons des bois, mouillettes au beurre</p></div>
+            <div class="dish" data-tags="lf"><div><span>Terrine de campagne<span class="icons">🥛</span></span><span>9 €</span></div><p>Pickles maison, pain au levain</p></div>
           </div>
           <div>
             <h3>Les plats</h3>
-            <div class="dish"><div><span>Joue de bœuf confite</span><span>21 €</span></div><p>Purée fumée, jus réduit au vin rouge</p></div>
-            <div class="dish"><div><span>Filet de truite rôti</span><span>19 €</span></div><p>Beurre blanc, poireaux fondants</p></div>
-            <div class="dish"><div><span>Risotto d'épeautre</span><span>17 €</span></div><p>Courge rôtie, sauge, vieux parmesan · <span class="veg">🌿 végétarien</span></p></div>
+            <div class="dish" data-tags="gf lf"><div><span>Joue de bœuf confite<span class="icons">🌾🥛</span></span><span>21 €</span></div><p>Purée de céleri, jus réduit au vin rouge</p></div>
+            <div class="dish" data-tags="gf"><div><span>Filet de truite rôti<span class="icons">🌾</span></span><span>19 €</span></div><p>Beurre blanc, poireaux fondants</p></div>
+            <div class="dish" data-tags="veg"><div><span>Risotto d'épeautre<span class="icons">🌿</span></span><span>17 €</span></div><p>Courge rôtie, sauge, vieux parmesan</p></div>
           </div>
           <div>
             <h3>Les douceurs</h3>
-            <div class="dish"><div><span>Tarte fine aux pommes</span><span>8 €</span></div><p>Caramel au beurre salé, glace vanille</p></div>
-            <div class="dish"><div><span>Mousse au chocolat</span><span>7 €</span></div><p>Chocolat noir 70 %, fleur de sel</p></div>
-            <div class="dish"><div><span>Fromages affinés</span><span>9 €</span></div><p>Sélection de notre fromager</p></div>
+            <div class="dish" data-tags="veg"><div><span>Tarte fine aux pommes<span class="icons">🌿</span></span><span>8 €</span></div><p>Caramel au beurre salé, glace vanille</p></div>
+            <div class="dish" data-tags="veg gf"><div><span>Mousse au chocolat<span class="icons">🌿🌾</span></span><span>7 €</span></div><p>Chocolat noir 70 %, fleur de sel</p></div>
+            <div class="dish" data-tags="veg gf lf"><div><span>Poire pochée au vin<span class="icons">🌿🌾🥛</span></span><span>8 €</span></div><p>Épices douces, sorbet cassis</p></div>
           </div>
         </div>
+        <p class="allergens">Une allergie ? Signalez-la à la réservation : la liste des 14 allergènes de chaque plat est disponible en salle.</p>
       </div>
     </div>
   </section>
 
   <section class="terrace">
-    <img src="https://images.unsplash.com/photo-1651686498265-659eb2e40617?w=1800&q=80&auto=format&fit=crop" alt="Terrasse du bistrot" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1651686498265-659eb2e40617?w=1800&q=80&auto=format&fit=crop" alt="Table en terrasse" loading="lazy">
     <div class="wrap">
       <div class="box">
-        <p class="kicker" style="color:var(--gold)">Aux beaux jours</p>
+        <p class="kicker" style="color:var(--gold)">Toute l'année</p>
         <h2>Un verre en terrasse ?</h2>
-        <p>Dès les premiers rayons de soleil, la terrasse s'installe sur la place. Planches à partager, vins au verre et apéro jusqu'à 23h.</p>
+        <p>Aux beaux jours comme en hiver (elle est chauffée), la terrasse vous attend sur la place. Planches à partager, vins au verre et apéro jusqu'à 23h.</p>
       </div>
     </div>
   </section>
 
-  <section class="reviews">
+  <section id="agenda">
     <div class="wrap">
-      <div class="head">
-        <p class="kicker">Ce qu'ils en disent</p>
-        <h2>Ils sont venus, ils reviennent</h2>
-        <p class="score"><b>4,8</b> / 5 sur plus de 320 avis Google</p>
+      <div class="center">
+        <p class="kicker">L'agenda du Comptoir</p>
+        <h2>Les soirées à ne pas manquer</h2>
+        <p class="lead">Dégustations, concerts et menus spéciaux. Les places sont limitées : inscrivez-vous en un clic.</p>
       </div>
-      <div class="review-grid">
+      <div class="events-grid">
+        <div class="event"><div class="date"><b>14</b><span>nov.</span></div><div class="body"><h3>Soirée vins nature</h3><p>Un vigneron de la région présente 5 vins, accompagnés de planches.</p><div class="meta">19h30 · 35 € · 6 places restantes</div><button>Réserver ma place</button></div></div>
+        <div class="event"><div class="date"><b>22</b><span>nov.</span></div><div class="body"><h3>Jazz au Comptoir</h3><p>Trio jazz acoustique en live pendant le dîner. Entrée libre, réservation conseillée.</p><div class="meta">20h · entrée libre</div><button>Réserver ma place</button></div></div>
+        <div class="event"><div class="date"><b>06</b><span>déc.</span></div><div class="body"><h3>Menu truffe</h3><p>Menu en 4 temps autour de la truffe noire, accord mets-vins en option.</p><div class="meta">19h · 59 € · 12 places restantes</div><button>Réserver ma place</button></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserver" class="book">
+    <div class="wrap book-box">
+      <div>
+        <p class="kicker" style="color:var(--gold)">Réservation</p>
+        <h2>Réservez votre table</h2>
+        <p class="lead">Confirmation immédiate, sans appel. Pour plus de 8 personnes, contactez-nous pour un menu de groupe.</p>
+        <ul class="book-perks">
+          <li>✓ Annulation gratuite jusqu'à 2 h avant</li>
+          <li>✓ Précisez une allergie ou un anniversaire</li>
+          <li>✓ Chaise haute disponible pour les petits</li>
+        </ul>
+      </div>
+      <div class="widget">
+        <div class="group"><span class="label">Jour</span><div class="chips" id="book-days"></div></div>
+        <div class="group"><span class="label">Service</span><div class="chips" id="book-service"><button class="on" data-service="midi">Midi</button><button data-service="soir">Soir</button></div></div>
+        <div class="group"><span class="label">Nombre de personnes</span>
+          <div class="counter"><button type="button" id="cov-minus" aria-label="Moins">−</button><output id="covers">2 personnes</output><button type="button" id="cov-plus" aria-label="Plus">+</button></div>
+          <p class="group-note" id="group-note"></p>
+        </div>
+        <div class="group"><span class="label">Heure</span><div class="chips" id="book-times"></div></div>
+        <button class="btn btn-terra" id="book-confirm" style="width:100%">Confirmer la réservation</button>
+        <div class="confirm" id="book-msg" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="emporter">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">À emporter</p>
+        <h2>Le Comptoir chez vous</h2>
+        <p class="lead">Commandez en ligne, passez récupérer votre repas sans attendre. Disponible du mardi au samedi.</p>
+      </div>
+      <div class="takeaway-grid">
+        <div id="items">
+          <div class="item" data-price="14"><span><b>Plat du jour</b><small>selon le marché, en bocal consigné</small></span><span class="p">14 €</span><span class="qty"><button>−</button><output>0</output><button>+</button></span></div>
+          <div class="item" data-price="21"><span><b>Joue de bœuf confite</b><small>purée de céleri, jus au vin rouge</small></span><span class="p">21 €</span><span class="qty"><button>−</button><output>0</output><button>+</button></span></div>
+          <div class="item" data-price="17"><span><b>Risotto d'épeautre</b><small>courge rôtie, sauge, parmesan</small></span><span class="p">17 €</span><span class="qty"><button>−</button><output>0</output><button>+</button></span></div>
+          <div class="item" data-price="7"><span><b>Mousse au chocolat</b><small>chocolat noir 70 %</small></span><span class="p">7 €</span><span class="qty"><button>−</button><output>0</output><button>+</button></span></div>
+          <div class="item" data-price="18"><span><b>Planche apéro</b><small>charcuterie et fromages pour 2</small></span><span class="p">18 €</span><span class="qty"><button>−</button><output>0</output><button>+</button></span></div>
+        </div>
+        <div class="cart">
+          <h3>Votre commande</h3>
+          <div class="total"><span>Total</span><span id="cart-total">0 €</span></div>
+          <label>Heure de retrait
+            <select id="pickup"><option>12h00</option><option>12h30</option><option>13h00</option><option>19h00</option><option>19h30</option><option>20h00</option></select>
+          </label>
+          <button class="btn btn-ink" id="order">Commander</button>
+          <p class="cart-msg" id="cart-msg" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" style="background:var(--paper);border-block:1px solid var(--line)">
+    <div class="wrap center">
+      <p class="kicker">Ce qu'ils en disent</p>
+      <h2>Ils sont venus, ils reviennent</h2>
+      <p class="score"><b>4,8</b> / 5 sur plus de 320 avis Google</p>
+      <div class="review-grid" style="text-align:left">
         <blockquote><span class="stars">★★★★★</span><p>« Une vraie cuisine de bistrot, généreuse et pleine de goût. On s'y sent comme à la maison. »</p><cite>Claire</cite></blockquote>
-        <blockquote><span class="stars">★★★★★</span><p>« La joue de bœuf est incroyable. Service adorable et de très bons conseils sur le vin. »</p><cite>Mehdi</cite></blockquote>
-        <blockquote><span class="stars">★★★★★</span><p>« Notre adresse préférée pour le déjeuner. La formule à 19 € est imbattable. »</p><cite>Sophie et Marc</cite></blockquote>
+        <blockquote><span class="stars">★★★★★</span><p>« La soirée vins nature était géniale, le vigneron passionnant. On a déjà réservé la suivante ! »</p><cite>Mehdi</cite></blockquote>
+        <blockquote><span class="stars">★★★★★</span><p>« Le plat du jour à emporter nous sauve le midi au bureau. Toujours bon, jamais pareil. »</p><cite>Sophie et Marc</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap private">
+      <div>
+        <p class="kicker">Groupes &amp; privatisation</p>
+        <h2>Fêtez vos occasions chez nous</h2>
+        <p>Anniversaire, repas d'équipe, baptême : la salle du fond accueille jusqu'à 20 personnes, et le restaurant entier jusqu'à 45.</p>
+        <ul>
+          <li>Menus de groupe dès 32 € par personne</li>
+          <li>Gâteau maison sur demande</li>
+          <li>Privatisation le lundi soir</li>
+        </ul>
+        <a href="#infos" class="btn btn-ink">Demander un devis</a>
+      </div>
+      <div class="private-img"><img src="https://images.unsplash.com/photo-1622140739492-f82f386260b5?w=900&q=80&auto=format&fit=crop" alt="La salle du restaurant" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Questions fréquentes</p>
+        <h2>Bon à savoir</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Les chiens sont-ils acceptés ?</summary><p>Oui, en terrasse et en salle, tant qu'ils restent sages. On a toujours une gamelle d'eau pour eux.</p></details>
+        <details><summary>Avez-vous un menu enfant ?</summary><p>Oui : plat + dessert + sirop à 11 € pour les moins de 10 ans, avec des produits frais comme pour les grands.</p></details>
+        <details><summary>Acceptez-vous les titres-restaurant ?</summary><p>Oui, en papier et en carte, le midi du mardi au vendredi.</p></details>
+        <details><summary>Le restaurant est-il accessible en fauteuil ?</summary><p>Oui, la salle est de plain-pied et les toilettes sont adaptées.</p></details>
       </div>
     </div>
   </section>
@@ -244,19 +462,128 @@
       <div>
         <p class="kicker" style="color:var(--gold)">Nous trouver</p>
         <h2>On vous attend</h2>
-        <div class="visit-grid">
-          <div><h3>Horaires</h3><p>Mardi – samedi</p><p>12h – 14h</p><p>19h – 22h30</p></div>
-          <div><h3>Adresse</h3><p>12 place du Marché</p><p>00000 Votre-Ville</p></div>
-          <div><h3>Téléphone</h3><p>01 99 00 41 27</p></div>
-          <div><h3>Groupes</h3><p>Jusqu'à 20 personnes, sur demande</p></div>
+        <table class="hours">
+          <tr class="closed"><td>Lundi</td><td>Fermé (privatisation possible)</td></tr>
+          <tr><td>Mardi – jeudi</td><td>12h – 14h · 19h – 22h</td></tr>
+          <tr><td>Vendredi – samedi</td><td>12h – 14h · 19h – 22h30</td></tr>
+          <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+        </table>
+        <div class="access">
+          <p><b>Adresse</b> · 12 place du Marché, 00000 Votre-Ville</p>
+          <p><b>Téléphone</b> · 01 99 00 41 27</p>
+          <p><b>Accès</b> · Bus 4, arrêt « Halles » · parking du Marché à 100 m</p>
         </div>
-        <a href="#" class="btn btn-terra">Réserver en ligne</a>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;margin:0;color:var(--gold)&quot;>Merci ! Vous recevrez l\'ardoise chaque lundi.</p>'">
+          <input type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" required>
+          <button class="btn btn-terra">Recevoir l'ardoise chaque lundi</button>
+        </form>
       </div>
-      <div class="visit-img"><img src="https://images.unsplash.com/photo-1622140739492-f82f386260b5?w=900&q=80&auto=format&fit=crop" alt="Tables dressées dans la salle" loading="lazy"></div>
+      <div class="visit-img"><img src="https://images.unsplash.com/photo-1642112177610-c1ff271857dd?w=900&q=80&auto=format&fit=crop" alt="Table garnie de plats à partager" loading="lazy"></div>
     </div>
   </section>
 
   <footer>© Le Comptoir Basilic — exemple de site, établissement fictif · Photos : Unsplash</footer>
-  <a href="#infos" class="btn btn-terra mobile-book">Réserver une table</a>
+  <a href="#reserver" class="btn btn-terra mobile-book">Réserver une table</a>
+
+  <script>
+    function pick(container, onPick) {
+      container.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn || btn.disabled) return;
+        container.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === btn));
+        onPick && onPick(btn);
+      });
+    }
+
+    const dailyDishes = {
+      2: ["Blanquette de veau", "À l'ancienne, riz pilaf et carottes glacées."],
+      3: ["Parmentier de canard", "Purée maison, salade de mâche aux noix."],
+      4: ["Lieu jaune rôti", "Écrasé de pommes de terre à l'huile d'olive, sauce vierge."],
+      5: ["Moules marinières", "Frites maison et aïoli. Le classique du vendredi."],
+      6: ["Poulet fermier rôti", "Jus corsé, gratin dauphinois."],
+    };
+    const daysBox = document.getElementById("days");
+    function showDaily(d) {
+      document.getElementById("daily-name").textContent = dailyDishes[d][0];
+      document.getElementById("daily-desc").textContent = dailyDishes[d][1];
+    }
+    pick(daysBox, (b) => showDaily(b.dataset.day));
+    const today = new Date().getDay();
+    const start = dailyDishes[today] ? today : 2;
+    daysBox.querySelectorAll("button").forEach((b) => {
+      b.classList.toggle("on", Number(b.dataset.day) === start);
+      if (Number(b.dataset.day) === today) b.classList.add("today");
+    });
+    showDaily(start);
+
+    pick(document.getElementById("diet"), (b) => {
+      const d = b.dataset.diet;
+      document.querySelectorAll(".dish").forEach((dish) => dish.classList.toggle("dim", d !== "all" && !dish.dataset.tags.split(" ").includes(d)));
+    });
+
+    document.querySelectorAll(".event button").forEach((b) => b.addEventListener("click", () => {
+      b.classList.toggle("done");
+      b.textContent = b.classList.contains("done") ? "✓ Place réservée" : "Réserver ma place";
+    }));
+
+    const fmtDay = new Intl.DateTimeFormat("fr-FR", { weekday: "short", day: "numeric" });
+    const bookDays = document.getElementById("book-days");
+    const openDays = [];
+    for (let d = new Date(), i = 0; openDays.length < 6 && i < 14; i++, d.setDate(d.getDate() + 1)) {
+      if (d.getDay() >= 2) openDays.push(new Date(d));
+    }
+    bookDays.innerHTML = openDays.map((d, i) => `<button class="${i === 0 ? "on" : ""}">${fmtDay.format(d)}</button>`).join("");
+    let service = "midi", dayIndex = 0, covers = 2;
+    const times = { midi: ["12h00", "12h15", "12h30", "12h45", "13h00", "13h30"], soir: ["19h00", "19h30", "20h00", "20h30", "21h00", "21h30"] };
+    const timesBox = document.getElementById("book-times");
+    function renderTimes() {
+      timesBox.innerHTML = times[service].map((t, i) => {
+        const full = (i + dayIndex * 2) % 5 === 1;
+        return `<button ${full ? "disabled title='Complet'" : ""}>${t}</button>`;
+      }).join("");
+      const first = timesBox.querySelector("button:not(:disabled)");
+      if (first) first.classList.add("on");
+    }
+    pick(bookDays, (b) => { dayIndex = [...bookDays.children].indexOf(b); renderTimes(); });
+    pick(document.getElementById("book-service"), (b) => { service = b.dataset.service; renderTimes(); });
+    pick(timesBox);
+    renderTimes();
+    function renderCovers() {
+      document.getElementById("covers").textContent = covers + (covers > 1 ? " personnes" : " personne");
+      document.getElementById("group-note").textContent = covers > 8 ? "Pour plus de 8 personnes, appelez-nous au 01 99 00 41 27 : on vous propose un menu de groupe." : "";
+      document.getElementById("book-confirm").disabled = covers > 8;
+    }
+    document.getElementById("cov-minus").onclick = () => { covers = Math.max(1, covers - 1); renderCovers(); };
+    document.getElementById("cov-plus").onclick = () => { covers = Math.min(12, covers + 1); renderCovers(); };
+    renderCovers();
+    document.getElementById("book-confirm").onclick = () => {
+      const day = bookDays.querySelector(".on").textContent;
+      const time = timesBox.querySelector(".on")?.textContent || "";
+      const msg = document.getElementById("book-msg");
+      msg.innerHTML = `<b>C'est noté !</b> Table pour ${covers} ${covers > 1 ? "personnes" : "personne"}, ${day} à ${time}. (Démonstration : aucune réservation n'est envoyée.)`;
+      msg.classList.add("on");
+    };
+
+    const items = document.querySelectorAll(".item");
+    function renderCart() {
+      let total = 0;
+      items.forEach((it) => { total += Number(it.dataset.price) * Number(it.querySelector("output").value); });
+      document.getElementById("cart-total").textContent = total + " €";
+      return total;
+    }
+    items.forEach((it) => {
+      const out = it.querySelector("output");
+      out.value = 0;
+      const [minus, plus] = it.querySelectorAll("button");
+      minus.onclick = () => { out.value = Math.max(0, Number(out.value) - 1); renderCart(); };
+      plus.onclick = () => { out.value = Math.min(9, Number(out.value) + 1); renderCart(); };
+    });
+    document.getElementById("order").onclick = () => {
+      const total = renderCart();
+      document.getElementById("cart-msg").textContent = total === 0
+        ? "Ajoutez au moins un plat à votre commande."
+        : `Commande de ${total} € prête à ${document.getElementById("pickup").value}. Paiement au retrait. (Démonstration)`;
+    };
+  </script>
 </body>
 </html>

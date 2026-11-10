@@ -4,125 +4,554 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Martel Rénovation — Plomberie, électricité, rénovation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../demo.css?v=3">
   <style>
-    :root { --bg: #ffffff; --soft: #f1f4f8; --ink: #14202e; --muted: #5a6778; --accent: #f2b705; --blue: #1b4d89; --line: #dfe5ec; }
+    :root { --bg: #ffffff; --soft: #f1f4f8; --ink: #14202e; --muted: #5a6778; --yellow: #f2b705; --yellow-soft: #fff6d6; --blue: #1b4d89; --blue-dark: #12365f; --line: #dfe5ec; --red: #d64532; }
+    html { scroll-behavior: smooth; }
     body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 "Archivo", sans-serif; }
     h1, h2, h3 { font-weight: 800; line-height: 1.1; margin: 0 0 .5em; letter-spacing: -.01em; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
-    .top { background: var(--blue); color: #fff; }
-    .top .wrap { display: flex; justify-content: space-between; align-items: center; padding: 18px 16px; gap: 12px; flex-wrap: wrap; }
-    .brand { font-size: 1.4rem; font-weight: 800; }
-    .brand span { color: var(--accent); }
-    .phone { background: var(--accent); color: var(--ink); text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; }
-    .hero { background: linear-gradient(120deg, var(--blue) 0 55%, #163f70 55%); color: #fff; padding: 72px 0 96px; }
-    .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-    .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); }
-    .hero h1 span { color: var(--accent); }
-    .hero p { font-size: 1.15rem; opacity: .9; max-width: 520px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .badges span { background: rgba(255,255,255,.12); padding: 8px 14px; border-radius: 99px; font-size: .9rem; font-weight: 500; }
-    .quote-box { background: #fff; color: var(--ink); border-radius: 14px; padding: 28px; box-shadow: 0 30px 60px rgba(0,0,0,.25); }
-    .quote-box h3 { font-size: 1.4rem; }
-    .quote-box input, .quote-box select { width: 100%; font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 12px; background: var(--soft); }
-    .quote-box button { width: 100%; background: var(--accent); border: 0; padding: 14px; font: 700 1rem "Archivo", sans-serif; border-radius: 8px; cursor: pointer; }
-    section { padding: 80px 0; }
     h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    h3 { font-size: 1.2rem; font-weight: 700; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
     .center { text-align: center; }
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
-    .service { border: 1px solid var(--line); border-radius: 14px; padding: 28px; border-top: 5px solid var(--accent); }
-    .service .ico { font-size: 2rem; }
-    .service p { color: var(--muted); margin: 0; }
-    .works { background: var(--soft); }
-    .ba { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
-    .ba-card { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
-    .ba-imgs { display: grid; grid-template-columns: 1fr 1fr; height: 180px; }
-    .ba-imgs div { display: grid; place-items: end start; padding: 10px; font-size: .8rem; font-weight: 700; color: #fff; }
-    .before { background: repeating-linear-gradient(45deg, #8a8378 0 12px, #7d766b 12px 24px); }
-    .after { background: linear-gradient(160deg, #e9eef4, #b9c9dc); color: var(--ink) !important; }
-    .after-2 { background: linear-gradient(160deg, #f5efe6, #d7c4a8); }
-    .ba-card p { padding: 16px 20px; margin: 0; font-weight: 500; }
-    .why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; text-align: center; }
-    .why b { display: block; font-size: 2.4rem; color: var(--blue); font-weight: 800; }
-    .why span { color: var(--muted); }
-    .zone { background: var(--ink); color: #fff; text-align: center; }
-    .zone p { opacity: .8; max-width: 620px; margin: 0 auto 28px; }
-    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .9rem; }
-    @media (max-width: 860px) {
-      .hero .wrap, .services, .ba { grid-template-columns: 1fr; }
-      .why { grid-template-columns: repeat(2, 1fr); }
-      .hero { background: var(--blue); padding: 48px 0 64px; }
-      section { padding: 56px 0; }
+    .kicker { display: inline-block; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); background: #e6eef8; padding: 5px 12px; border-radius: 6px; margin: 0 0 14px; }
+    .lead { color: var(--muted); max-width: 620px; }
+    .center .lead { margin: 0 auto 40px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none; font: 700 1rem "Archivo", sans-serif; padding: 14px 24px; border-radius: 10px; transition: transform .15s, background .15s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-yellow { background: var(--yellow); color: var(--ink); }
+    .btn-yellow:hover { background: #ffc61a; }
+    .btn-blue { background: var(--blue); color: #fff; }
+    .btn-blue:hover { background: var(--blue-dark); }
+    .btn-white { background: #fff; color: var(--ink); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); }
+    section { padding: 88px 0; }
+
+    .urgent { background: var(--red); color: #fff; font-size: .92rem; font-weight: 600; }
+    .urgent .wrap { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 8px 16px; text-align: center; }
+    .urgent a { color: #fff; }
+    .top { background: var(--blue); color: #fff; position: sticky; top: 0; z-index: 30; }
+    .top .wrap { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; gap: 16px; }
+    .brand { font-size: 1.35rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .brand span { color: var(--yellow); }
+    .top nav { display: flex; align-items: center; gap: 24px; }
+    .top nav a:not(.btn) { color: #d6e2f2; text-decoration: none; font-weight: 600; font-size: .95rem; }
+    .top nav a:not(.btn):hover { color: #fff; }
+    .top .btn { padding: 10px 16px; }
+
+    .hero { background: var(--blue); color: #fff; position: relative; overflow: hidden; }
+    .hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; padding: 64px 16px 96px; }
+    .hero h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); }
+    .hero h1 span { color: var(--yellow); }
+    .hero p { font-size: 1.15rem; color: #d6e2f2; max-width: 540px; }
+    .hero p.kicker { font-size: .78rem; color: #fff; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; }
+    .badges span { background: rgba(255,255,255,.12); padding: 7px 14px; border-radius: 99px; font-size: .88rem; font-weight: 600; }
+    .hero-photo { position: relative; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.3); border: 6px solid rgba(255,255,255,.1); }
+    .hero-card { position: absolute; left: 16px; right: 16px; bottom: 16px; background: #fff; color: var(--ink); border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+    .hero-card .dot { width: 42px; height: 42px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; font-size: 1.2rem; flex: none; }
+    .hero-card b { display: block; }
+    .hero-card small { color: var(--muted); }
+
+    .trust { background: var(--ink); color: #fff; }
+    .trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 28px 16px; }
+    .trust div { text-align: center; }
+    .trust b { display: block; font-size: 1.7rem; font-weight: 800; color: var(--yellow); }
+    .trust span { font-size: .9rem; color: #b8c4d4; }
+
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+    .service:hover { box-shadow: 0 18px 40px rgba(20,32,46,.1); transform: translateY(-3px); }
+    .service .ph { height: 180px; }
+    .service .body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+    .service p { color: var(--muted); margin: 0 0 14px; font-size: .96rem; }
+    .service ul { margin: 0 0 16px; padding-left: 18px; color: var(--muted); font-size: .92rem; }
+    .service .from { margin-top: auto; font-weight: 700; color: var(--blue); }
+    .service-cta { background: var(--yellow-soft); border: 2px dashed var(--yellow); justify-content: center; text-align: center; padding: 32px; }
+    .service-cta p { margin-bottom: 20px; }
+
+    .estimator { background: var(--soft); }
+    .est-box { display: grid; grid-template-columns: 1.2fr 1fr; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(20,32,46,.08); }
+    .est-form { padding: 40px; }
+    .est-form label.title { display: block; font-weight: 700; margin: 0 0 10px; }
+    .est-form .group { margin-bottom: 26px; }
+    .choices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .choices button, .levels button { font: 600 .95rem "Archivo", sans-serif; text-align: left; padding: 14px; border-radius: 10px; border: 2px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+    .choices button span { display: block; font-size: 1.4rem; margin-bottom: 4px; }
+    .choices button.on, .levels button.on { border-color: var(--blue); background: #e6eef8; }
+    .levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .levels button { text-align: center; }
+    .levels small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; }
+    input[type=range] { width: 100%; accent-color: var(--blue); }
+    .range-val { font-weight: 800; color: var(--blue); }
+    .est-result { background: var(--blue); color: #fff; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .est-result .label { color: #b8c9e0; font-weight: 600; }
+    .est-result .amount { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--yellow); line-height: 1.1; margin: 6px 0 10px; }
+    .est-result ul { list-style: none; padding: 0; margin: 18px 0 26px; }
+    .est-result li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.15); display: flex; justify-content: space-between; gap: 12px; font-size: .95rem; }
+    .est-result li b { color: #fff; }
+    .est-result small { color: #b8c9e0; display: block; margin-top: 14px; font-size: .82rem; }
+
+    .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 32px; }
+    .filters button { font: 600 .95rem "Archivo", sans-serif; padding: 10px 18px; border-radius: 99px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+    .filters button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+    .project[hidden] { display: none; }
+    .project .ph { height: 220px; position: relative; }
+    .project .tag { position: absolute; top: 12px; left: 12px; background: var(--yellow); color: var(--ink); font-size: .78rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+    .project .body { padding: 18px 20px 22px; }
+    .project .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: .88rem; }
+
+    .process { background: var(--ink); color: #fff; }
+    .process .lead { color: #b8c4d4; }
+    .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: step; padding: 0; margin: 0; }
+    .timeline li { list-style: none; position: relative; background: rgba(255,255,255,.06); border-radius: 14px; padding: 24px 18px; counter-increment: step; }
+    .timeline li::before { content: counter(step); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--yellow); color: var(--ink); font-weight: 800; margin-bottom: 14px; }
+    .timeline p { color: #b8c4d4; font-size: .92rem; margin: 0; }
+    .timeline .when { display: inline-block; margin-top: 12px; font-size: .8rem; font-weight: 700; color: var(--yellow); }
+    .timeline ol { padding: 0; margin: 0; display: contents; }
+
+    .aids-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .aid { border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+    .aid b { display: block; font-size: 1.5rem; color: var(--blue); font-weight: 800; }
+    .aid h3 { margin: 6px 0 8px; font-size: 1.05rem; }
+    .aid p { color: var(--muted); margin: 0; font-size: .92rem; }
+    .aid-note { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 22px; }
+
+    .help { background: #fff3f1; }
+    .help-box { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start; }
+    .help-list { display: grid; gap: 10px; }
+    .help-list button { font: 600 1rem "Archivo", sans-serif; text-align: left; padding: 16px 18px; border-radius: 12px; border: 2px solid #f3cfc8; background: #fff; color: var(--ink); cursor: pointer; display: flex; gap: 12px; align-items: center; }
+    .help-list button.on { border-color: var(--red); }
+    .help-answer { background: #fff; border-radius: 18px; padding: 32px; border-left: 6px solid var(--red); }
+    .help-answer ol { padding-left: 20px; margin: 0 0 22px; }
+    .help-answer li { margin-bottom: 8px; }
+    .btn-red { background: var(--red); color: #fff; }
+
+    .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center; }
+    .about-photo { aspect-ratio: 1; border-radius: 20px; overflow: hidden; }
+    .about p { color: var(--muted); }
+    .about .sign { color: var(--ink); font-weight: 700; }
+    .certs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .certs span { border: 2px solid var(--line); border-radius: 10px; padding: 8px 14px; font-weight: 700; font-size: .88rem; }
+
+    .reviews { background: var(--soft); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review { background: #fff; border-radius: 16px; padding: 26px; }
+    .stars { color: var(--yellow); letter-spacing: 2px; }
+    .review p { margin: 10px 0 14px; }
+    .review cite { font-style: normal; font-weight: 700; font-size: .9rem; }
+    .review cite span { color: var(--muted); font-weight: 400; }
+
+    .faq { max-width: 780px; margin: 0 auto; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    .faq summary::after { content: "+"; color: var(--blue); font-size: 1.4rem; line-height: 1; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { color: var(--muted); margin: 10px 0 0; }
+
+    .quote { background: var(--blue); color: #fff; }
+    .quote-box { max-width: 720px; margin: 0 auto; background: #fff; color: var(--ink); border-radius: 20px; padding: 36px; }
+    .progress { display: flex; gap: 8px; margin-bottom: 26px; }
+    .progress i { flex: 1; height: 6px; border-radius: 99px; background: var(--line); }
+    .progress i.on { background: var(--yellow); }
+    .step-title { font-size: .85rem; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+    .q-step { display: none; }
+    .q-step.on { display: block; }
+    .q-step label { display: block; font-weight: 600; margin-bottom: 14px; font-size: .95rem; }
+    .q-step input, .q-step select, .q-step textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--soft); margin-top: 6px; }
+    .q-step .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .q-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; }
+    .q-done { text-align: center; padding: 20px 0; }
+    .q-done div { font-size: 3rem; }
+
+    footer { background: var(--ink); color: #b8c4d4; padding: 48px 0 28px; font-size: .92rem; }
+    footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+    footer h3 { color: #fff; font-size: 1rem; }
+    footer p { margin: 0 0 6px; }
+    footer .legal { border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: .85rem; }
+    .call-mobile { display: none; }
+
+    @media (max-width: 960px) {
+      .top nav a:not(.btn) { display: none; }
+      .hero .wrap, .est-box, .help-box, .about { grid-template-columns: 1fr; }
+      .hero-photo { max-width: 420px; aspect-ratio: 1; }
+      .trust .wrap { grid-template-columns: 1fr 1fr; }
+      .services, .projects, .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .aids-grid { grid-template-columns: 1fr 1fr; }
+      footer .cols { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 620px) {
+      .services, .projects, .reviews-grid, .timeline, .aids-grid, .choices { grid-template-columns: 1fr; }
+      .est-form, .est-result, .quote-box, .help-answer { padding: 26px 20px; }
+      .q-step .row2 { grid-template-columns: 1fr; }
+      .call-mobile { display: flex; justify-content: center; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+      footer { padding-bottom: 96px; }
     }
   </style>
 </head>
 <body>
   <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — entreprise fictive</div>
-  <div class="top">
-    <div class="wrap">
-      <span class="brand">MARTEL <span>Rénovation</span></span>
-      <a class="phone" href="#">📞 01 99 00 58 13</a>
-    </div>
-  </div>
+  <div class="urgent"><div class="wrap">🚨 Fuite, panne électrique ? Dépannage 7j/7 en moins de 2 h · <a href="tel:0199005813"><b>01 99 00 58 13</b></a></div></div>
 
-  <header class="hero">
+  <header class="top">
     <div class="wrap">
-      <div>
-        <h1>Vos travaux faits <span>proprement</span>, dans les délais.</h1>
-        <p>Plomberie, électricité, salle de bain, cuisine : un seul interlocuteur pour toute votre rénovation.</p>
-        <div class="badges"><span>✔ Devis gratuit sous 48 h</span><span>✔ Garantie décennale</span><span>✔ Artisan certifié RGE</span></div>
-      </div>
-      <form class="quote-box" onsubmit="event.preventDefault()">
-        <h3>Devis gratuit</h3>
-        <select><option>Type de travaux</option><option>Salle de bain</option><option>Cuisine</option><option>Plomberie</option><option>Électricité</option></select>
-        <input placeholder="Votre nom">
-        <input placeholder="Votre téléphone">
-        <button>Être rappelé</button>
-      </form>
+      <a href="#" class="brand">MARTEL <span>Rénovation</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#estimation">Estimer mes travaux</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#aides">Aides</a>
+        <a href="#devis" class="btn btn-yellow">Devis gratuit</a>
+      </nav>
     </div>
   </header>
 
-  <section>
+  <section class="hero" style="padding:0">
     <div class="wrap">
-      <h2 class="center">Nos services</h2>
+      <div>
+        <p class="kicker" style="background:rgba(255,255,255,.12);color:#fff">Artisan rénovation · Votre-Ville et 30 km</p>
+        <h1>Vos travaux faits <span>proprement</span>, dans les délais annoncés.</h1>
+        <p>Plomberie, électricité, salle de bain, cuisine : un seul artisan pour tout votre chantier, du devis jusqu'au nettoyage final.</p>
+        <div class="hero-ctas">
+          <a href="#estimation" class="btn btn-yellow">Estimer mes travaux en 1 min</a>
+          <a href="#urgence" class="btn btn-outline">J'ai une urgence</a>
+        </div>
+        <div class="badges"><span>✔ Devis gratuit sous 48 h</span><span>✔ Garantie décennale</span><span>✔ Artisan RGE</span></div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1731168273756-e02cae42265b?w=900&q=80&auto=format&fit=crop" alt="Artisan en train de découper du carrelage">
+        <div class="hero-card"><div class="dot">📅</div><div><b>Prochaine disponibilité : 2 semaines</b><small>Visite de devis possible dès cette semaine</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <div><b>15 ans</b><span>d'expérience</span></div>
+      <div><b>600+</b><span>chantiers terminés</span></div>
+      <div><b>48 h</b><span>pour recevoir votre devis</span></div>
+      <div><b>4,9 ★</b><span>sur 180 avis Google</span></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Nos services</p>
+        <h2>Tout votre intérieur, un seul interlocuteur</h2>
+        <p class="lead">Pas besoin de coordonner trois entreprises : on s'occupe de tout, avec un planning clair et un prix fixé à l'avance.</p>
+      </div>
       <div class="services">
-        <div class="service"><div class="ico">🚿</div><h3>Salle de bain</h3><p>Rénovation complète, douche à l'italienne, accessibilité PMR.</p></div>
-        <div class="service"><div class="ico">🔧</div><h3>Plomberie</h3><p>Dépannage, chauffe-eau, recherche de fuite. Intervention rapide.</p></div>
-        <div class="service"><div class="ico">⚡</div><h3>Électricité</h3><p>Mise aux normes, tableau électrique, éclairage.</p></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80&auto=format&fit=crop" alt="Salle de bain rénovée" loading="lazy"></div><div class="body"><h3>🚿 Salle de bain</h3><p>Rénovation complète ou partielle, clé en main.</p><ul><li>Douche à l'italienne</li><li>Remplacement baignoire par douche</li><li>Adaptation seniors / PMR</li></ul><span class="from">À partir de 4 500 €</span></div></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&q=80&auto=format&fit=crop" alt="Cuisine rénovée" loading="lazy"></div><div class="body"><h3>🍳 Cuisine</h3><p>Pose de cuisine, plomberie et électricité incluses.</p><ul><li>Pose de meubles et plan de travail</li><li>Déplacement d'arrivées d'eau</li><li>Crédence et carrelage</li></ul><span class="from">À partir de 2 800 €</span></div></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=700&q=80&auto=format&fit=crop" alt="Plombier au travail" loading="lazy"></div><div class="body"><h3>🔧 Plomberie</h3><p>Installation, réparation et dépannage rapide.</p><ul><li>Recherche de fuite</li><li>Chauffe-eau, ballon thermodynamique</li><li>Débouchage</li></ul><span class="from">Déplacement 49 €</span></div></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=700&q=80&auto=format&fit=crop" alt="Électricien au tableau électrique" loading="lazy"></div><div class="body"><h3>⚡ Électricité</h3><p>Mise aux normes NF C 15-100 et rénovation.</p><ul><li>Tableau électrique</li><li>Prises, éclairage, volets</li><li>Diagnostic avant vente</li></ul><span class="from">À partir de 1 200 €</span></div></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1697967464378-1498c293e1aa?w=700&q=80&auto=format&fit=crop" alt="Pièce en travaux" loading="lazy"></div><div class="body"><h3>🧱 Rénovation intérieure</h3><p>Cloisons, peinture, sols : on transforme vos pièces.</p><ul><li>Placo et isolation</li><li>Peinture et revêtements</li><li>Parquet, carrelage</li></ul><span class="from">Sur devis</span></div></div>
+        <div class="service service-cta"><h3>Un projet différent ?</h3><p>Décrivez-le en quelques lignes, on vous dit gratuitement si on peut s'en charger.</p><a href="#devis" class="btn btn-blue" style="align-self:center">Décrire mon projet</a></div>
       </div>
     </div>
   </section>
 
-  <section class="works">
+  <section id="estimation" class="estimator">
     <div class="wrap">
-      <h2 class="center">Avant / après</h2>
-      <div class="ba">
-        <div class="ba-card"><div class="ba-imgs"><div class="before">AVANT</div><div class="after">APRÈS</div></div><p>Salle de bain complète — 8 jours de travaux</p></div>
-        <div class="ba-card"><div class="ba-imgs"><div class="before">AVANT</div><div class="after after-2">APRÈS</div></div><p>Cuisine ouverte — 12 jours de travaux</p></div>
+      <div class="center">
+        <p class="kicker">Estimateur en ligne</p>
+        <h2>Combien vont coûter vos travaux ?</h2>
+        <p class="lead">Une première fourchette en 3 clics, avant même de nous appeler. Le prix exact sera fixé après une visite gratuite.</p>
+      </div>
+      <div class="est-box">
+        <div class="est-form">
+          <div class="group">
+            <label class="title">1. Quels travaux ?</label>
+            <div class="choices" id="est-type">
+              <button class="on" data-type="sdb"><span>🚿</span>Salle de bain</button>
+              <button data-type="cuisine"><span>🍳</span>Cuisine</button>
+              <button data-type="elec"><span>⚡</span>Électricité</button>
+              <button data-type="peinture"><span>🎨</span>Peinture</button>
+            </div>
+          </div>
+          <div class="group">
+            <label class="title" for="est-surface">2. Surface : <span class="range-val" id="est-surface-val">6 m²</span></label>
+            <input type="range" id="est-surface" min="3" max="60" value="6">
+          </div>
+          <div class="group" style="margin-bottom:0">
+            <label class="title">3. Gamme de finitions</label>
+            <div class="levels" id="est-level">
+              <button data-level="0">Essentielle<small>bon rapport qualité/prix</small></button>
+              <button class="on" data-level="1">Confort<small>le plus choisi</small></button>
+              <button data-level="2">Premium<small>matériaux haut de gamme</small></button>
+            </div>
+          </div>
+        </div>
+        <div class="est-result" aria-live="polite">
+          <span class="label">Estimation indicative</span>
+          <div class="amount" id="est-amount">—</div>
+          <span id="est-title">Salle de bain · 6 m² · Confort</span>
+          <ul>
+            <li><span>Durée du chantier</span><b id="est-duration">—</b></li>
+            <li><span>Main-d'œuvre incluse</span><b>Oui</b></li>
+            <li><span>Évacuation des gravats</span><b>Incluse</b></li>
+          </ul>
+          <a href="#devis" class="btn btn-yellow">Recevoir un devis précis</a>
+          <small>Estimation donnée à titre indicatif, hors aides financières. Le devis définitif est établi après visite, gratuitement et sans engagement.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="realisations">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Nos réalisations</p>
+        <h2>Quelques chantiers récents</h2>
+        <p class="lead">Chaque projet avec sa durée et son budget réel, pour vous donner une idée concrète.</p>
+      </div>
+      <div class="filters" id="filters">
+        <button class="on" data-filter="all">Tout voir</button>
+        <button data-filter="sdb">Salles de bain</button>
+        <button data-filter="cuisine">Cuisines</button>
+        <button data-filter="elec">Électricité</button>
+      </div>
+      <div class="projects">
+        <div class="project" data-cat="sdb"><div class="ph"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=700&q=80&auto=format&fit=crop" alt="Salle de bain avec baignoire" loading="lazy"><span class="tag">Salle de bain</span></div><div class="body"><h3>Salle de bain zen avec baignoire</h3><div class="meta"><span>📍 Votre-Ville</span><span>⏱ 9 jours</span><span>💶 7 800 €</span></div></div></div>
+        <div class="project" data-cat="cuisine"><div class="ph"><img src="https://images.unsplash.com/photo-1617228069096-4638a7ffc906?w=700&q=80&auto=format&fit=crop" alt="Cuisine avec îlot" loading="lazy"><span class="tag">Cuisine</span></div><div class="body"><h3>Cuisine ouverte avec îlot central</h3><div class="meta"><span>📍 Centre-ville</span><span>⏱ 12 jours</span><span>💶 9 400 €</span></div></div></div>
+        <div class="project" data-cat="sdb"><div class="ph"><img src="https://images.unsplash.com/photo-1629079447777-1e605162dc8d?w=700&q=80&auto=format&fit=crop" alt="Salle d'eau moderne" loading="lazy"><span class="tag">Salle de bain</span></div><div class="body"><h3>Salle d'eau compacte, douche à l'italienne</h3><div class="meta"><span>📍 Quartier gare</span><span>⏱ 6 jours</span><span>💶 5 200 €</span></div></div></div>
+        <div class="project" data-cat="elec"><div class="ph"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80&auto=format&fit=crop" alt="Installation électrique" loading="lazy"><span class="tag">Électricité</span></div><div class="body"><h3>Mise aux normes d'une maison des années 70</h3><div class="meta"><span>📍 Hameau voisin</span><span>⏱ 5 jours</span><span>💶 3 900 €</span></div></div></div>
+        <div class="project" data-cat="cuisine"><div class="ph"><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=700&q=80&auto=format&fit=crop" alt="Cuisine bois et blanc" loading="lazy"><span class="tag">Cuisine</span></div><div class="body"><h3>Cuisine bois et blanc, plan en quartz</h3><div class="meta"><span>📍 Votre-Ville</span><span>⏱ 8 jours</span><span>💶 6 300 €</span></div></div></div>
+        <div class="project" data-cat="elec"><div class="ph"><img src="https://images.unsplash.com/photo-1635335874521-7987db781153?w=700&q=80&auto=format&fit=crop" alt="Tableau électrique neuf" loading="lazy"><span class="tag">Électricité</span></div><div class="body"><h3>Remplacement du tableau électrique</h3><div class="meta"><span>📍 Zone artisanale</span><span>⏱ 1 jour</span><span>💶 1 450 €</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker" style="background:rgba(255,255,255,.1);color:var(--yellow)">Notre méthode</p>
+        <h2>Un chantier sans mauvaise surprise</h2>
+        <p class="lead">Vous savez à chaque étape ce qui se passe, combien ça coûte et quand ce sera fini.</p>
+      </div>
+      <ol class="timeline">
+        <li><h3>Premier appel</h3><p>On écoute votre projet et on fixe un rendez-vous.</p><span class="when">Sous 24 h</span></li>
+        <li><h3>Visite gratuite</h3><p>Mesures, photos, conseils sur place, sans engagement.</p><span class="when">Sous 1 semaine</span></li>
+        <li><h3>Devis détaillé</h3><p>Chaque poste chiffré, avec le planning et les aides possibles.</p><span class="when">Sous 48 h</span></li>
+        <li><h3>Chantier</h3><p>Protection de vos sols, point chaque soir, chantier propre.</p><span class="when">Date garantie</span></li>
+        <li><h3>Réception</h3><p>On vérifie tout ensemble avant de régler le solde.</p><span class="when">Le dernier jour</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="aides">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Aides financières</p>
+        <h2>Payez moins cher vos travaux</h2>
+        <p class="lead">Selon vos travaux et vos revenus, plusieurs aides peuvent réduire la facture. On vous indique celles auxquelles vous avez droit et on vous aide à monter le dossier.</p>
+      </div>
+      <div class="aids-grid">
+        <div class="aid"><b>TVA 10 %</b><h3>TVA réduite</h3><p>Pour la rénovation d'un logement de plus de 2 ans, au lieu de 20 %.</p></div>
+        <div class="aid"><b>TVA 5,5 %</b><h3>Travaux énergétiques</h3><p>Pour les travaux d'amélioration de la performance énergétique.</p></div>
+        <div class="aid"><b>MaPrimeRénov'</b><h3>Aide de l'État</h3><p>Pour certains travaux de rénovation énergétique, réalisés par un artisan RGE.</p></div>
+        <div class="aid"><b>Éco-PTZ</b><h3>Prêt à taux zéro</h3><p>Pour financer des travaux de rénovation énergétique sans intérêts.</p></div>
+      </div>
+      <p class="aid-note">Aides soumises à conditions. Montants et règles à vérifier sur le site officiel france-renov.gouv.fr.</p>
+    </div>
+  </section>
+
+  <section id="urgence" class="help">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker" style="background:#fde1dc;color:var(--red)">Urgence</p>
+        <h2>Un problème ? Les bons gestes en attendant</h2>
+        <p class="lead">Choisissez votre situation : on vous dit quoi faire tout de suite pour limiter les dégâts, puis on arrive.</p>
+      </div>
+      <div class="help-box">
+        <div class="help-list" id="help-list">
+          <button class="on" data-help="fuite">💧 J'ai une fuite d'eau</button>
+          <button data-help="courant">⚡ Je n'ai plus de courant</button>
+          <button data-help="bouche">🚽 Évier ou WC bouché</button>
+          <button data-help="eau-chaude">🔥 Plus d'eau chaude</button>
+        </div>
+        <div class="help-answer" id="help-answer" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap about">
+      <div class="about-photo"><img src="https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?w=800&q=80&auto=format&fit=crop" alt="L'artisan étudie des plans" loading="lazy"></div>
+      <div>
+        <p class="kicker">Qui sommes-nous</p>
+        <h2>Une entreprise familiale, pas une plateforme</h2>
+        <p>Martel Rénovation, c'est Thomas, artisan depuis 15 ans, et une équipe de trois compagnons qui travaillent ensemble depuis le début. Pas de sous-traitance : ceux qui viennent faire le devis sont ceux qui font le chantier.</p>
+        <p>Notre fierté ? Que plus de la moitié de nos clients viennent du bouche-à-oreille.</p>
+        <p class="sign">Thomas Martel, fondateur</p>
+        <div class="certs"><span>🏅 RGE</span><span>🛡 Garantie décennale</span><span>📋 Assurance RC Pro</span><span>🔌 Habilitation électrique</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Avis clients</p>
+        <h2>Ils nous ont confié leur maison</h2>
+        <p class="lead"><span class="stars">★★★★★</span> 4,9 / 5 sur 180 avis Google</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review"><span class="stars">★★★★★</span><p>« Salle de bain terminée en 8 jours comme prévu, chantier nettoyé chaque soir. Le devis était respecté à l'euro près. »</p><cite>Martine D. <span>· salle de bain</span></cite></div>
+        <div class="review"><span class="stars">★★★★★</span><p>« Fuite un dimanche matin, Thomas était là en une heure. Prix du dépannage annoncé au téléphone, aucune surprise. »</p><cite>Karim B. <span>· dépannage</span></cite></div>
+        <div class="review"><span class="stars">★★★★★</span><p>« Ils nous ont aidés à obtenir MaPrimeRénov' pour notre chauffe-eau. On n'aurait jamais su faire seuls. »</p><cite>Famille L. <span>· chauffe-eau</span></cite></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2 class="center">Pourquoi nous choisir</h2>
-      <div class="why">
-        <div><b>15 ans</b><span>d'expérience</span></div>
-        <div><b>600+</b><span>chantiers réalisés</span></div>
-        <div><b>48 h</b><span>pour votre devis</span></div>
-        <div><b>4,9 ★</b><span>note moyenne</span></div>
+      <div class="center">
+        <p class="kicker">Questions fréquentes</p>
+        <h2>Vous vous demandez sûrement…</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Le devis est-il vraiment gratuit ?</summary><p>Oui, la visite et le devis sont gratuits et sans engagement, dans un rayon de 30 km. Seuls les dépannages d'urgence sont facturés (déplacement 49 €).</p></details>
+        <details><summary>Quel est le délai avant de commencer ?</summary><p>En général 2 à 4 semaines après la signature du devis. La date de début et la durée sont écrites sur le devis.</p></details>
+        <details><summary>Faut-il que je sois présent pendant les travaux ?</summary><p>Non. Beaucoup de clients nous laissent une clé. On vous envoie des photos de l'avancement chaque soir.</p></details>
+        <details><summary>Peut-on payer en plusieurs fois ?</summary><p>Oui : 30 % à la signature, 40 % à mi-chantier et le solde à la réception des travaux, une fois que tout vous convient.</p></details>
+        <details><summary>Que se passe-t-il en cas de problème après les travaux ?</summary><p>Nos travaux sont couverts par la garantie décennale et la garantie de parfait achèvement d'un an. On revient gratuitement si quelque chose ne va pas.</p></details>
       </div>
     </div>
   </section>
 
-  <section class="zone">
+  <section id="devis" class="quote">
     <div class="wrap">
-      <h2>On intervient près de chez vous</h2>
-      <p>Votre-Ville et toutes les communes dans un rayon de 30 km. Déplacement gratuit pour le devis.</p>
-      <a class="phone" href="#">Appeler maintenant</a>
+      <div class="center">
+        <p class="kicker" style="background:rgba(255,255,255,.12);color:#fff">Devis gratuit</p>
+        <h2>Demandez votre devis en 3 étapes</h2>
+        <p class="lead" style="color:#d6e2f2">Réponse sous 48 h. On vous rappelle pour fixer la visite.</p>
+      </div>
+      <form class="quote-box" id="quote" onsubmit="return false">
+        <div class="progress"><i class="on"></i><i></i><i></i></div>
+        <div class="q-step on" data-step="1">
+          <p class="step-title">Étape 1 sur 3</p>
+          <h3>Votre projet</h3>
+          <label>Type de travaux<select><option>Salle de bain</option><option>Cuisine</option><option>Plomberie</option><option>Électricité</option><option>Rénovation intérieure</option><option>Autre</option></select></label>
+          <label>Quand souhaitez-vous commencer ?<select><option>Dès que possible</option><option>Dans 1 à 3 mois</option><option>Dans plus de 3 mois</option><option>Je me renseigne</option></select></label>
+        </div>
+        <div class="q-step" data-step="2">
+          <p class="step-title">Étape 2 sur 3</p>
+          <h3>Quelques détails</h3>
+          <div class="row2">
+            <label>Surface approximative (m²)<input type="number" min="1" placeholder="ex. 8"></label>
+            <label>Type de logement<select><option>Maison</option><option>Appartement</option><option>Local professionnel</option></select></label>
+          </div>
+          <label>Décrivez votre projet<textarea rows="4" placeholder="Ex. remplacer la baignoire par une douche à l'italienne…"></textarea></label>
+        </div>
+        <div class="q-step" data-step="3">
+          <p class="step-title">Étape 3 sur 3</p>
+          <h3>Vos coordonnées</h3>
+          <div class="row2">
+            <label>Nom<input type="text" placeholder="Votre nom"></label>
+            <label>Téléphone<input type="tel" placeholder="Votre numéro"></label>
+          </div>
+          <label>Commune<input type="text" placeholder="Votre commune"></label>
+        </div>
+        <div class="q-step q-done" data-step="4">
+          <div>✅</div>
+          <h3>Demande envoyée !</h3>
+          <p style="color:var(--muted)">Merci, Thomas vous rappelle sous 48 h pour fixer la visite. (Démonstration : aucune donnée n'est envoyée.)</p>
+        </div>
+        <div class="q-nav" id="q-nav">
+          <button type="button" class="btn" id="q-prev" style="background:var(--soft);color:var(--ink);visibility:hidden">← Retour</button>
+          <button type="button" class="btn btn-yellow" id="q-next">Continuer →</button>
+        </div>
+      </form>
     </div>
   </section>
-  <footer>© Martel Rénovation — exemple de site, entreprise fictive</footer>
+
+  <footer>
+    <div class="wrap">
+      <div class="cols">
+        <div><h3>MARTEL Rénovation</h3><p>Plomberie, électricité et rénovation intérieure à Votre-Ville et dans un rayon de 30 km.</p></div>
+        <div><h3>Contact</h3><p>📞 01 99 00 58 13</p><p>📍 8 rue de l'Artisanat, 00000 Votre-Ville</p></div>
+        <div><h3>Horaires</h3><p>Bureau : lun – ven, 8h – 18h</p><p>Urgences : 7j/7</p></div>
+      </div>
+      <p class="legal">© Martel Rénovation — exemple de site, entreprise fictive · Photos : Unsplash</p>
+    </div>
+  </footer>
+  <a href="tel:0199005813" class="btn btn-yellow call-mobile">📞 Appeler maintenant</a>
+
+  <script>
+    const prices = {
+      sdb: { name: "Salle de bain", perM2: [650, 900, 1300], min: 3500, days: (s) => Math.max(5, Math.round(s * 1.1)) },
+      cuisine: { name: "Cuisine", perM2: [450, 700, 1100], min: 2500, days: (s) => Math.max(4, Math.round(s * 0.8)) },
+      elec: { name: "Électricité", perM2: [70, 95, 130], min: 900, days: (s) => Math.max(1, Math.round(s / 15)) },
+      peinture: { name: "Peinture", perM2: [25, 35, 50], min: 400, days: (s) => Math.max(1, Math.round(s / 12)) },
+    };
+    const levelNames = ["Essentielle", "Confort", "Premium"];
+    let estType = "sdb", estLevel = 1;
+    const surface = document.getElementById("est-surface");
+    const euro = (n) => (Math.round(n / 100) * 100).toLocaleString("fr-FR") + " €";
+    function updateEstimate() {
+      const p = prices[estType];
+      const s = Number(surface.value);
+      const base = Math.max(p.min, p.perM2[estLevel] * s);
+      document.getElementById("est-surface-val").textContent = s + " m²";
+      document.getElementById("est-amount").textContent = euro(base * 0.9) + " – " + euro(base * 1.15);
+      document.getElementById("est-title").textContent = `${p.name} · ${s} m² · ${levelNames[estLevel]}`;
+      const d = p.days(s);
+      document.getElementById("est-duration").textContent = d + (d > 1 ? " jours" : " jour");
+    }
+    function choose(groupId, onPick) {
+      document.getElementById(groupId).addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn) return;
+        e.currentTarget.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === btn));
+        onPick(btn);
+      });
+    }
+    choose("est-type", (b) => { estType = b.dataset.type; updateEstimate(); });
+    choose("est-level", (b) => { estLevel = Number(b.dataset.level); updateEstimate(); });
+    surface.addEventListener("input", updateEstimate);
+    updateEstimate();
+
+    choose("filters", (b) => {
+      const f = b.dataset.filter;
+      document.querySelectorAll(".project").forEach((p) => { p.hidden = f !== "all" && p.dataset.cat !== f; });
+    });
+
+    const help = {
+      fuite: ["Coupez l'eau au compteur général (souvent sous l'évier ou près du compteur dans la rue).", "Coupez l'électricité si l'eau s'approche de prises ou d'appareils.", "Épongez et placez une bassine sous la fuite.", "Prenez des photos pour votre assurance."],
+      courant: ["Vérifiez si vos voisins ont du courant : si non, c'est une coupure du réseau, appelez votre fournisseur.", "Sinon, regardez le tableau électrique : un disjoncteur est-il baissé ?", "Débranchez les appareils de la pièce concernée puis relevez le disjoncteur.", "S'il saute à nouveau, ne forcez pas : appelez-nous."],
+      bouche: ["Arrêtez de tirer la chasse ou de faire couler l'eau.", "Essayez une ventouse, sans produits chimiques agressifs.", "Versez de l'eau très chaude (pas bouillante dans un WC en céramique) avec du liquide vaisselle.", "Si l'eau remonte ailleurs, le problème est plus loin : appelez-nous."],
+      "eau-chaude": ["Vérifiez que le disjoncteur du chauffe-eau n'est pas baissé.", "Pour une chaudière gaz, regardez si un code erreur s'affiche et notez-le.", "Vérifiez la pression de la chaudière (entre 1 et 2 bars en général).", "Ne démontez rien vous-même : appelez-nous avec le code erreur."],
+    };
+    const answer = document.getElementById("help-answer");
+    function showHelp(key) {
+      answer.innerHTML = `<h3>À faire tout de suite</h3><ol>${help[key].map((t) => `<li>${t}</li>`).join("")}</ol><a href="tel:0199005813" class="btn btn-red">📞 Appeler le dépannage 7j/7</a>`;
+    }
+    choose("help-list", (b) => showHelp(b.dataset.help));
+    showHelp("fuite");
+
+    let step = 1;
+    const steps = document.querySelectorAll(".q-step");
+    const bars = document.querySelectorAll(".progress i");
+    const prev = document.getElementById("q-prev");
+    const next = document.getElementById("q-next");
+    function showStep() {
+      steps.forEach((s) => s.classList.toggle("on", Number(s.dataset.step) === step));
+      bars.forEach((b, i) => b.classList.toggle("on", i < step));
+      prev.style.visibility = step > 1 && step < 4 ? "visible" : "hidden";
+      next.textContent = step === 3 ? "Envoyer ma demande" : "Continuer →";
+      document.getElementById("q-nav").style.display = step === 4 ? "none" : "flex";
+    }
+    next.addEventListener("click", () => { if (step < 4) { step++; showStep(); } });
+    prev.addEventListener("click", () => { if (step > 1) { step--; showStep(); } });
+  </script>
 </body>
 </html>
