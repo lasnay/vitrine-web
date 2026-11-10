@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pixel &amp; Plume — Création et refonte de sites internet</title>
   <meta name="description" content="Votre site est lent, daté ou introuvable sur Google ? Je le refais : moderne, rapide, adapté au mobile. Audit gratuit, prix clairs.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <header class="topbar">
@@ -18,6 +20,7 @@
       <nav class="nav">
         <a href="#offres">Offres</a>
         <a href="#realisations">Exemples</a>
+        <a href="#securite">Sécurité</a>
         <a href="#comparatif">Comparatif</a>
         <a href="#methode">Méthode</a>
         <a href="#faq">Questions</a>
@@ -37,7 +40,7 @@
             <a href="#contact" class="btn">Demander mon audit gratuit</a>
             <a href="#offres" class="btn btn-ghost">Voir les tarifs</a>
           </div>
-          <a href="#test" class="test-link">⚡ Tester gratuitement la vitesse de mon site →</a>
+          <a href="#test" class="test-link">⚡ Tester gratuitement la vitesse et la sécurité de mon site →</a>
           <div class="hero-stats">
             <div><b>0 €</b><span>pour voir la maquette</span></div>
             <div><b>2 sem.</b><span>délai moyen</span></div>
@@ -64,8 +67,8 @@
 
     <div class="marquee" aria-label="Inclus dans chaque site">
       <div class="marquee-track">
-        <span>Maquette offerte</span><span>Adapté au mobile</span><span>HTTPS sécurisé</span><span>Chargement rapide</span><span>Référencement local</span><span>Fiche Google Business</span><span>Paiement en 2 fois</span><span>Vous êtes propriétaire</span><span>Prix fixe</span>
-        <span aria-hidden="true">Maquette offerte</span><span aria-hidden="true">Adapté au mobile</span><span aria-hidden="true">HTTPS sécurisé</span><span aria-hidden="true">Chargement rapide</span><span aria-hidden="true">Référencement local</span><span aria-hidden="true">Fiche Google Business</span><span aria-hidden="true">Paiement en 2 fois</span><span aria-hidden="true">Vous êtes propriétaire</span><span aria-hidden="true">Prix fixe</span>
+        <span>Maquette offerte</span><span>Adapté au mobile</span><span>HTTPS sécurisé</span><span>Sans WordPress à pirater</span><span>Chargement rapide</span><span>Référencement local</span><span>Fiche Google Business</span><span>Paiement en 2 fois</span><span>Vous êtes propriétaire</span><span>Prix fixe</span>
+        <span aria-hidden="true">Maquette offerte</span><span aria-hidden="true">Adapté au mobile</span><span aria-hidden="true">HTTPS sécurisé</span><span aria-hidden="true">Sans WordPress à pirater</span><span aria-hidden="true">Chargement rapide</span><span aria-hidden="true">Référencement local</span><span aria-hidden="true">Fiche Google Business</span><span aria-hidden="true">Paiement en 2 fois</span><span aria-hidden="true">Vous êtes propriétaire</span><span aria-hidden="true">Prix fixe</span>
       </div>
     </div>
 
@@ -99,18 +102,19 @@
 
     <section id="test" class="speedtest">
       <div class="wrap narrow">
-        <h2>Votre site est-il rapide ?</h2>
-        <p class="section-lead">Testez-le gratuitement avec l'outil officiel de Google. Un score sous 50 sur mobile, c'est des visiteurs qui partent avant même de vous lire.</p>
+        <h2>Votre site est-il rapide et sécurisé ?</h2>
+        <p class="section-lead">Testez-le gratuitement avec deux outils de référence : celui de Google pour la vitesse, celui de Mozilla (l'éditeur de Firefox) pour la sécurité.</p>
         <form class="test-form" id="test-form">
           <input type="text" id="test-url" placeholder="www.votre-site.fr" aria-label="Adresse de votre site" required>
-          <button type="submit" class="btn">Lancer le test</button>
+          <button type="submit" class="btn" data-tool="speed">⚡ Tester la vitesse</button>
+          <button type="submit" class="btn btn-ghost" data-tool="security">🔒 Tester la sécurité</button>
         </form>
         <div class="score-legend">
-          <span><i class="dot bad"></i>0 – 49 : à refaire</span>
-          <span><i class="dot mid"></i>50 – 89 : à améliorer</span>
-          <span><i class="dot good"></i>90 – 100 : excellent</span>
+          <span><i class="dot bad"></i>Vitesse sous 50 ou sécurité D / F : à refaire</span>
+          <span><i class="dot mid"></i>50 – 89 ou C / B : à améliorer</span>
+          <span><i class="dot good"></i>90+ ou A : excellent</span>
         </div>
-        <p class="test-note">Le test s'ouvre dans un nouvel onglet (PageSpeed Insights, de Google). Envoyez-moi votre score : je vous explique gratuitement ce qui coince.</p>
+        <p class="test-note">Les tests s'ouvrent dans un nouvel onglet (PageSpeed Insights de Google, Observatory de Mozilla). Envoyez-moi vos résultats : je vous explique gratuitement ce qui coince.</p>
       </div>
     </section>
 
@@ -173,6 +177,21 @@
       </div>
     </section>
 
+    <section id="securite" class="security">
+      <div class="wrap">
+        <h2>La sécurité, incluse d'office</h2>
+        <p class="section-lead">La plupart des sites de petites entreprises piratés tournent sous WordPress avec des extensions pas à jour. Mes sites sont construits autrement : il n'y a presque rien à attaquer.</p>
+        <div class="grid-3 security-grid">
+          <article class="card"><div class="icon">🔒</div><h3>HTTPS obligatoire</h3><p>Le cadenas dans la barre d'adresse, inclus et forcé : plus jamais le message « Non sécurisé » qui fait fuir vos visiteurs.</p></article>
+          <article class="card"><div class="icon">🧱</div><h3>Rien à pirater</h3><p>Pas de WordPress, pas d'extensions, pas de base de données, pas d'espace d'administration exposé. Et donc aucune mise à jour de sécurité à surveiller.</p></article>
+          <article class="card"><div class="icon">🌍</div><h3>Réseau mondial</h3><p>Votre site est copié sur des serveurs partout dans le monde : il reste rapide et encaisse les pics de visites.</p></article>
+          <article class="card"><div class="icon">🛡️</div><h3>Protections dans le code</h3><p>Le site indique au navigateur ce qu'il a le droit de charger, ce qui bloque l'injection de contenus malveillants.</p></article>
+          <article class="card"><div class="icon">🍪</div><h3>Sans pisteurs</h3><p>Aucun cookie publicitaire : vos visiteurs ne sont pas suivis, et vous n'avez pas besoin de bandeau cookies envahissant.</p></article>
+          <article class="card"><div class="icon">💾</div><h3>Historique complet</h3><p>Chaque modification est enregistrée : en cas de souci, on revient à la version d'avant en quelques minutes. Et une copie complète vous appartient.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section id="comparatif" class="comparison">
       <div class="wrap">
         <h2>Pourquoi pas Wix ou une agence ?</h2>
@@ -185,6 +204,7 @@
             <tbody>
               <tr><td>Prix</td><td class="us">dès 290 €, une seule fois</td><td>souvent 1 500 € et plus</td><td>abonnement tous les mois, à vie</td></tr>
               <tr><td>Design</td><td class="us">fait pour vous</td><td>thème personnalisé</td><td>modèle utilisé par des milliers de sites</td></tr>
+              <tr><td>Sécurité</td><td class="us">HTTPS inclus, rien à mettre à jour</td><td>souvent WordPress : extensions à mettre à jour sans cesse</td><td>gérée par la plateforme</td></tr>
               <tr><td>Vitesse</td><td class="us">site léger, très rapide</td><td>variable</td><td>souvent lent sur mobile</td></tr>
               <tr><td>Maquette avant de payer</td><td class="us">✓ offerte</td><td>rarement</td><td>—</td></tr>
               <tr><td>Interlocuteur</td><td class="us">une seule personne, joignable</td><td>chef de projet</td><td>support en ligne</td></tr>
@@ -253,6 +273,10 @@
           <p>En 2 fois : 30 % quand vous validez la maquette, 70 % à la mise en ligne. Virement ou carte bancaire.</p>
         </details>
         <details>
+          <summary>Mon site peut-il être piraté ?</summary>
+          <p>Aucun site n'est invulnérable, mais un site statique comme ceux que je crée n'a ni base de données, ni espace d'administration, ni extensions : les failles les plus courantes n'existent tout simplement pas. Et grâce à l'historique, on peut toujours revenir en arrière.</p>
+        </details>
+        <details>
           <summary>Et si le résultat ne me plaît pas ?</summary>
           <p>Vous voyez la maquette avant de payer quoi que ce soit. Ensuite, je fais les retouches jusqu'à ce que le site vous convienne.</p>
         </details>
@@ -311,6 +335,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

@@ -37,5 +37,12 @@ document.getElementById("test-form").addEventListener("submit", (e) => {
   let url = document.getElementById("test-url").value.trim();
   if (!url) return;
   if (!/^https?:\/\//i.test(url)) url = "https://" + url;
-  window.open(`https://pagespeed.web.dev/report?url=${encodeURIComponent(url)}&form_factor=mobile`, "_blank", "noopener");
+  let host;
+  try { host = new URL(url).hostname; } catch { return; }
+  if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(host)) return;
+  const tool = e.submitter && e.submitter.dataset.tool === "security" ? "security" : "speed";
+  const target = tool === "security"
+    ? `https://developer.mozilla.org/fr/observatory/analyze?host=${encodeURIComponent(host)}`
+    : `https://pagespeed.web.dev/report?url=${encodeURIComponent(url)}&form_factor=mobile`;
+  window.open(target, "_blank", "noopener");
 });

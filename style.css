@@ -191,7 +191,7 @@ section { padding: 80px 0; }
 
 .speedtest { background: var(--bg); }
 .test-form { display: flex; gap: 10px; flex-wrap: wrap; }
-.test-form input { flex: 1; min-width: 220px; font: inherit; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); }
+.test-form input { flex: 1 1 280px; min-width: 0; font: inherit; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); }
 .test-form input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .score-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin: 22px 0 10px; font-size: .9rem; color: var(--muted); }
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
@@ -224,3 +224,8 @@ section { padding: 80px 0; }
 
 @media (max-width: 900px) { .addons-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 680px) { .addons-grid { grid-template-columns: 1fr; } .hero-stats { gap: 22px; } .addons { padding: 20px; } }
+
+.security { background: var(--bg); }
+.security-grid { row-gap: 22px; }
+.security .card { background: var(--surface); }
+.test-form .btn-ghost { background: transparent; }
