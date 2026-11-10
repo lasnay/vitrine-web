@@ -4,132 +4,259 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Le Comptoir Basilic — Bistrot de saison</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../demo.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../demo.css?v=3">
   <style>
-    :root { --bg: #f6f1e7; --ink: #2b2a24; --muted: #6d6a5e; --accent: #4f6b3a; --accent2: #b5562e; --line: #ddd4c2; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.65 "Work Sans", sans-serif; }
-    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 700; line-height: 1.1; margin: 0 0 .4em; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
-    .brand { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; font-weight: 700; }
-    .brand em { color: var(--accent); }
-    nav a.cta { background: var(--accent2); color: #fff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; }
-    .hero { position: relative; min-height: 520px; display: grid; place-items: center; text-align: center; color: #fff; border-radius: 6px; overflow: hidden;
-      background: radial-gradient(circle at 25% 30%, #7c9a5f 0, transparent 45%), radial-gradient(circle at 80% 70%, #c9763f 0, transparent 40%), linear-gradient(135deg, #2f3b24, #46532f 55%, #5a3b23); }
-    .hero::after { content: "🌿"; position: absolute; font-size: 14rem; opacity: .08; right: -30px; bottom: -60px; }
-    .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); }
-    .hero h1 em { font-style: italic; color: #e9d7a8; }
-    .hero p { font-size: 1.15rem; max-width: 520px; margin: 0 auto 28px; opacity: .9; }
-    .btn { display: inline-block; background: #fff; color: var(--ink); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; }
-    section { padding: 80px 0; }
-    .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .intro h2 { font-size: 2.6rem; }
-    .stats { display: flex; gap: 32px; margin-top: 24px; }
-    .stats b { display: block; font-family: "Cormorant Garamond", serif; font-size: 2.2rem; color: var(--accent); }
-    .stats span { color: var(--muted); font-size: .9rem; }
-    .plate { aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fff 0 38%, #efe6d4 39% 60%, #e4d8c0 61%); display: grid; place-items: center; font-size: 6rem; box-shadow: 0 30px 60px rgba(43,42,36,.15); max-width: 380px; margin: 0 auto; }
-    .menu { background: #fff; border-block: 1px solid var(--line); }
-    .menu h2 { text-align: center; font-size: 2.6rem; }
-    .menu .sub { text-align: center; color: var(--muted); margin-bottom: 48px; }
-    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .menu-grid h3 { font-size: 1.6rem; color: var(--accent2); border-bottom: 1px solid var(--line); padding-bottom: 8px; }
-    .dish { display: flex; justify-content: space-between; gap: 12px; margin: 16px 0 2px; font-weight: 500; }
-    .dish + p { margin: 0; color: var(--muted); font-size: .92rem; }
-    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
-    .reviews blockquote { margin: 0; background: #fff; padding: 26px; border-radius: 6px; border: 1px solid var(--line); font-family: "Cormorant Garamond", serif; font-size: 1.25rem; font-style: italic; }
-    .reviews cite { display: block; margin-top: 12px; font: normal 500 .9rem "Work Sans", sans-serif; color: var(--muted); }
-    .stars { color: #d39b2a; letter-spacing: 2px; font-style: normal; }
-    .info { background: var(--ink); color: #eee8da; }
-    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .info h3 { color: #e9d7a8; font-size: 1.5rem; }
-    .info p { margin: 0 0 6px; }
-    .info .btn { background: var(--accent2); color: #fff; margin-top: 12px; }
-    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .9rem; }
-    @media (max-width: 800px) {
-      .intro, .menu-grid, .reviews, .info-grid { grid-template-columns: 1fr; }
-      .hero { min-height: 420px; }
-      section { padding: 56px 0; }
-      nav .links { display: none; }
+    :root { --cream: #f7f1e6; --paper: #fffaf1; --ink: #2a2620; --muted: #6f6858; --green: #3f5a32; --terra: #b5532c; --gold: #e3c48a; --line: #e4d9c4; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font: 400 17px/1.7 "Work Sans", sans-serif; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 600; line-height: 1.05; margin: 0 0 .4em; }
+    h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+    .kicker { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); font-weight: 600; margin: 0 0 12px; }
+    .btn { display: inline-block; padding: 15px 30px; border-radius: 2px; text-decoration: none; font-weight: 600; letter-spacing: .03em; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-terra { background: var(--terra); color: #fff; }
+    .btn-terra:hover { background: #9c4422; }
+    .btn-line { border: 1px solid rgba(255,255,255,.7); color: #fff; }
+    .btn-line:hover { background: rgba(255,255,255,.12); }
+
+    .hero { position: relative; isolation: isolate; min-height: 92vh; display: flex; flex-direction: column; color: #fff; overflow: hidden; }
+    .hero > img { position: absolute; inset: 0; z-index: -2; }
+    .hero > .wrap { width: 100%; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(20,16,10,.6), rgba(20,16,10,.3) 40%, rgba(20,16,10,.8)); }
+    .hero nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    .brand { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .brand em { color: var(--gold); }
+    .hero nav .links { display: flex; gap: 28px; align-items: center; }
+    .hero nav .links a { color: #fff; text-decoration: none; font-weight: 500; }
+    .hero-body { margin: auto 0; padding: 40px 16px 90px; }
+    .hero-body > * { max-width: 680px; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.6rem); }
+    .hero h1 em { color: var(--gold); }
+    .hero p { font-size: 1.2rem; max-width: 520px; margin: 0 0 32px; }
+    .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+    .open-now { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,.4); backdrop-filter: blur(6px); padding: 6px 14px; border-radius: 99px; font-size: .88rem; margin-bottom: 22px; }
+    .open-now i { width: 8px; height: 8px; border-radius: 50%; background: #7fd47a; box-shadow: 0 0 0 4px rgba(127,212,122,.25); }
+
+    .promises { background: var(--green); color: #f1ead8; }
+    .promises .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 34px 16px; text-align: center; }
+    .promises b { display: block; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: #fff; font-weight: 600; }
+    .promises span { font-size: .92rem; opacity: .85; }
+
+    section { padding: 96px 0; }
+    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .story-img { position: relative; isolation: isolate; aspect-ratio: 4/5; }
+    .story-img::after { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid var(--terra); z-index: -1; }
+    .story p { color: var(--muted); }
+    .quote { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.6rem; line-height: 1.35; color: var(--ink) !important; border-left: 3px solid var(--terra); padding-left: 20px; margin: 28px 0; }
+    .sign { font-weight: 600; color: var(--ink) !important; }
+
+    .gallery { background: var(--ink); color: #f1ead8; }
+    .gallery .head { text-align: center; margin-bottom: 48px; }
+    .gallery .head p:last-child { color: #c7bda8; max-width: 520px; margin: 0 auto; }
+    .mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 12px; }
+    .mosaic figure { margin: 0; position: relative; overflow: hidden; }
+    .mosaic figure img { transition: transform .6s; }
+    .mosaic figure:hover img { transform: scale(1.06); }
+    .mosaic figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; background: linear-gradient(transparent, rgba(0,0,0,.75)); font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-style: italic; }
+    .m-big { grid-column: span 2; grid-row: span 2; }
+    .m-wide { grid-column: span 2; }
+
+    .board { background: var(--paper); border: 1px solid var(--line); padding: 56px; box-shadow: 0 30px 60px rgba(42,38,32,.08); }
+    .board .head { text-align: center; margin-bottom: 44px; }
+    .formula { display: inline-block; margin-top: 8px; background: var(--terra); color: #fff; padding: 8px 18px; font-weight: 600; font-size: .95rem; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .menu-grid h3 { font-size: 1.7rem; color: var(--green); text-align: center; margin-bottom: 20px; }
+    .menu-grid h3::after { content: "✦"; display: block; font-size: .8rem; color: var(--terra); margin-top: 6px; }
+    .dish { margin-bottom: 20px; }
+    .dish div { display: flex; align-items: baseline; gap: 8px; font-weight: 600; }
+    .dish div::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted #b9ad94; }
+    .dish div span:last-child { order: 2; color: var(--terra); white-space: nowrap; }
+    .dish p { margin: 2px 0 0; color: var(--muted); font-size: .92rem; }
+    .veg { color: var(--green); font-size: .8rem; white-space: nowrap; }
+
+    .terrace { position: relative; isolation: isolate; color: #fff; padding: 140px 0; overflow: hidden; }
+    .terrace > img { position: absolute; inset: 0; z-index: -2; }
+    .terrace::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,16,10,.82), rgba(20,16,10,.25)); }
+    .terrace .box { max-width: 520px; }
+    .terrace p { font-size: 1.1rem; }
+
+    .reviews .head { text-align: center; margin-bottom: 44px; }
+    .score { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; color: var(--muted); margin: 0; }
+    .score b { color: var(--terra); font-size: 1.6rem; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-grid blockquote { margin: 0; background: var(--paper); padding: 32px; border: 1px solid var(--line); }
+    .review-grid p { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-style: italic; line-height: 1.4; margin: 10px 0 16px; }
+    .stars { color: #d39b2a; letter-spacing: 3px; }
+    .review-grid cite { font-style: normal; font-weight: 600; font-size: .9rem; color: var(--muted); }
+
+    .visit { background: var(--green); color: #f1ead8; }
+    .visit .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+    .visit h2 { color: #fff; }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 28px 0 34px; }
+    .visit-grid h3 { color: var(--gold); font-size: 1.4rem; margin-bottom: 6px; }
+    .visit-grid p { margin: 0; }
+    .visit-img { aspect-ratio: 1; }
+    footer { text-align: center; padding: 28px 16px; color: var(--muted); font-size: .88rem; }
+    .mobile-book { display: none; }
+
+    @media (max-width: 860px) {
+      .hero nav .links a:not(.btn) { display: none; }
+      .hero nav .links .btn { padding: 10px 18px; }
+      .promises .wrap, .story, .menu-grid, .review-grid, .visit .wrap { grid-template-columns: 1fr; }
+      .story { gap: 48px; }
+      .story-img { max-width: 420px; width: calc(100% - 22px); }
+      .mosaic { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+      .board { padding: 32px 20px; }
+      section { padding: 64px 0; }
+      .terrace { padding: 96px 0; }
+      .mobile-book { display: block; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+      footer { padding-bottom: 96px; }
     }
   </style>
 </head>
 <body>
   <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — restaurant fictif</div>
-  <div class="wrap">
-    <nav>
-      <span class="brand">Le Comptoir <em>Basilic</em></span>
-      <a href="#infos" class="cta">Réserver</a>
-    </nav>
-    <header class="hero">
-      <div>
-        <h1>Cuisine de <em>saison</em>,<br>produits du coin.</h1>
-        <p>Un bistrot chaleureux où la carte change au rythme du marché. Midi et soir, du mardi au samedi.</p>
-        <a href="#carte" class="btn">Voir la carte</a>
+
+  <header class="hero">
+    <img src="https://images.unsplash.com/photo-1552960226-639240203497?w=1800&q=80&auto=format&fit=crop" alt="Salle du restaurant éclairée le soir">
+    <div class="wrap">
+      <nav>
+        <a href="#" class="brand">Le Comptoir <em>Basilic</em></a>
+        <div class="links">
+          <a href="#carte">La carte</a>
+          <a href="#histoire">Notre histoire</a>
+          <a href="#infos">Nous trouver</a>
+          <a href="#infos" class="btn btn-terra">Réserver</a>
+        </div>
+      </nav>
+    </div>
+    <div class="wrap hero-body">
+      <span class="open-now"><i></i> Ouvert ce soir · 19h – 22h30</span>
+      <h1>Ici, on cuisine <em>le marché</em> du matin.</h1>
+      <p>Un bistrot chaleureux, des plats généreux faits maison et des vins de petits vignerons. On vous garde une table ?</p>
+      <div class="ctas">
+        <a href="#infos" class="btn btn-terra">Réserver une table</a>
+        <a href="#carte" class="btn btn-line">Découvrir la carte</a>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <div class="promises">
+    <div class="wrap">
+      <div><b>100 % fait maison</b><span>des sauces aux desserts</span></div>
+      <div><b>Producteurs à 30 km</b><span>légumes, viandes et fromages</span></div>
+      <div><b>Terrasse ombragée</b><span>aux beaux jours</span></div>
+    </div>
   </div>
 
-  <section>
-    <div class="wrap intro">
+  <section id="histoire">
+    <div class="wrap story">
+      <div class="story-img"><img src="https://images.unsplash.com/photo-1577219492769-b63a779fac28?w=900&q=80&auto=format&fit=crop" alt="Le chef en cuisine" loading="lazy"></div>
       <div>
-        <h2>Le goût des choses simples</h2>
-        <p>Chaque matin, nous choisissons nos légumes chez les maraîchers du marché et notre viande chez l'éleveur voisin. Tout est fait maison, des sauces aux desserts.</p>
-        <div class="stats">
-          <div><b>100 %</b><span>fait maison</span></div>
-          <div><b>30 km</b><span>rayon de nos producteurs</span></div>
-          <div><b>4,8 ★</b><span>sur 320 avis</span></div>
-        </div>
+        <p class="kicker">Notre histoire</p>
+        <h2>Une cuisine qui a du <em>goût</em> et du cœur</h2>
+        <p>Après dix ans dans de grandes maisons, Julien a ouvert le Comptoir pour revenir à l'essentiel : de beaux produits, travaillés simplement, servis dans une ambiance où l'on se sent bien.</p>
+        <p class="quote">« Chaque matin, je pars au marché sans savoir exactement ce que je vais cuisiner. C'est ce qui rend la carte vivante. »</p>
+        <p class="sign">Julien, chef et fondateur</p>
       </div>
-      <div class="plate">🥗</div>
     </div>
   </section>
 
-  <section id="carte" class="menu">
+  <section class="gallery">
     <div class="wrap">
-      <h2>La carte du moment</h2>
-      <p class="sub">Formule midi entrée + plat ou plat + dessert : 19 €</p>
-      <div class="menu-grid">
-        <div>
-          <h3>Entrées</h3>
-          <div class="dish"><span>Velouté de potimarron</span><span>8 €</span></div><p>Noisettes torréfiées, crème crue</p>
-          <div class="dish"><span>Œuf parfait</span><span>9 €</span></div><p>Champignons des bois, mouillettes</p>
-          <div class="dish"><span>Terrine maison</span><span>9 €</span></div><p>Pickles de légumes, pain de campagne</p>
-        </div>
-        <div>
-          <h3>Plats</h3>
-          <div class="dish"><span>Joue de bœuf confite</span><span>21 €</span></div><p>Purée fumée, jus réduit au vin rouge</p>
-          <div class="dish"><span>Filet de truite</span><span>19 €</span></div><p>Beurre blanc, poireaux fondants</p>
-          <div class="dish"><span>Risotto d'épeautre</span><span>17 €</span></div><p>Courge rôtie, sauge, parmesan</p>
-        </div>
-        <div>
-          <h3>Desserts</h3>
-          <div class="dish"><span>Tarte fine aux pommes</span><span>8 €</span></div><p>Caramel au beurre salé</p>
-          <div class="dish"><span>Mousse au chocolat</span><span>7 €</span></div><p>Chocolat noir 70 %, fleur de sel</p>
-          <div class="dish"><span>Assiette de fromages</span><span>9 €</span></div><p>Affinés par notre fromager</p>
-        </div>
+      <div class="head">
+        <p class="kicker" style="color:var(--gold)">Dans nos assiettes</p>
+        <h2>Ça se passe de commentaires</h2>
+        <p>Quelques plats de saison, à retrouver sur l'ardoise selon les arrivages.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="m-big"><img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=1000&q=80&auto=format&fit=crop" alt="Suprême de volaille et betteraves rôties" loading="lazy"><figcaption>Suprême de volaille, betteraves rôties</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1663530761401-15eefb544889?w=600&q=80&auto=format&fit=crop" alt="Le chef nappe une viande de sauce" loading="lazy"><figcaption>Le dressage minute</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1572684278701-e2f6ec992d59?w=600&q=80&auto=format&fit=crop" alt="Tarte maison" loading="lazy"><figcaption>Tarte du moment</figcaption></figure>
+        <figure class="m-wide"><img src="https://images.unsplash.com/photo-1715249792892-ec2689ab016e?w=1000&q=80&auto=format&fit=crop" alt="Huîtres et verre de vin blanc" loading="lazy"><figcaption>Huîtres &amp; vin blanc du vendredi</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="carte">
     <div class="wrap">
-      <h2 style="text-align:center;font-size:2.6rem">Ils sont venus, ils reviennent</h2>
-      <div class="reviews">
-        <blockquote><span class="stars">★★★★★</span><br>« Une vraie cuisine de bistrot, généreuse et pleine de goût. »<cite>Claire, avis Google</cite></blockquote>
-        <blockquote><span class="stars">★★★★★</span><br>« La joue de bœuf est incroyable. Service adorable. »<cite>Mehdi, avis Google</cite></blockquote>
-        <blockquote><span class="stars">★★★★★</span><br>« Notre adresse préférée pour le déjeuner. »<cite>Sophie et Marc, avis Google</cite></blockquote>
+      <div class="board">
+        <div class="head">
+          <p class="kicker">L'ardoise du moment</p>
+          <h2>La carte d'automne</h2>
+          <span class="formula">Formule midi · entrée + plat ou plat + dessert : 19 €</span>
+        </div>
+        <div class="menu-grid">
+          <div>
+            <h3>Pour commencer</h3>
+            <div class="dish"><div><span>Velouté de potimarron</span><span>8 €</span></div><p>Noisettes torréfiées, crème crue · <span class="veg">🌿 végétarien</span></p></div>
+            <div class="dish"><div><span>Œuf parfait</span><span>9 €</span></div><p>Champignons des bois, mouillettes au beurre</p></div>
+            <div class="dish"><div><span>Terrine de campagne</span><span>9 €</span></div><p>Pickles maison, pain au levain</p></div>
+          </div>
+          <div>
+            <h3>Les plats</h3>
+            <div class="dish"><div><span>Joue de bœuf confite</span><span>21 €</span></div><p>Purée fumée, jus réduit au vin rouge</p></div>
+            <div class="dish"><div><span>Filet de truite rôti</span><span>19 €</span></div><p>Beurre blanc, poireaux fondants</p></div>
+            <div class="dish"><div><span>Risotto d'épeautre</span><span>17 €</span></div><p>Courge rôtie, sauge, vieux parmesan · <span class="veg">🌿 végétarien</span></p></div>
+          </div>
+          <div>
+            <h3>Les douceurs</h3>
+            <div class="dish"><div><span>Tarte fine aux pommes</span><span>8 €</span></div><p>Caramel au beurre salé, glace vanille</p></div>
+            <div class="dish"><div><span>Mousse au chocolat</span><span>7 €</span></div><p>Chocolat noir 70 %, fleur de sel</p></div>
+            <div class="dish"><div><span>Fromages affinés</span><span>9 €</span></div><p>Sélection de notre fromager</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="infos" class="info">
-    <div class="wrap info-grid">
-      <div><h3>Horaires</h3><p>Mardi – samedi</p><p>12h – 14h · 19h – 22h</p></div>
-      <div><h3>Adresse</h3><p>12 place du Marché</p><p>00000 Votre-Ville</p></div>
-      <div><h3>Réservation</h3><p>01 23 45 67 89</p><a href="#" class="btn">Réserver en ligne</a></div>
+  <section class="terrace">
+    <img src="https://images.unsplash.com/photo-1651686498265-659eb2e40617?w=1800&q=80&auto=format&fit=crop" alt="Terrasse du bistrot" loading="lazy">
+    <div class="wrap">
+      <div class="box">
+        <p class="kicker" style="color:var(--gold)">Aux beaux jours</p>
+        <h2>Un verre en terrasse ?</h2>
+        <p>Dès les premiers rayons de soleil, la terrasse s'installe sur la place. Planches à partager, vins au verre et apéro jusqu'à 23h.</p>
+      </div>
     </div>
   </section>
-  <footer>© Le Comptoir Basilic — exemple de site, établissement fictif</footer>
+
+  <section class="reviews">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Ce qu'ils en disent</p>
+        <h2>Ils sont venus, ils reviennent</h2>
+        <p class="score"><b>4,8</b> / 5 sur plus de 320 avis Google</p>
+      </div>
+      <div class="review-grid">
+        <blockquote><span class="stars">★★★★★</span><p>« Une vraie cuisine de bistrot, généreuse et pleine de goût. On s'y sent comme à la maison. »</p><cite>Claire</cite></blockquote>
+        <blockquote><span class="stars">★★★★★</span><p>« La joue de bœuf est incroyable. Service adorable et de très bons conseils sur le vin. »</p><cite>Mehdi</cite></blockquote>
+        <blockquote><span class="stars">★★★★★</span><p>« Notre adresse préférée pour le déjeuner. La formule à 19 € est imbattable. »</p><cite>Sophie et Marc</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="infos" class="visit">
+    <div class="wrap">
+      <div>
+        <p class="kicker" style="color:var(--gold)">Nous trouver</p>
+        <h2>On vous attend</h2>
+        <div class="visit-grid">
+          <div><h3>Horaires</h3><p>Mardi – samedi</p><p>12h – 14h</p><p>19h – 22h30</p></div>
+          <div><h3>Adresse</h3><p>12 place du Marché</p><p>00000 Votre-Ville</p></div>
+          <div><h3>Téléphone</h3><p>01 23 45 67 89</p></div>
+          <div><h3>Groupes</h3><p>Jusqu'à 20 personnes, sur demande</p></div>
+        </div>
+        <a href="#" class="btn btn-terra">Réserver en ligne</a>
+      </div>
+      <div class="visit-img"><img src="https://images.unsplash.com/photo-1622140739492-f82f386260b5?w=900&q=80&auto=format&fit=crop" alt="Tables dressées dans la salle" loading="lazy"></div>
+    </div>
+  </section>
+
+  <footer>© Le Comptoir Basilic — exemple de site, établissement fictif · Photos : Unsplash</footer>
+  <a href="#infos" class="btn btn-terra mobile-book">Réserver une table</a>
 </body>
 </html>
