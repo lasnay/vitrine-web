@@ -229,3 +229,11 @@ section { padding: 80px 0; }
 .security-grid { row-gap: 22px; }
 .security .card { background: var(--surface); }
 .test-form .btn-ghost { background: transparent; }
+
+.addons-sub { margin: 34px 0 6px; font-size: 1.15rem; text-align: center; padding-top: 26px; border-top: 1px solid var(--line); }
+.addons-note { text-align: center; color: var(--muted); font-size: .9rem; max-width: 640px; margin: 0 auto 18px; }
+.addons-pack { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 14px; padding: 16px 18px; border-radius: 12px; border: 2px solid var(--accent); background: var(--accent-soft); }
+.addons-pack b { display: block; font-size: 1.05rem; color: var(--ink); }
+.addons-pack span { color: var(--muted); font-size: .92rem; }
+.pack-price { white-space: nowrap; color: var(--muted); }
+.pack-price strong { color: var(--accent); font-size: 1.5rem; font-weight: 800; margin-left: 6px; }
