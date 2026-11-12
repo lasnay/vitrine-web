@@ -10,9 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
+  <a class="announce" href="#offres">🚀 Offre pionnier : 3 places à prix réduit pour mes premiers clients <b>Voir →</b></a>
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a href="#" class="logo">Pixel <span>&amp;</span> Plume</a>
@@ -122,11 +123,32 @@
       <div class="wrap">
         <h2>Des offres simples, des prix clairs</h2>
         <p class="section-lead">Des tarifs pensés pour les petites entreprises et les indépendants. Le prix est fixé avant de commencer, sans surprise.</p>
-        <p class="launch">🎉 <b>Tarifs de lancement</b> : valables pour mes premiers clients</p>
-        <div class="grid-3">
+        <div class="pioneer">
+          <div>
+            <h3>🚀 Offre pionnier · 3 places seulement</h3>
+            <p>Je démarre mon activité : mes 3 premiers clients profitent d'un tarif réduit. En échange : un avis Google, un court témoignage, et l'accord de présenter votre site dans ma section « Exemples ».</p>
+          </div>
+          <div class="pioneer-count"><b>3 / 3</b><span>places restantes</span></div>
+        </div>
+        <div class="grid-offers">
+          <article class="offer">
+            <h3>Page essentielle</h3>
+            <span class="pio-tag">Offre pionnier</span>
+            <p class="price"><s>190 €</s> <strong>100 €</strong></p>
+            <p>Le minimum pour exister sur Google : une page claire qui donne envie de vous appeler.</p>
+            <ul>
+              <li>1 page complète (présentation, services, contact)</li>
+              <li>Horaires, adresse et plan d'accès</li>
+              <li>Bouton « Appeler » sur téléphone</li>
+              <li>HTTPS et adaptée au mobile</li>
+              <li>Livrée en 3 à 5 jours</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost">Je veux une page</a>
+          </article>
           <article class="offer">
             <h3>Refonte express</h3>
-            <p class="price">à partir de <strong>290 €</strong></p>
+            <span class="pio-tag">Offre pionnier</span>
+            <p class="price"><s>290 €</s> <strong>150 €</strong></p>
             <p>Votre site actuel, remis à neuf : nouveau design, adapté au mobile, plus rapide.</p>
             <ul>
               <li>Jusqu'à 3 pages</li>
@@ -139,7 +161,8 @@
           <article class="offer featured">
             <span class="badge">Recommandé</span>
             <h3>Site vitrine complet</h3>
-            <p class="price">à partir de <strong>490 €</strong></p>
+            <span class="pio-tag">Offre pionnier</span>
+            <p class="price"><s>490 €</s> <strong>290 €</strong></p>
             <p>Un site créé sur mesure pour présenter votre activité et attirer de nouveaux clients.</p>
             <ul>
               <li>Jusqu'à 5 pages</li>
@@ -151,18 +174,19 @@
           </article>
           <article class="offer">
             <h3>Entretien &amp; tranquillité</h3>
+            <span class="pio-tag pio-plain">Sans engagement</span>
             <p class="price"><strong>15 €</strong> / mois</p>
             <p>Je m'occupe de tout pour que votre site reste à jour et en ligne.</p>
             <ul>
               <li>Hébergement et nom de domaine</li>
               <li>Petites modifications incluses</li>
               <li>Sauvegardes et surveillance</li>
-              <li>Sans engagement</li>
+              <li>Résiliable à tout moment</li>
             </ul>
             <a href="#contact" class="btn btn-ghost">En savoir plus</a>
           </article>
         </div>
-        <p class="pay-note">Paiement en 2 fois : 30 % à la validation de la maquette, 70 % à la mise en ligne. Prix nets, pas de TVA en plus (micro-entreprise, TVA non applicable, art. 293 B du CGI).</p>
+        <p class="pay-note">Après les 3 places pionnier, les prix barrés deviennent les prix normaux. Paiement en 2 fois : 30 % à la validation de la maquette, 70 % à la mise en ligne. Prix nets, pas de TVA en plus (micro-entreprise, TVA non applicable, art. 293 B du CGI).</p>
         <div class="addons">
           <h3>Options à la carte</h3>
           <div class="addons-grid">
@@ -217,7 +241,7 @@
               <tr><th></th><th class="us">Pixel &amp; Plume</th><th>Agence web</th><th>Wix / Squarespace</th></tr>
             </thead>
             <tbody>
-              <tr><td>Prix</td><td class="us">dès 290 €, une seule fois</td><td>souvent 1 500 € et plus</td><td>abonnement tous les mois, à vie</td></tr>
+              <tr><td>Prix</td><td class="us">dès 190 €, une seule fois</td><td>souvent 1 500 € et plus</td><td>abonnement tous les mois, à vie</td></tr>
               <tr><td>Design</td><td class="us">fait pour vous</td><td>thème personnalisé</td><td>modèle utilisé par des milliers de sites</td></tr>
               <tr><td>Sécurité</td><td class="us">HTTPS inclus, rien à mettre à jour</td><td>souvent WordPress : extensions à mettre à jour sans cesse</td><td>gérée par la plateforme</td></tr>
               <tr><td>Vitesse</td><td class="us">site léger, très rapide</td><td>variable</td><td>souvent lent sur mobile</td></tr>
@@ -327,6 +351,8 @@
             <label>Budget envisagé
               <select name="budget">
                 <option value="">— Choisir —</option>
+                <option>Offre pionnier (3 places)</option>
+                <option>Autour de 190 € (page essentielle)</option>
                 <option>Autour de 290 € (refonte express)</option>
                 <option>Autour de 490 € (site complet)</option>
                 <option>Plus, avec des options</option>
