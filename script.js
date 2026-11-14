@@ -22,6 +22,7 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
   const body = [
     `Nom : ${data.get("name")}`,
     `E-mail : ${data.get("email")}`,
+    `Besoin : ${data.get("need") || "—"}`,
     `Entreprise : ${data.get("company") || "—"}`,
     `Téléphone : ${data.get("phone") || "—"}`,
     `Site actuel : ${data.get("has_site") || "—"} ${data.get("site") ? "(" + data.get("site") + ")" : ""}`,
@@ -45,4 +46,11 @@ document.getElementById("test-form").addEventListener("submit", (e) => {
     ? `https://developer.mozilla.org/fr/observatory/analyze?host=${encodeURIComponent(host)}`
     : `https://pagespeed.web.dev/report?url=${encodeURIComponent(url)}&form_factor=mobile`;
   window.open(target, "_blank", "noopener");
+});
+
+document.querySelectorAll("[data-need]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const select = document.querySelector('select[name="need"]');
+    if (select) select.value = link.dataset.need;
+  });
 });

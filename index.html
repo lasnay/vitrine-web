@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
   <a class="announce" href="#offres">🚀 Offre pionnier : 3 places à prix réduit pour mes premiers clients <b>Voir →</b></a>
@@ -216,6 +216,26 @@
       </div>
     </section>
 
+    <section id="sur-mesure" class="custom">
+      <div class="wrap">
+        <h2>Un outil sur mesure pour gagner du temps</h2>
+        <p class="section-lead">Vous faites la même tâche à la main tous les jours ? Décrivez-la-moi : je vous dis gratuitement si je peux l'automatiser, et combien ça coûterait.</p>
+        <div class="custom-grid">
+          <article class="card"><div class="icon">⭐</div><h3>Avis Google en un scan</h3><p>Un QR code et un lien direct pour que vos clients laissent un avis en 10 secondes, juste après leur passage.</p></article>
+          <article class="card"><div class="icon">📩</div><h3>Réponse automatique</h3><p>Dès qu'un client vous écrit ou demande un devis, il reçoit un accusé de réception, même quand vous êtes occupé.</p></article>
+          <article class="card"><div class="icon">🔔</div><h3>Rappels de rendez-vous</h3><p>Un e-mail de rappel avant chaque rendez-vous, pour moins de clients qui oublient de venir.</p></article>
+          <article class="card"><div class="icon">🧮</div><h3>Estimateur de prix</h3><p>Comme dans mon exemple d'artisan : le visiteur obtient une première fourchette et vous arrive une demande déjà qualifiée.</p></article>
+          <article class="card"><div class="icon">📋</div><h3>Demandes de devis classées</h3><p>Un formulaire qui vous envoie les infos rangées (travaux, surface, adresse) plutôt qu'un message à décrypter.</p></article>
+          <article class="card"><div class="icon">🛠️</div><h3>Votre idée</h3><p>Un tableau à remplir, un document à générer, une relance à envoyer ? Racontez-moi ce qui vous prend du temps.</p></article>
+        </div>
+        <div class="custom-cta">
+          <div class="custom-price"><b>Diagnostic gratuit</b><span>Petits outils dès 60 €, prix fixé avant de commencer</span></div>
+          <a href="#contact" class="btn" data-need="Un petit outil ou une automatisation">Décrire ma tâche</a>
+        </div>
+        <p class="custom-note">Les outils de démonstration de mes exemples (estimateur, réservation, panier) montrent l'idée : chaque outil réel est adapté à votre activité.</p>
+      </div>
+    </section>
+
     <section id="securite" class="security">
       <div class="wrap">
         <h2>La sécurité, incluse d'office</h2>
@@ -360,6 +380,15 @@
               </select>
             </label>
           </div>
+          <label>Ce qui vous intéresse
+            <select name="need">
+              <option value="">— Choisir —</option>
+              <option>Un site (création ou refonte)</option>
+              <option>Un petit outil ou une automatisation</option>
+              <option>Les deux</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+          </label>
           <label>Adresse de votre site (si vous en avez un)<input type="text" name="site" placeholder="www.monentreprise.fr"></label>
           <label>Votre message<textarea name="message" rows="4" placeholder="Votre activité, ce qui ne vous plaît pas dans votre site actuel…"></textarea></label>
           <button type="submit" class="btn">Envoyer ma demande</button>
@@ -376,6 +405,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
