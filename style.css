@@ -273,3 +273,8 @@ section { padding: 80px 0; }
 .contact-form label, .contact-form input, .contact-form select, .contact-form textarea { min-width: 0; max-width: 100%; }
 .contact-form select { width: 100%; text-overflow: ellipsis; }
 @media (max-width: 680px) { .contact-form .row { grid-template-columns: minmax(0, 1fr); } }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.form-status { margin: 0; min-height: 1.2em; font-weight: 600; font-size: .95rem; }
+.form-status[data-state="ok"] { color: #3ddc97; }
+.form-status[data-state="error"] { color: #ff8787; }

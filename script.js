@@ -1,4 +1,5 @@
 const CONTACT_EMAIL = "lasnay.dev@gmail.com";
+const FORM_ENDPOINT = "";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -15,9 +16,10 @@ nav.addEventListener("click", (e) => {
   }
 });
 
-document.getElementById("contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const data = new FormData(e.target);
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+function openMailto(data) {
   const subject = `Demande d'audit — ${data.get("name")}`;
   const body = [
     `Nom : ${data.get("name")}`,
@@ -31,6 +33,38 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
     data.get("message"),
   ].join("\n");
   window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(contactForm);
+  if (data.get("_gotcha")) return;
+  if (!FORM_ENDPOINT) {
+    openMailto(data);
+    return;
+  }
+  const button = contactForm.querySelector('button[type="submit"]');
+  button.disabled = true;
+  formStatus.textContent = "Envoi en cours…";
+  formStatus.dataset.state = "";
+  try {
+    const payload = Object.fromEntries(data.entries());
+    payload._subject = `Demande d'audit — ${data.get("name")}`;
+    const response = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) throw new Error("send failed");
+    contactForm.reset();
+    formStatus.dataset.state = "ok";
+    formStatus.textContent = "Merci ! Votre demande est bien partie, je vous réponds sous 48 h.";
+  } catch {
+    formStatus.dataset.state = "error";
+    formStatus.textContent = `L'envoi n'a pas fonctionné. Écrivez-moi directement à ${CONTACT_EMAIL}.`;
+  } finally {
+    button.disabled = false;
+  }
 });
 
 document.getElementById("test-form").addEventListener("submit", (e) => {

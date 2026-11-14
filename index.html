@@ -5,12 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pixel &amp; Plume — Création et refonte de sites internet</title>
   <meta name="description" content="Votre site est lent, daté ou introuvable sur Google ? Je le refais : moderne, rapide, adapté au mobile. Audit gratuit, prix clairs.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0e1a2e">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Pixel &amp; Plume">
+  <meta property="og:title" content="Pixel &amp; Plume — Création et refonte de sites internet">
+  <meta property="og:description" content="Votre site est lent, daté ou introuvable sur Google ? Je le refais : moderne, rapide, adapté au mobile. Maquette offerte, prix clairs.">
+  <meta property="og:url" content="https://lasnay.github.io/vitrine-web/">
+  <meta property="og:image" content="https://lasnay.github.io/vitrine-web/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pixel &amp; Plume : création et refonte de sites internet pour petites entreprises">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <a class="announce" href="#offres">🚀 Offre pionnier : 3 places à prix réduit pour mes premiers clients <b>Voir →</b></a>
@@ -351,6 +366,7 @@
         <h2>Demandez votre audit gratuit</h2>
         <p class="section-lead">Envoyez-moi l'adresse de votre site : je vous réponds sous 48 h avec 3 améliorations concrètes. Sans engagement.</p>
         <form class="contact-form" id="contact-form">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="row">
             <label>Votre nom<input type="text" name="name" required></label>
             <label>Votre e-mail<input type="email" name="email" required></label>
@@ -393,6 +409,7 @@
           <label>Votre message<textarea name="message" rows="4" placeholder="Votre activité, ce qui ne vous plaît pas dans votre site actuel…"></textarea></label>
           <button type="submit" class="btn">Envoyer ma demande</button>
           <p class="form-reassure">Réponse sous 48 h · Maquette offerte · Sans engagement</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -405,6 +422,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
