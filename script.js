@@ -1,5 +1,5 @@
 const CONTACT_EMAIL = "lasnay.dev@gmail.com";
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formspree.io/f/xgakojlk";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
