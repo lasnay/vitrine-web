@@ -184,7 +184,7 @@
 
     @media (max-width: 960px) {
       .top nav a:not(.btn) { display: none; }
-      .hero .wrap, .est-box, .help-box, .about { grid-template-columns: 1fr; }
+      .hero .wrap, .est-box, .help-box, .about { grid-template-columns: minmax(0, 1fr); }
       .est-result { border-left: 0; border-top: 1px solid var(--line); }
       .hero-photo { max-width: 420px; aspect-ratio: 1; }
       .trust .wrap { grid-template-columns: 1fr 1fr; }
@@ -196,6 +196,9 @@
       .panel { padding: 40px 24px; }
     }
     @media (max-width: 620px) {
+      .levels { grid-template-columns: 1fr; }
+      .est-form, .est-result { min-width: 0; }
+      .choices button, .levels button { min-width: 0; }
       .services, .projects, .reviews-grid, .timeline, .aids-grid, .choices { grid-template-columns: 1fr; }
       .est-form, .est-result, .quote-box, .help-answer { padding: 26px 20px; }
       .q-step .row2 { grid-template-columns: 1fr; }
@@ -207,7 +210,7 @@
 </head>
 <body>
   <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Pixel &amp; Plume</a> — entreprise fictive</div>
-  <div class="urgent"><div class="wrap">🚨 Fuite, panne électrique ? Dépannage 7j/7 en moins de 2 h · <a href="tel:0199005813"><b>01 99 00 58 13</b></a></div></div>
+  <div class="urgent"><div class="wrap">🚨 Fuite, panne de courant ? Dépannage 7j/7 en moins de 2 h · <a href="tel:0199005813"><b>01 99 00 58 13</b></a></div></div>
 
   <header class="top">
     <div class="wrap">
@@ -258,7 +261,7 @@
         <p class="lead">Pas besoin de coordonner trois entreprises : on s'occupe de tout, avec un planning clair et un prix fixé à l'avance.</p>
       </div>
       <div class="services">
-        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80&auto=format&fit=crop" alt="Salle de bain rénovée" loading="lazy"></div><div class="body"><h3>🚿 Salle de bain</h3><p>Rénovation complète ou partielle, clé en main.</p><ul><li>Douche à l'italienne</li><li>Remplacement baignoire par douche</li><li>Adaptation seniors / PMR</li></ul><span class="from">À partir de 4 500 €</span></div></div>
+        <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&q=80&auto=format&fit=crop" alt="Salle de bain rénovée" loading="lazy"></div><div class="body"><h3>🚿 Salle de bain</h3><p>Rénovation complète ou partielle, clé en main.</p><ul><li>Douche à l'italienne</li><li>Remplacement baignoire par douche</li><li>Adaptation pour seniors et PMR</li></ul><span class="from">À partir de 4 500 €</span></div></div>
         <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&q=80&auto=format&fit=crop" alt="Cuisine rénovée" loading="lazy"></div><div class="body"><h3>🍳 Cuisine</h3><p>Pose de cuisine, plomberie et électricité incluses.</p><ul><li>Pose de meubles et plan de travail</li><li>Déplacement d'arrivées d'eau</li><li>Crédence et carrelage</li></ul><span class="from">À partir de 2 800 €</span></div></div>
         <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=700&q=80&auto=format&fit=crop" alt="Plombier au travail" loading="lazy"></div><div class="body"><h3>🔧 Plomberie</h3><p>Installation, réparation et dépannage rapide.</p><ul><li>Recherche de fuite</li><li>Chauffe-eau, ballon thermodynamique</li><li>Débouchage</li></ul><span class="from">Déplacement 49 €</span></div></div>
         <div class="service"><div class="ph"><img src="https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=700&q=80&auto=format&fit=crop" alt="Électricien au tableau électrique" loading="lazy"></div><div class="body"><h3>⚡ Électricité</h3><p>Mise aux normes NF C 15-100 et rénovation.</p><ul><li>Tableau électrique</li><li>Prises, éclairage, volets</li><li>Diagnostic avant vente</li></ul><span class="from">À partir de 1 200 €</span></div></div>
@@ -367,7 +370,7 @@
         <div class="aid"><b>TVA 10 %</b><h3>TVA réduite</h3><p>Pour la rénovation d'un logement de plus de 2 ans, au lieu de 20 %.</p></div>
         <div class="aid"><b>TVA 5,5 %</b><h3>Travaux énergétiques</h3><p>Pour les travaux d'amélioration de la performance énergétique.</p></div>
         <div class="aid"><b>MaPrimeRénov'</b><h3>Aide de l'État</h3><p>Pour certains travaux de rénovation énergétique, réalisés par un artisan RGE.</p></div>
-        <div class="aid"><b>Éco-PTZ</b><h3>Prêt à taux zéro</h3><p>Pour financer des travaux de rénovation énergétique sans intérêts.</p></div>
+        <div class="aid"><b>Éco-PTZ</b><h3>Prêt à taux zéro</h3><p>Pour financer des travaux de rénovation énergétique sans intérêt.</p></div>
       </div>
       <p class="aid-note">Aides soumises à conditions. Montants et règles à vérifier sur le site officiel france-renov.gouv.fr.</p>
     </div>
@@ -378,7 +381,7 @@
       <div class="center">
         <p class="kicker">Urgence</p>
         <h2>Un problème ? Les bons gestes en attendant</h2>
-        <p class="lead">Choisissez votre situation : on vous dit quoi faire tout de suite pour limiter les dégâts, puis on arrive.</p>
+        <p class="lead">Choisissez votre situation : on vous explique les bons gestes à faire tout de suite pour limiter les dégâts, puis on arrive.</p>
       </div>
       <div class="help-box">
         <div class="help-list" id="help-list">
@@ -430,7 +433,7 @@
       <div class="faq">
         <details><summary>Le devis est-il vraiment gratuit ?</summary><p>Oui, la visite et le devis sont gratuits et sans engagement, dans un rayon de 30 km. Seuls les dépannages d'urgence sont facturés (déplacement 49 €).</p></details>
         <details><summary>Quel est le délai avant de commencer ?</summary><p>En général 2 à 4 semaines après la signature du devis. La date de début et la durée sont écrites sur le devis.</p></details>
-        <details><summary>Faut-il que je sois présent pendant les travaux ?</summary><p>Non. Beaucoup de clients nous laissent une clé. On vous envoie des photos de l'avancement chaque soir.</p></details>
+        <details><summary>Faut-il que je sois là pendant les travaux ?</summary><p>Non. Beaucoup de clients nous laissent une clé. On vous envoie des photos de l'avancement chaque soir.</p></details>
         <details><summary>Peut-on payer en plusieurs fois ?</summary><p>Oui : 30 % à la signature, 40 % à mi-chantier et le solde à la réception des travaux, une fois que tout vous convient.</p></details>
         <details><summary>Que se passe-t-il en cas de problème après les travaux ?</summary><p>Nos travaux sont couverts par la garantie décennale et la garantie de parfait achèvement d'un an. On revient gratuitement si quelque chose ne va pas.</p></details>
       </div>
@@ -536,7 +539,7 @@
 
     const help = {
       fuite: ["Coupez l'eau au compteur général (souvent sous l'évier ou près du compteur dans la rue).", "Coupez l'électricité si l'eau s'approche de prises ou d'appareils.", "Épongez et placez une bassine sous la fuite.", "Prenez des photos pour votre assurance."],
-      courant: ["Vérifiez si vos voisins ont du courant : si non, c'est une coupure du réseau, appelez votre fournisseur.", "Sinon, regardez le tableau électrique : un disjoncteur est-il baissé ?", "Débranchez les appareils de la pièce concernée puis relevez le disjoncteur.", "S'il saute à nouveau, ne forcez pas : appelez-nous."],
+      courant: ["Vérifiez si vos voisins ont du courant. S'ils n'en ont pas, c'est une coupure du réseau : appelez votre fournisseur.", "Sinon, regardez le tableau électrique : un disjoncteur est-il baissé ?", "Débranchez les appareils de la pièce concernée puis relevez le disjoncteur.", "S'il saute à nouveau, ne forcez pas : appelez-nous."],
       bouche: ["Arrêtez de tirer la chasse ou de faire couler l'eau.", "Essayez une ventouse, sans produits chimiques agressifs.", "Versez de l'eau très chaude (pas bouillante dans un WC en céramique) avec du liquide vaisselle.", "Si l'eau remonte ailleurs, le problème est plus loin : appelez-nous."],
       "eau-chaude": ["Vérifiez que le disjoncteur du chauffe-eau n'est pas baissé.", "Pour une chaudière gaz, regardez si un code erreur s'affiche et notez-le.", "Vérifiez la pression de la chaudière (entre 1 et 2 bars en général).", "Ne démontez rien vous-même : appelez-nous avec le code erreur."],
     };
