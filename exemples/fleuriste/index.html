@@ -36,7 +36,8 @@
     .btn-rose { background: var(--rose); color: #fff; }
     .btn-rose:hover { background: var(--rose-d); }
     .btn-line { border: 2px solid var(--rose); color: var(--rose); background: transparent; }
-    section { padding: 72px 0; }
+    section { padding: 72px 0; scroll-margin-top: 64px; }
+    #infos { min-height: calc(100vh - 64px); }
     header { position: sticky; top: 0; z-index: 20; background: rgba(251,246,241,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
     .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
     .brand { font: 700 1.4rem "Fraunces", serif; color: var(--ink); text-decoration: none; }
