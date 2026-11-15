@@ -297,6 +297,3 @@ section { padding: 80px 0; }
 .thumb-fleuriste b { color: #fff3c9; }
 @media (min-width: 901px) { .grid-works { grid-template-columns: repeat(2, 1fr); } }
 
-.demo-video { margin: 40px auto 0; max-width: 860px; text-align: center; }
-.demo-video img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,.15); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
-.demo-video figcaption { margin-top: 12px; font-size: .92rem; opacity: .8; }
