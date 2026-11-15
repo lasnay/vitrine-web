@@ -50,8 +50,7 @@
     .hero h1 em { color: var(--rose); font-style: italic; }
     .hero-art { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 3.4rem; text-align: center; }
     .hero-art div { background: var(--paper); border-radius: 24px; padding: 18px 0; box-shadow: 0 10px 30px rgba(194,87,122,.12); }
-    .hero-art div:nth-child(2) { transform: translateY(18px); background: var(--leaf-l); }
-    .hero-art div:nth-child(5) { transform: translateY(18px); }
+    .hero-art div:nth-child(2), .hero-art div:nth-child(5) { background: var(--leaf-l); }
     .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
     .pills span { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .88rem; font-weight: 600; }
     .composer { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 32px; box-shadow: 0 12px 40px rgba(43,42,40,.06); }
@@ -184,7 +183,7 @@
         <div class="center"><p class="kicker">Abonnement floral</p><h2>Des fleurs toute l'année</h2><p class="lead">Un bouquet de saison, au rythme que vous voulez. Sans engagement, on peut mettre en pause à tout moment.</p></div>
         <div class="cards">
           <article class="card"><div class="em">🌼</div><h3>Le mensuel</h3><div class="price">22 € <small>/ mois</small></div><ul><li>1 bouquet par mois</li><li>À retirer en boutique</li><li>Sans engagement</li></ul><a href="#contact" class="btn btn-line">Je choisis</a></article>
-          <article class="card hot"><span class="tag">Le plus choisi</span><div class="em">🌷</div><h3>Le bimensuel</h3><div class="price">38 € <small>/ mois</small></div><ul><li>2 bouquets par mois</li><li>Livraison possible à Rennes</li><li>Choix du style à chaque fois</li></ul><a href="#contact" class="btn btn-rose">Je choisis</a></article>
+          <article class="card hot"><span class="tag">Notre conseil</span><div class="em">🌷</div><h3>Le bimensuel</h3><div class="price">38 € <small>/ mois</small></div><ul><li>2 bouquets par mois</li><li>Livraison possible à Rennes</li><li>Choix du style à chaque fois</li></ul><a href="#contact" class="btn btn-rose">Je choisis</a></article>
           <article class="card"><div class="em">🪻</div><h3>L'hebdomadaire</h3><div class="price">68 € <small>/ mois</small></div><ul><li>1 bouquet par semaine</li><li>Idéal pour un bureau ou un cabinet</li><li>Facture mensuelle</li></ul><a href="#contact" class="btn btn-line">Je choisis</a></article>
         </div>
       </div>
