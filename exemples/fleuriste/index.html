@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🌷</text></svg>">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Petits Rouages">
+  <meta property="og:title" content="Atelier Pétale — Fleuriste">
+  <meta property="og:description" content="Site d'exemple réalisé par Petits Rouages : composeur de bouquet, abonnement floral, événements, retrait en boutique.">
+  <meta property="og:url" content="https://lasnay.github.io/vitrine-web/exemples/fleuriste/">
+  <meta property="og:image" content="https://lasnay.github.io/vitrine-web/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Petits Rouages : sites internet et outils sur mesure pour petites entreprises">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Atelier Pétale — Fleuriste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../demo.css?v=3">
+  <style>
+    :root { --bg: #fbf6f1; --paper: #fff; --ink: #2b2a28; --muted: #6d6660; --rose: #c2577a; --rose-d: #a3425f; --leaf: #3f6b4e; --leaf-l: #e3eee6; --blush: #f6dfe5; --line: #eadfd6; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.7 "Nunito Sans", sans-serif; }
+    h1, h2, h3 { font-family: "Fraunces", serif; font-weight: 700; line-height: 1.12; margin: 0 0 .4em; }
+    h2 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    .center { text-align: center; }
+    .kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); font-weight: 700; margin: 0 0 10px; }
+    .lead { color: var(--muted); max-width: 560px; margin: 0 0 24px; }
+    .center .lead { margin: 0 auto 36px; }
+    .btn { display: inline-block; padding: 14px 26px; border-radius: 999px; border: 0; cursor: pointer; text-decoration: none; font: 700 1rem "Nunito Sans", sans-serif; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-rose { background: var(--rose); color: #fff; }
+    .btn-rose:hover { background: var(--rose-d); }
+    .btn-line { border: 2px solid var(--rose); color: var(--rose); background: transparent; }
+    section { padding: 72px 0; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(251,246,241,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+    .brand { font: 700 1.4rem "Fraunces", serif; color: var(--ink); text-decoration: none; }
+    .brand span { color: var(--rose); }
+    nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; }
+    nav a:hover { color: var(--rose); }
+    .hero { padding: 64px 0 72px; background: linear-gradient(160deg, var(--blush), #fbf6f1 60%); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+    .hero h1 { font-size: clamp(2.3rem, 6vw, 3.8rem); }
+    .hero h1 em { color: var(--rose); font-style: italic; }
+    .hero-art { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 3.4rem; text-align: center; }
+    .hero-art div { background: var(--paper); border-radius: 24px; padding: 18px 0; box-shadow: 0 10px 30px rgba(194,87,122,.12); }
+    .hero-art div:nth-child(2) { transform: translateY(18px); background: var(--leaf-l); }
+    .hero-art div:nth-child(5) { transform: translateY(18px); }
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+    .pills span { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .88rem; font-weight: 600; }
+    .composer { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 32px; box-shadow: 0 12px 40px rgba(43,42,40,.06); }
+    fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+    legend { font-weight: 700; margin-bottom: 8px; padding: 0; }
+    .opts { display: flex; gap: 10px; flex-wrap: wrap; }
+    .opts label { cursor: pointer; }
+    .opts input { position: absolute; opacity: 0; pointer-events: none; }
+    .opts span { display: block; border: 2px solid var(--line); border-radius: 14px; padding: 9px 16px; font-weight: 600; background: var(--bg); transition: all .15s; }
+    .opts input:checked + span { border-color: var(--rose); background: var(--blush); color: var(--rose-d); }
+    .opts input:focus-visible + span { outline: 3px solid var(--leaf); outline-offset: 2px; }
+    .opts small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; }
+    input[type=date], input[type=text], input[type=email], select, textarea { width: 100%; padding: 12px 14px; border: 2px solid var(--line); border-radius: 12px; font: inherit; background: var(--bg); }
+    input:focus, select:focus, textarea:focus { outline: 0; border-color: var(--rose); }
+    .summary { background: var(--leaf-l); border-radius: 18px; padding: 22px; align-self: start; position: sticky; top: 90px; }
+    .vase { font-size: 4.2rem; text-align: center; line-height: 1.1; min-height: 80px; }
+    .summary ul { list-style: none; padding: 0; margin: 12px 0; font-size: .95rem; }
+    .summary li { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; border-bottom: 1px dashed #b9cdbf; }
+    .total { font: 700 2rem "Fraunces", serif; color: var(--leaf); margin: 10px 0; }
+    .summary .btn { width: 100%; text-align: center; }
+    .ok { display: none; margin-top: 12px; background: #fff; border-radius: 12px; padding: 12px; font-weight: 600; color: var(--leaf); }
+    .ok.show { display: block; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
+    .card .em { font-size: 2.4rem; }
+    .card.hot { border-color: var(--rose); box-shadow: 0 10px 30px rgba(194,87,122,.15); }
+    .price { font: 700 1.9rem "Fraunces", serif; color: var(--rose); margin: 4px 0 10px; }
+    .price small { font: 400 .9rem "Nunito Sans", sans-serif; color: var(--muted); }
+    .card ul { padding-left: 18px; color: var(--muted); margin: 0 0 16px; font-size: .95rem; }
+    .alt { background: var(--paper); border-block: 1px solid var(--line); }
+    .seasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .season { border-radius: 20px; padding: 20px; background: var(--paper); border: 1px solid var(--line); }
+    .season.now { background: var(--blush); border-color: var(--rose); }
+    .season b { display: block; font-family: "Fraunces", serif; font-size: 1.2rem; }
+    .season p { margin: 6px 0 0; color: var(--muted); font-size: .92rem; }
+    .tag { display: inline-block; background: var(--rose); color: #fff; border-radius: 999px; font-size: .72rem; font-weight: 700; padding: 2px 10px; margin-bottom: 6px; }
+    .form { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 28px; display: grid; gap: 14px; max-width: 640px; margin: 0 auto; }
+    .form label { font-weight: 700; font-size: .92rem; }
+    .info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .info .card h3 { font-size: 1.2rem; }
+    .info p { margin: 0; color: var(--muted); }
+    footer { padding: 30px 16px; text-align: center; font-size: .88rem; color: var(--muted); border-top: 1px solid var(--line); }
+    @media (max-width: 860px) {
+      .hero-grid, .composer { grid-template-columns: 1fr; }
+      .summary { position: static; }
+      .cards, .info { grid-template-columns: 1fr; }
+      .seasons { grid-template-columns: 1fr 1fr; }
+      nav { gap: 14px; }
+      nav a.hide-s { display: none; }
+      section { padding: 52px 0; }
+    }
+    @media (max-width: 480px) { .seasons { grid-template-columns: 1fr; } .composer, .form { padding: 18px; } .hero-art { font-size: 2.6rem; } }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">Site d'exemple réalisé par <a href="../../index.html">Petits Rouages</a> — boutique fictive</div>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#">Atelier <span>Pétale</span></a>
+      <nav>
+        <a href="#bouquet" class="hide-s">Composer</a>
+        <a href="#abonnement" class="hide-s">Abonnement</a>
+        <a href="#saison" class="hide-s">De saison</a>
+        <a href="#evenements" class="hide-s">Événements</a>
+        <a href="#infos" class="btn btn-rose" style="color:#fff;padding:9px 18px">Nous trouver</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Fleuriste · fleurs de saison</p>
+          <h1>Des fleurs <em>fraîches</em>, composées pour vous.</h1>
+          <p class="lead">Composez votre bouquet en ligne, choisissez le jour de retrait, et récupérez-le en boutique, prêt et emballé.</p>
+          <a href="#bouquet" class="btn btn-rose">Composer mon bouquet</a>
+          <a href="#abonnement" class="btn btn-line">Voir l'abonnement</a>
+          <div class="pills"><span>🌱 Fleurs de saison</span><span>♻️ Emballage sans plastique</span><span>🕐 Prêt en 2 h</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div>🌷</div><div>🌿</div><div>🌸</div><div>🌻</div><div>🪻</div><div>🌹</div></div>
+      </div>
+    </section>
+
+    <section id="bouquet">
+      <div class="wrap">
+        <div class="center"><p class="kicker">Composeur de bouquet</p><h2>Votre bouquet, à votre goût</h2><p class="lead">Choisissez la taille, le style et les petits plus : le prix se met à jour tout de suite.</p></div>
+        <form class="composer" id="composer" autocomplete="off">
+          <div>
+            <fieldset><legend>1. La taille</legend>
+              <div class="opts" data-group="size">
+                <label><input type="radio" name="size" value="Petit|18" checked><span>Petit<small>18 €</small></span></label>
+                <label><input type="radio" name="size" value="Moyen|32"><span>Moyen<small>32 €</small></span></label>
+                <label><input type="radio" name="size" value="Grand|48"><span>Grand<small>48 €</small></span></label>
+                <label><input type="radio" name="size" value="Généreux|68"><span>Généreux<small>68 €</small></span></label>
+              </div>
+            </fieldset>
+            <fieldset><legend>2. Le style</legend>
+              <div class="opts">
+                <label><input type="radio" name="style" value="Champêtre|0|🌻" checked><span>Champêtre<small>fleurs des champs</small></span></label>
+                <label><input type="radio" name="style" value="Pastel|0|🌸"><span>Pastel<small>tons doux</small></span></label>
+                <label><input type="radio" name="style" value="Intense|4|🌹"><span>Intense<small>+ 4 € · couleurs vives</small></span></label>
+                <label><input type="radio" name="style" value="Blanc & vert|3|🪻"><span>Blanc &amp; vert<small>+ 3 € · épuré</small></span></label>
+              </div>
+            </fieldset>
+            <fieldset><legend>3. Les petits plus</legend>
+              <div class="opts">
+                <label><input type="checkbox" name="extra" value="Vase en verre|9"><span>Vase en verre<small>+ 9 €</small></span></label>
+                <label><input type="checkbox" name="extra" value="Carte message|2"><span>Carte message<small>+ 2 €</small></span></label>
+                <label><input type="checkbox" name="extra" value="Chocolats|6"><span>Chocolats<small>+ 6 €</small></span></label>
+              </div>
+            </fieldset>
+            <fieldset><legend>4. Le jour de retrait en boutique</legend>
+              <input type="date" id="pickup" aria-label="Jour de retrait">
+            </fieldset>
+          </div>
+          <aside class="summary" aria-live="polite">
+            <div class="vase" id="vase">🌻💐</div>
+            <ul id="lines"></ul>
+            <div class="total" id="total">18 €</div>
+            <button type="submit" class="btn btn-rose">Réserver ce bouquet</button>
+            <p class="ok" id="ok">Merci ! Dans un vrai site, votre commande serait envoyée à la boutique et vous recevriez un e-mail de confirmation.</p>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <section id="abonnement" class="alt">
+      <div class="wrap">
+        <div class="center"><p class="kicker">Abonnement floral</p><h2>Des fleurs toute l'année</h2><p class="lead">Un bouquet de saison, au rythme que vous voulez. Sans engagement, on peut mettre en pause à tout moment.</p></div>
+        <div class="cards">
+          <article class="card"><div class="em">🌼</div><h3>Le mensuel</h3><div class="price">22 € <small>/ mois</small></div><ul><li>1 bouquet par mois</li><li>À retirer en boutique</li><li>Sans engagement</li></ul><a href="#contact" class="btn btn-line">Je choisis</a></article>
+          <article class="card hot"><span class="tag">Le plus choisi</span><div class="em">🌷</div><h3>Le bimensuel</h3><div class="price">38 € <small>/ mois</small></div><ul><li>2 bouquets par mois</li><li>Livraison possible à Rennes</li><li>Choix du style à chaque fois</li></ul><a href="#contact" class="btn btn-rose">Je choisis</a></article>
+          <article class="card"><div class="em">🪻</div><h3>L'hebdomadaire</h3><div class="price">68 € <small>/ mois</small></div><ul><li>1 bouquet par semaine</li><li>Idéal pour un bureau ou un cabinet</li><li>Facture mensuelle</li></ul><a href="#contact" class="btn btn-line">Je choisis</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="saison">
+      <div class="wrap">
+        <div class="center"><p class="kicker">Calendrier</p><h2>Ce qui fleurit, et quand</h2><p class="lead">Nous travaillons avec les fleurs de la saison : plus fraîches, plus durables et moins chères.</p></div>
+        <div class="seasons" id="seasons">
+          <div class="season" data-m="2,3,4"><b>🌷 Printemps</b><p>Tulipes, pivoines, renoncules, lilas.</p></div>
+          <div class="season" data-m="5,6,7"><b>🌻 Été</b><p>Tournesols, dahlias, lavande, pois de senteur.</p></div>
+          <div class="season" data-m="8,9,10"><b>🍂 Automne</b><p>Chrysanthèmes, asters, rudbeckias, feuillages roux.</p></div>
+          <div class="season" data-m="11,0,1"><b>❄️ Hiver</b><p>Hellébores, anémones, houx, branches de saison.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evenements" class="alt">
+      <div class="wrap">
+        <div class="center"><p class="kicker">Événements</p><h2>Mariage, deuil, entreprise : un devis sur mesure</h2><p class="lead">Décrivez-nous votre projet, nous revenons vers vous sous 48 h avec une proposition.</p></div>
+        <form class="form" id="contact">
+          <div><label for="ev-type">Type d'événement</label>
+            <select id="ev-type"><option>Mariage</option><option>Obsèques</option><option>Anniversaire</option><option>Entreprise ou cabinet</option><option>Autre</option></select></div>
+          <div><label for="ev-date">Date prévue</label><input type="date" id="ev-date"></div>
+          <div><label for="ev-name">Votre nom</label><input type="text" id="ev-name" placeholder="Prénom Nom"></div>
+          <div><label for="ev-msg">Votre projet</label><textarea id="ev-msg" rows="3" placeholder="Nombre de personnes, couleurs souhaitées, budget approximatif…"></textarea></div>
+          <button type="submit" class="btn btn-rose">Demander un devis</button>
+          <p class="ok" id="ev-ok">Merci ! Dans un vrai site, la demande arriverait classée dans la boîte e-mail de la boutique.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="infos">
+      <div class="wrap">
+        <div class="center"><h2>Venir à la boutique</h2></div>
+        <div class="info">
+          <article class="card"><h3>📍 Adresse</h3><p>12 rue des Lilas<br>Ville d'exemple<br>(adresse fictive)</p></article>
+          <article class="card"><h3>🕐 Horaires</h3><p>Mardi – samedi : 9 h – 19 h<br>Dimanche : 9 h – 13 h<br>Fermé le lundi</p></article>
+          <article class="card"><h3>📞 Contact</h3><p>02 61 91 00 00<br>bonjour@atelier-petale.example</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© Atelier Pétale — exemple de site, établissement fictif</footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('composer');
+      var lines = document.getElementById('lines');
+      var totalEl = document.getElementById('total');
+      var vase = document.getElementById('vase');
+      var pickup = document.getElementById('pickup');
+      var days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+
+      var today = new Date();
+      var iso = function (d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+      pickup.min = iso(today);
+      var first = new Date(today); first.setDate(first.getDate() + 1);
+      if (first.getDay() === 1) first.setDate(first.getDate() + 1);
+      pickup.value = iso(first);
+
+      function row(label, value) {
+        var li = document.createElement('li');
+        var a = document.createElement('span'); a.textContent = label;
+        var b = document.createElement('span'); b.textContent = value;
+        li.appendChild(a); li.appendChild(b); lines.appendChild(li);
+      }
+
+      function update() {
+        lines.textContent = '';
+        var size = form.size.value.split('|');
+        var style = form.style.value.split('|');
+        var total = Number(size[1]) + Number(style[1]);
+        row('Bouquet ' + size[0].toLowerCase(), size[1] + ' €');
+        row('Style ' + style[0].toLowerCase(), Number(style[1]) ? '+ ' + style[1] + ' €' : 'inclus');
+        var emoji = style[2];
+        form.querySelectorAll('input[name=extra]:checked').forEach(function (c) {
+          var p = c.value.split('|'); total += Number(p[1]); row(p[0], '+ ' + p[1] + ' €');
+          if (p[0] === 'Chocolats') emoji += '🍫'; if (p[0] === 'Vase en verre') emoji += '🫙'; if (p[0] === 'Carte message') emoji += '💌';
+        });
+        var d = pickup.value ? new Date(pickup.value + 'T12:00:00') : null;
+        if (d) row('Retrait', days[d.getDay()] + ' ' + d.getDate() + '/' + (d.getMonth() + 1));
+        totalEl.textContent = total + ' €';
+        vase.textContent = emoji;
+      }
+
+      form.addEventListener('change', function () { document.getElementById('ok').classList.remove('show'); update(); });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var d = pickup.value ? new Date(pickup.value + 'T12:00:00') : null;
+        if (d && d.getDay() === 1) { alert('La boutique est fermée le lundi : choisissez un autre jour de retrait.'); return; }
+        document.getElementById('ok').classList.add('show');
+      });
+      update();
+
+      document.getElementById('contact').addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.getElementById('ev-ok').classList.add('show');
+      });
+
+      var m = today.getMonth();
+      document.querySelectorAll('.season').forEach(function (s) {
+        if (s.dataset.m.split(',').indexOf(String(m)) > -1) {
+          s.classList.add('now');
+          var t = document.createElement('span'); t.className = 'tag'; t.textContent = 'En ce moment';
+          s.insertBefore(t, s.firstChild);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
