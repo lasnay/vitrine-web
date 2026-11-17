@@ -67,14 +67,21 @@ contactForm.addEventListener("submit", async (e) => {
   }
 });
 
+document.getElementById("test-url").addEventListener("input", (e) => e.target.setCustomValidity(""));
+
 document.getElementById("test-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  let url = document.getElementById("test-url").value.trim();
+  const input = document.getElementById("test-url");
+  let url = input.value.trim();
   if (!url) return;
   if (!/^https?:\/\//i.test(url)) url = "https://" + url;
-  let host;
-  try { host = new URL(url).hostname; } catch { return; }
-  if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(host)) return;
+  let host = "";
+  try { host = new URL(url).hostname; } catch {}
+  if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(host)) {
+    input.setCustomValidity("Adresse non reconnue. Exemple : www.votre-site.fr");
+    input.reportValidity();
+    return;
+  }
   const tool = e.submitter && e.submitter.dataset.tool === "security" ? "security" : "speed";
   const target = tool === "security"
     ? `https://developer.mozilla.org/fr/observatory/analyze?host=${encodeURIComponent(host)}`
